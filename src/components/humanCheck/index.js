@@ -7,7 +7,7 @@ class HumanCheck extends Component {
       <div>
         Click on all cars
         <br />
-        <Link to="/introduction">
+        <Link to="/">
           <button>Back to introduction</button>
         </Link>
         <Link to="/firstsurvey">

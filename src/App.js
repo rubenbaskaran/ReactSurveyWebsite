@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route path="/introduction" component={Introduction} />
+        <Route exact path="/" component={Introduction} />
         <Route path="/humancheck" component={HumanCheck} />
         <Route path="/firstsurvey" component={FirstSurvey} />
         <Route path="/randomvideo" component={RandomVideo} />
