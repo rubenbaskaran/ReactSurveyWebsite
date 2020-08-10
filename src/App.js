@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Introduction from "./components/introduction";
 import HumanCheck from "./components/humanCheck";
 import FirstSurvey from "./components/firstSurvey";
