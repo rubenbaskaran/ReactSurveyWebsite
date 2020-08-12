@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 class Introduction extends Component {
   render() {
@@ -8,10 +9,14 @@ class Introduction extends Component {
         This is the introduction page
         <br />
         <a href="https://alkohologsamfund.dk/">
-          <button>Back to alkohologsamfund</button>
+          <Button variant="contained" color="primary">
+            Back to alkohologsamfund
+          </Button>
         </a>
         <Link to="/humancheck">
-          <button>Go to human check</button>
+          <Button variant="contained" color="primary">
+            Go to human check
+          </Button>
         </Link>
       </div>
     );

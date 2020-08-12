@@ -7,6 +7,7 @@ import RandomVideo from "./components/randomVideo";
 import SecondSurvey from "./components/secondSurvey";
 import CompetitionParticipation from "./components/competitionParticipation";
 import ThankYou from "./components/thankYou";
+import "fontsource-roboto";
 
 function App() {
   return (
