@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Container,
   Button,
@@ -16,11 +15,18 @@ const useStyles = makeStyles({
   grid: {
     background: "teal",
   },
+  childGrid: {
+    background: "pink",
+  },
   ratingScale: {
     padding: 20,
   },
   question: {
     color: "black",
+  },
+  button: {
+    color: "yellow",
+    width: "100%",
   },
 });
 
@@ -42,19 +48,25 @@ function Introduction() {
           <Grid item xs={12}>
             <h1>This is the introduction page</h1>
           </Grid>
-          <Grid item sm={6} xs={12}>
-            <a href="https://alkohologsamfund.dk/">
-              <Button variant="contained" color="primary">
-                Back to alkohologsamfund
-              </Button>
-            </a>
+          <Grid container item sm={6} xs={12} className={classes.childGrid}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              href="https://alkohologsamfund.dk/"
+            >
+              Back to alkohologsamfund
+            </Button>
           </Grid>
-          <Grid item sm={6} xs={12}>
-            <Link to="/humancheck">
-              <Button variant="contained" color="primary">
-                Go to human check
-              </Button>
-            </Link>
+          <Grid container item sm={6} xs={12} className={classes.childGrid}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              href="/humancheck"
+            >
+              Go to human check
+            </Button>
           </Grid>
           <Grid item xs={3}>
             <Paper>xs=3</Paper>
