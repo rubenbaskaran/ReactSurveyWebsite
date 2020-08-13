@@ -42,14 +42,14 @@ function Introduction() {
           <Grid item xs={12}>
             <h1>This is the introduction page</h1>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sm={6} xs={12}>
             <a href="https://alkohologsamfund.dk/">
               <Button variant="contained" color="primary">
                 Back to alkohologsamfund
               </Button>
             </a>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sm={6} xs={12}>
             <Link to="/humancheck">
               <Button variant="contained" color="primary">
                 Go to human check
