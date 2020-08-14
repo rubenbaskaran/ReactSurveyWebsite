@@ -63,10 +63,10 @@ function Introduction() {
             <Paper>xs=3</Paper>
           </Grid>
           <Grid item xs={12}>
-            <RatingScale />
+            <RatingScale question="Question 1: Write the question here..." />
           </Grid>
           <Grid item xs={12}>
-            <RatingScale />
+            <RatingScale question="Question 2: Write the question here..." />
           </Grid>
         </Grid>
       </Container>

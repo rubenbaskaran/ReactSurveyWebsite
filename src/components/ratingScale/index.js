@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-function RatingScale() {
+function RatingScale(props) {
   const [rating, setRating] = React.useState(5);
   const classes = useStyles();
 
@@ -29,9 +29,7 @@ function RatingScale() {
 
   return (
     <Paper className={classes.ratingScale}>
-      <FormLabel className={classes.question}>
-        Question 1: Write the question here...
-      </FormLabel>
+      <FormLabel className={classes.question}>{props.question}</FormLabel>
       <RadioGroup
         name="questionOne"
         value={rating.toString()}
