@@ -24,20 +24,22 @@ const useStyles = makeStyles({
     "margin-left": "auto",
     "margin-right": "auto",
     "margin-top": "20px",
-    "background-color": "pink",
     display: "inline-block",
   },
   required: {
     display: "block",
     "text-align": "right",
     color: "red",
-    "padding-top": "15px",
   },
-  goodBadText: {
-    display: "flex",
-    "justify-content": "center",
-    "align-items": "center",
+  goodText: {
+    display: "inline-block",
     "margin-top": "20px",
+    "margin-left": "10px",
+  },
+  badText: {
+    display: "inline-block",
+    "margin-top": "20px",
+    "margin-right": "20px",
   },
 });
 
@@ -58,9 +60,12 @@ function RatingScale(props) {
         onChange={handleChange}
         row
       >
-        <FormLabel className={classes.question}>{props.question}</FormLabel>
-        <div className={classes.goodBadText}>Very bad</div>
+        <FormLabel className={classes.question}>
+          <b>{props.question}</b>
+        </FormLabel>
+
         <div className={classes.ratingScale}>
+          <div className={classes.badText}>Very bad</div>
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
             <FormControlLabel
               key={value}
@@ -69,8 +74,8 @@ function RatingScale(props) {
               label={value.toString()}
             />
           ))}
+          <div className={classes.goodText}>Very good</div>
         </div>
-        <div className={classes.goodBadText}>Very good</div>
       </RadioGroup>
       <div className={classes.required}>
         <label>*required</label>

@@ -10,6 +10,8 @@ const useStyles = makeStyles({
   grid: {
     background: "#f3f3f3",
     padding: "20px",
+    border: "1px solid #f3f3f3",
+    "border-radius": "10px",
   },
   childGrid: {
     background: "#f3f3f3",
@@ -47,10 +49,10 @@ function Introduction() {
             </p>
           </Grid>
           <Grid item xs={12}>
-            <RatingScale question="Question 1: Write the question here..." />
+            <RatingScale question="Question 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
           </Grid>
           <Grid item xs={12}>
-            <RatingScale question="Question 2: Write the question here..." />
+            <RatingScale question="Question 2: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
           </Grid>
           <Grid container item sm={6} xs={12} className={classes.childGrid}>
             <Button
