@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Button,
-  Grid,
-  Paper,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-} from "@material-ui/core";
+import { Container, Button, Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import RatingScale from "../questionTypes";
 
@@ -32,15 +23,8 @@ const useStyles = makeStyles({
 });
 
 function Introduction() {
-  const [rating, setRating] = React.useState(5);
   const [spacing] = React.useState(1);
-
   const classes = useStyles();
-
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setRating(Number(event.target.value));
-  };
 
   return (
     <div>
@@ -79,26 +63,7 @@ function Introduction() {
             <Paper>xs=3</Paper>
           </Grid>
           <Grid item xs={12}>
-            <Paper className={classes.ratingScale}>
-              <FormLabel className={classes.question}>
-                Question 1: Write the question here...
-              </FormLabel>
-              <RadioGroup
-                name="questionOne"
-                value={rating.toString()}
-                onChange={handleChange}
-                row
-              >
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
-                  <FormControlLabel
-                    key={value}
-                    value={value.toString()}
-                    control={<Radio />}
-                    label={value.toString()}
-                  />
-                ))}
-              </RadioGroup>
-            </Paper>
+            <RatingScale />
           </Grid>
           <Grid item xs={12}>
             <RatingScale />

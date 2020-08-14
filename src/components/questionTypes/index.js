@@ -18,13 +18,14 @@ const useStyles = makeStyles({
   },
 });
 
-const handleChange = (event) => {
-  console.log(event.target.value);
-};
-
 function RatingScale() {
+  const [rating, setRating] = React.useState(5);
   const classes = useStyles();
-  const [rating] = React.useState(7);
+
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setRating(Number(event.target.value));
+  };
 
   return (
     <Paper className={classes.ratingScale}>
