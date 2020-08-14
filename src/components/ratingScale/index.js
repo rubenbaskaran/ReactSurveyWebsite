@@ -19,6 +19,9 @@ const useStyles = makeStyles({
     display: "block",
     width: "100%",
     padding: "15px",
+    "font-family": "Segoe UI",
+    "letter-spacing": "0.5px",
+    "line-height": "1.5",
   },
   ratingScale: {
     "margin-left": "auto",
