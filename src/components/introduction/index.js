@@ -5,7 +5,8 @@ import RatingScale from "../ratingScale";
 
 const useStyles = makeStyles({
   container: {
-    "margin-top": "20px",
+    "margin-top": "40px",
+    "margin-bottom": "40px",
   },
   grid: {
     background: "#f3f3f3",
