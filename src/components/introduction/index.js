@@ -10,6 +10,7 @@ import {
   Radio,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import RatingScale from "../questionTypes";
 
 const useStyles = makeStyles({
   grid: {
@@ -98,6 +99,9 @@ function Introduction() {
                 ))}
               </RadioGroup>
             </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale />
           </Grid>
         </Grid>
       </Container>
