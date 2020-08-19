@@ -12,14 +12,22 @@ const useStyles = makeStyles({
     "margin-top": "15px",
     width: "100%",
   },
-  progressBar: {
+  progressBarPlacement: {
     "margin-top": "40px",
+  },
+  progressBarFont: {
+    color: "black",
+    "font-size": "1.25rem",
   },
   colorPrimary: {
     backgroundColor: "#f3f3f3",
   },
   barColorPrimary: {
     backgroundColor: "green",
+  },
+  progressBarStyling: {
+    height: "20px",
+    "border-radius": "5px",
   },
 });
 
