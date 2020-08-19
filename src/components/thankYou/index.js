@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../styles";
+import LinearWithValueLabel from "../progressBar";
 
 function ThankYou() {
   const [spacing] = React.useState(1);
@@ -10,6 +11,7 @@ function ThankYou() {
   return (
     <div>
       <Container fixed>
+        <LinearWithValueLabel value="100" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Thank you for participating</h1>

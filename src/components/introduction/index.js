@@ -11,7 +11,7 @@ function Introduction() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel />
+        <LinearWithValueLabel value="10" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the introduction page</h1>

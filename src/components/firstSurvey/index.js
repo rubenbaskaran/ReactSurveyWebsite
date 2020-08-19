@@ -3,6 +3,7 @@ import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../ratingScale";
 import useStyles from "../styles";
 import { Link } from "react-router-dom";
+import LinearWithValueLabel from "../progressBar";
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
@@ -11,6 +12,7 @@ function FirstSurvey() {
   return (
     <div>
       <Container fixed>
+        <LinearWithValueLabel value="40" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the first survey</h1>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
+import LinearWithValueLabel from "../progressBar";
 
 function HumanCheck() {
   const [spacing] = React.useState(1);
@@ -10,6 +11,7 @@ function HumanCheck() {
   return (
     <div>
       <Container fixed>
+        <LinearWithValueLabel value="25" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the human check</h1>

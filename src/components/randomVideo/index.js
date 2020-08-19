@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../styles";
+import LinearWithValueLabel from "../progressBar";
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
@@ -10,6 +11,7 @@ function RandomVideo() {
   return (
     <div>
       <Container fixed>
+        <LinearWithValueLabel value="55" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the random video</h1>
