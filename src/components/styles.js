@@ -9,8 +9,8 @@ const useStyles = makeStyles({
     "border-radius": "10px",
   },
   button: {
-    width: "100%",
     "margin-top": "15px",
+    width: "100%",
   },
 });
 

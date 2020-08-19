@@ -30,27 +30,26 @@ function HumanCheck() {
             </p>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                href="/"
-              >
-                Back to introduction
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Back to introduction
+            </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/firstsurvey">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Go to first survey
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/firstsurvey"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Go to first survey
+            </Button>
           </Grid>
         </Grid>
       </Container>

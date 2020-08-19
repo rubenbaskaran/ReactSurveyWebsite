@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../styles";
@@ -30,15 +30,15 @@ function ThankYou() {
             </p>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/competitionparticipation">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Back to competition participation
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/competitionparticipation"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Back to competition participation
+            </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button

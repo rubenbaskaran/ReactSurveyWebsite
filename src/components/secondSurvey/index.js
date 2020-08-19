@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../ratingScale";
@@ -61,33 +61,29 @@ function SecondSurvey() {
             <RatingScale question="Question 10: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/randomvideo">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                href="/randomvideo"
-              >
-                Back to random video
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/randomvideo"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Back to random video
+            </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/competitionparticipation">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Go to competition participation
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/competitionparticipation"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Go to competition participation
+            </Button>
           </Grid>
         </Grid>
       </Container>
-      This is the second survey
-      <br />
-      <button>Back to random video</button>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import RatingScale from "../ratingScale";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
 
@@ -41,15 +40,15 @@ function Introduction() {
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/humancheck">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Go to human check
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/humancheck"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Go to human check
+            </Button>
           </Grid>
         </Grid>
       </Container>

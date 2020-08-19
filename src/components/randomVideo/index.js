@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../styles";
@@ -30,26 +30,26 @@ function RandomVideo() {
             </p>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/firstsurvey">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Back to first survey
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/firstsurvey"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Back to first survey
+            </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Link to="/secondsurvey">
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Go to second survey
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              to="/secondsurvey"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Go to second survey
+            </Button>
           </Grid>
         </Grid>
       </Container>
