@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../ratingScale";
+import { Link } from "react-router-dom";
 import useStyles from "../styles";
 
 function Introduction() {
@@ -29,36 +30,6 @@ function Introduction() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 2: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 4: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 6: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 7: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 8: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 9: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?" />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale question="Question 10: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
-          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               variant="contained"
@@ -70,14 +41,15 @@ function Introduction() {
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              href="/humancheck"
-            >
-              Go to human check
-            </Button>
+            <Link to="/humancheck">
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
+                Go to human check
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Container>
