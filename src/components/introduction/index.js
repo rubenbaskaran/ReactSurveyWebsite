@@ -1,27 +1,7 @@
 import React from "react";
-import { Container, Button, Grid, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../ratingScale";
-
-const useStyles = makeStyles({
-  container: {
-    "margin-top": "40px",
-    "margin-bottom": "40px",
-  },
-  grid: {
-    background: "#f3f3f3",
-    padding: "20px",
-    border: "1px solid #f3f3f3",
-    "border-radius": "10px",
-  },
-  childGrid: {
-    background: "#f3f3f3",
-  },
-  button: {
-    width: "100%",
-    "margin-top": "15px",
-  },
-});
+import useStyles from "../styles";
 
 function Introduction() {
   const [spacing] = React.useState(1);
@@ -29,7 +9,7 @@ function Introduction() {
 
   return (
     <div>
-      <Container fixed className={classes.container}>
+      <Container fixed>
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the introduction page</h1>
@@ -79,7 +59,7 @@ function Introduction() {
           <Grid item xs={12}>
             <RatingScale question="Question 10: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?" />
           </Grid>
-          <Grid container item sm={6} xs={12} className={classes.childGrid}>
+          <Grid container item sm={6} xs={12}>
             <Button
               variant="contained"
               color="primary"
@@ -89,7 +69,7 @@ function Introduction() {
               Back to alkohologsamfund
             </Button>
           </Grid>
-          <Grid container item sm={6} xs={12} className={classes.childGrid}>
+          <Grid container item sm={6} xs={12}>
             <Button
               variant="contained"
               color="primary"
