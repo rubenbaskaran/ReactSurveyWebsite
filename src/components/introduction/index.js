@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
+import LinearWithValueLabel from "../progressBar";
 
 function Introduction() {
   const [spacing] = React.useState(1);
@@ -10,6 +11,7 @@ function Introduction() {
   return (
     <div>
       <Container fixed>
+        <LinearWithValueLabel />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the introduction page</h1>
