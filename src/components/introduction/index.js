@@ -3,6 +3,7 @@ import { Container, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
 import LinearWithValueLabel from "../progressBar";
+import GenderQuestion from "../gender";
 
 function Introduction() {
   const [spacing] = React.useState(1);
@@ -30,6 +31,9 @@ function Introduction() {
               placerat. Mauris sit amet tempor elit. Mauris libero turpis,
               laoreet ac pretium non, condimentum vel ex.
             </p>
+          </Grid>
+          <Grid item xs={12}>
+            <GenderQuestion question="Gender" />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
