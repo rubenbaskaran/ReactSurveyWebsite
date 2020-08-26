@@ -31,6 +31,16 @@ function RandomVideo() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
+          <Grid item xs={12} container justify="center">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ElIl2gXQUnw?controls=0"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}

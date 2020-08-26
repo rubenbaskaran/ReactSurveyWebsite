@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
 import LinearWithValueLabel from "../progressBar";
@@ -30,6 +30,19 @@ function HumanCheck() {
               placerat. Mauris sit amet tempor elit. Mauris libero turpis,
               laoreet ac pretium non, condimentum vel ex.
             </p>
+          </Grid>
+          <Grid item xs={12} container justify="center">
+            <div
+              style={{
+                "background-color": "grey",
+                height: "300px",
+                width: "300px",
+                "text-align": "center",
+                "line-height": "300px",
+              }}
+            >
+              Human check (in progress)
+            </div>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
