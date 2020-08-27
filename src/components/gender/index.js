@@ -54,6 +54,17 @@ function GenderQuestion(props) {
     setRating(event.target.value);
   };
 
+  const gender = ["Male", "Female"];
+
+  const genderItems = gender.map((item) => (
+    <FormControlLabel
+      key={item}
+      value={item}
+      control={<Radio />}
+      label={item}
+    />
+  ));
+
   return (
     <Paper className={classes.paper}>
       <RadioGroup
@@ -66,20 +77,7 @@ function GenderQuestion(props) {
           <b>{props.question}</b>
         </FormLabel>
 
-        <div className={classes.ratingScale}>
-          <FormControlLabel
-            key={"male"}
-            value={"male"}
-            control={<Radio />}
-            label={"Male"}
-          />
-          <FormControlLabel
-            key={"female"}
-            value={"female"}
-            control={<Radio />}
-            label={"Female"}
-          />
-        </div>
+        <div className={classes.ratingScale}>{genderItems}</div>
       </RadioGroup>
       <div className={classes.required}>
         <label>*required</label>
