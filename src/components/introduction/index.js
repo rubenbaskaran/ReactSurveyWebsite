@@ -5,6 +5,7 @@ import useStyles from "../styles";
 import LinearWithValueLabel from "../progressBar";
 import GenderQuestion from "../gender";
 import AgeQuestion from "../age";
+import EducationQuestion from "../education";
 
 function Introduction() {
   const [spacing] = React.useState(1);
@@ -38,6 +39,9 @@ function Introduction() {
           </Grid>
           <Grid item xs={12}>
             <AgeQuestion question="Age" />
+          </Grid>
+          <Grid item xs={12}>
+            <EducationQuestion question="Education" />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button

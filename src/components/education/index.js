@@ -58,15 +58,19 @@ function AgeQuestion(props) {
     setRating(event.target.value);
   };
 
-  const items = [];
+  const education = [
+    "Primary school",
+    "High school",
+    "Bachelor's degree",
+    "Master's degree",
+    "PhD",
+  ];
 
-  for (var i = 16; i < 100; i++) {
-    items.push(
-      <MenuItem key={i} value={i}>
-        {i.toString()}
-      </MenuItem>
-    );
-  }
+  const items = education.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
 
   return (
     <Paper className={classes.paper}>
@@ -85,7 +89,7 @@ function AgeQuestion(props) {
               inputProps={{ "aria-label": "Without label" }}
             >
               <MenuItem value="" disabled>
-                <em>Choose your age...</em>
+                <em>Choose your educational level...</em>
               </MenuItem>
               {items}
             </Select>
