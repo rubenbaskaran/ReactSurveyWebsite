@@ -5,6 +5,10 @@ import {
   RadioGroup,
   FormControlLabel,
   Radio,
+  FormControl,
+  Select,
+  MenuItem,
+  FormHelperText,
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -45,7 +49,7 @@ const useStyles = makeStyles({
   },
 });
 
-function GenderQuestion(props) {
+function AgeQuestion(props) {
   const [rating, setRating] = React.useState("");
   const classes = useStyles();
 
@@ -53,6 +57,16 @@ function GenderQuestion(props) {
     console.log(event.target.value);
     setRating(event.target.value);
   };
+
+  const items = [];
+
+  for (var i = 16; i < 100; i++) {
+    items.push(
+      <MenuItem key={i} value={i}>
+        {i.toString()}
+      </MenuItem>
+    );
+  }
 
   return (
     <Paper className={classes.paper}>
@@ -67,18 +81,20 @@ function GenderQuestion(props) {
         </FormLabel>
 
         <div className={classes.ratingScale}>
-          <FormControlLabel
-            key={"male"}
-            value={"male"}
-            control={<Radio />}
-            label={"Male"}
-          />
-          <FormControlLabel
-            key={"female"}
-            value={"female"}
-            control={<Radio />}
-            label={"Female"}
-          />
+          <FormControl className={classes.formControl}>
+            <Select
+              value={rating}
+              onChange={handleChange}
+              displayEmpty
+              className={classes.selectEmpty}
+              inputProps={{ "aria-label": "Without label" }}
+            >
+              <MenuItem value="" disabled>
+                <em>Choose your age...</em>
+              </MenuItem>
+              {items}
+            </Select>
+          </FormControl>
         </div>
       </RadioGroup>
       <div className={classes.required}>
@@ -88,4 +104,4 @@ function GenderQuestion(props) {
   );
 }
 
-export default GenderQuestion;
+export default AgeQuestion;
