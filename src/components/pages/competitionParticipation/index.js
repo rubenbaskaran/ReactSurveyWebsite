@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import GenderQuestion from "../../questionTypes/gender";
+import Textfield from "../../questionTypes/Textfield";
 
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
@@ -30,6 +32,12 @@ function CompetitionParticipation() {
               placerat. Mauris sit amet tempor elit. Mauris libero turpis,
               laoreet ac pretium non, condimentum vel ex.
             </p>
+          </Grid>
+          <Grid item xs={12}>
+            <Textfield
+              question="Enter email address for participating in the competition"
+              required={false}
+            />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
