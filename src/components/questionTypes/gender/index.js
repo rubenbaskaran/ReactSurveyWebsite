@@ -79,9 +79,11 @@ function GenderQuestion(props) {
 
         <div className={classes.ratingScale}>{genderItems}</div>
       </RadioGroup>
-      <div className={classes.required}>
-        <label>*required</label>
-      </div>
+      {props.required == true && (
+        <div className={classes.required}>
+          <label>*required</label>
+        </div>
+      )}
     </Paper>
   );
 }

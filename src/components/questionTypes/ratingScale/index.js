@@ -80,9 +80,11 @@ function RatingScale(props) {
           <div className={classes.goodText}>Very good</div>
         </div>
       </RadioGroup>
-      <div className={classes.required}>
-        <label>*required</label>
-      </div>
+      {props.required == true && (
+        <div className={classes.required}>
+          <label>*required</label>
+        </div>
+      )}
     </Paper>
   );
 }

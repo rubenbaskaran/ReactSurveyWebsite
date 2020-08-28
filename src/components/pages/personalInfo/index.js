@@ -72,13 +72,14 @@ function PersonalInfo() {
             </p>
           </Grid>
           <Grid item xs={12}>
-            <GenderQuestion question="Gender" />
+            <GenderQuestion question="Gender" required={true} />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Age"
               items={ageItems}
               placeholder="Choose your age..."
+              required={true}
             />
           </Grid>
           <Grid item xs={12}>

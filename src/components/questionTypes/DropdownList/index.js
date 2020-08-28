@@ -82,9 +82,11 @@ function DropdownList(props) {
           </FormControl>
         </div>
       </RadioGroup>
-      <div className={classes.required}>
-        <label>*required</label>
-      </div>
+      {props.required == true && (
+        <div className={classes.required}>
+          <label>*required</label>
+        </div>
+      )}
     </Paper>
   );
 }
