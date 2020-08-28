@@ -49,7 +49,7 @@ const useStyles = makeStyles({
   },
 });
 
-function AgeQuestion(props) {
+function DropdownList(props) {
   const [rating, setRating] = React.useState("");
   const classes = useStyles();
 
@@ -57,20 +57,6 @@ function AgeQuestion(props) {
     console.log(event.target.value);
     setRating(event.target.value);
   };
-
-  const education = [
-    "Primary school",
-    "High school",
-    "Bachelor's degree",
-    "Master's degree",
-    "PhD",
-  ];
-
-  const items = education.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   return (
     <Paper className={classes.paper}>
@@ -89,9 +75,9 @@ function AgeQuestion(props) {
               inputProps={{ "aria-label": "Without label" }}
             >
               <MenuItem value="" disabled>
-                <em>Choose your educational level...</em>
+                <em>{props.placeholder}</em>
               </MenuItem>
-              {items}
+              {props.items}
             </Select>
           </FormControl>
         </div>
@@ -103,4 +89,4 @@ function AgeQuestion(props) {
   );
 }
 
-export default AgeQuestion;
+export default DropdownList;

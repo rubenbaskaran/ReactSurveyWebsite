@@ -3,10 +3,6 @@ import { Container, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
 import LinearWithValueLabel from "../progressBar";
-import GenderQuestion from "../gender";
-import AgeQuestion from "../age";
-import EducationQuestion from "../education";
-import OccupationQuestion from "../occupation";
 
 function Consent() {
   const [spacing] = React.useState(1);

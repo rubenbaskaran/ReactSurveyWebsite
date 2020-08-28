@@ -1,16 +1,52 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../styles";
 import LinearWithValueLabel from "../progressBar";
 import GenderQuestion from "../gender";
-import AgeQuestion from "../age";
-import EducationQuestion from "../education";
-import OccupationQuestion from "../occupation";
+import DropdownList from "../DropdownList";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  const ageItems = [];
+  for (var i = 16; i < 100; i++) {
+    ageItems.push(
+      <MenuItem key={i} value={i}>
+        {i.toString()}
+      </MenuItem>
+    );
+  }
+
+  const education = [
+    "Primary school",
+    "High school",
+    "Bachelor's degree",
+    "Master's degree",
+    "PhD",
+  ];
+  const educationItems = education.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
+  const occupation = [
+    "Unemployed",
+    "Student",
+    "Junior employee",
+    "Senior employee",
+    "Manager",
+    "Leader",
+    "Self-employed",
+  ];
+
+  const occupationItems = occupation.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
 
   return (
     <div>
@@ -39,13 +75,25 @@ function PersonalInfo() {
             <GenderQuestion question="Gender" />
           </Grid>
           <Grid item xs={12}>
-            <AgeQuestion question="Age" />
+            <DropdownList
+              question="Age"
+              items={ageItems}
+              placeholder="Choose your age..."
+            />
           </Grid>
           <Grid item xs={12}>
-            <EducationQuestion question="Education" />
+            <DropdownList
+              question="Education"
+              items={educationItems}
+              placeholder="Choose your educational level..."
+            />
           </Grid>
           <Grid item xs={12}>
-            <OccupationQuestion question="Occupation" />
+            <DropdownList
+              question="Occupation"
+              items={occupationItems}
+              placeholder="Choose your occupation..."
+            />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
