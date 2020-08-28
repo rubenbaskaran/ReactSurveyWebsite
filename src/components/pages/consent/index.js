@@ -1,20 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../styles";
-import LinearWithValueLabel from "../progressBar";
+import { Link } from "react-router-dom";
+import useStyles from "../../styles";
+import LinearWithValueLabel from "../../progressBar";
 
-function RandomVideo() {
+function Consent() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="55" />
+        <LinearWithValueLabel value="0" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the random video</h1>
+            <h1>This is the consent page</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
               nunc id leo tristique blandit. Integer at dolor ornare, blandit
@@ -31,36 +31,25 @@ function RandomVideo() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
-          <Grid item xs={12} container justify="center">
-            <iframe
-              width="760"
-              height="515"
-              src="https://www.youtube.com/embed/ElIl2gXQUnw?controls=0"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
-              component={Link}
-              to="/firstsurvey"
               variant="contained"
               color="primary"
               className={classes.button}
+              href="https://alkohologsamfund.dk/"
             >
-              Back to first survey
+              Back to alkohologsamfund
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/secondsurvey"
+              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Go to second survey
+              Go to personal info page
             </Button>
           </Grid>
         </Grid>
@@ -69,4 +58,4 @@ function RandomVideo() {
   );
 }
 
-export default RandomVideo;
+export default Consent;

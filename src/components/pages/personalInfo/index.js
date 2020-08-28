@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyles from "../styles";
-import LinearWithValueLabel from "../progressBar";
-import GenderQuestion from "../gender";
-import DropdownList from "../DropdownList";
+import useStyles from "../../styles";
+import LinearWithValueLabel from "../../progressBar";
+import GenderQuestion from "../../questionTypes/gender";
+import DropdownList from "../../questionTypes/DropdownList";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);

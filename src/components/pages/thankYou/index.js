@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../styles";
-import LinearWithValueLabel from "../progressBar";
+import useStyles from "../../styles";
+import LinearWithValueLabel from "../../progressBar";
 
-function CompetitionParticipation() {
+function ThankYou() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="85" />
+        <LinearWithValueLabel value="100" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the competition participation page</h1>
+            <h1>Thank you for participating</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
               nunc id leo tristique blandit. Integer at dolor ornare, blandit
@@ -34,23 +34,22 @@ function CompetitionParticipation() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/secondsurvey"
+              to="/competitionparticipation"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to second survey
+              Back to competition participation
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
-              component={Link}
-              to="/thankyou"
               variant="contained"
               color="primary"
               className={classes.button}
+              href="https://alkohologsamfund.dk/"
             >
-              Go to thank you page
+              Go to alkohologsamfund
             </Button>
           </Grid>
         </Grid>
@@ -59,4 +58,4 @@ function CompetitionParticipation() {
   );
 }
 
-export default CompetitionParticipation;
+export default ThankYou;

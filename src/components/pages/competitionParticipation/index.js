@@ -1,20 +1,20 @@
 import React from "react";
-import { Container, Button, Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyles from "../styles";
-import LinearWithValueLabel from "../progressBar";
+import { Container, Button, Grid } from "@material-ui/core";
+import useStyles from "../../styles";
+import LinearWithValueLabel from "../../progressBar";
 
-function HumanCheck() {
+function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="25" />
+        <LinearWithValueLabel value="85" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the human check</h1>
+            <h1>This is the competition participation page</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
               nunc id leo tristique blandit. Integer at dolor ornare, blandit
@@ -31,39 +31,26 @@ function HumanCheck() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
-          <Grid item xs={12} container justify="center">
-            <div
-              style={{
-                "background-color": "grey",
-                height: "300px",
-                width: "300px",
-                "text-align": "center",
-                "line-height": "300px",
-              }}
-            >
-              Human check (in progress)
-            </div>
-          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="personalinfo"
+              to="/secondsurvey"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to personal info page
+              Back to second survey
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/firstsurvey"
+              to="/thankyou"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Go to first survey
+              Go to thank you page
             </Button>
           </Grid>
         </Grid>
@@ -72,4 +59,4 @@ function HumanCheck() {
   );
 }
 
-export default HumanCheck;
+export default CompetitionParticipation;

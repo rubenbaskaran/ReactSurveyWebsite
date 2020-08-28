@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import Consent from "./components/consent";
-import PersonalInfo from "./components/personalInfo";
-import HumanCheck from "./components/humanCheck";
-import FirstSurvey from "./components/firstSurvey";
-import RandomVideo from "./components/randomVideo";
-import SecondSurvey from "./components/secondSurvey";
-import CompetitionParticipation from "./components/competitionParticipation";
-import ThankYou from "./components/thankYou";
+import Consent from "./components/pages/consent";
+import PersonalInfo from "./components/pages/personalInfo";
+import HumanCheck from "./components/pages/humanCheck";
+import FirstSurvey from "./components/pages/firstSurvey";
+import RandomVideo from "./components/pages/randomVideo";
+import SecondSurvey from "./components/pages/secondSurvey";
+import CompetitionParticipation from "./components/pages/competitionParticipation";
+import ThankYou from "./components/pages/thankYou";
 import "fontsource-roboto";
 
 ReactDOM.render(

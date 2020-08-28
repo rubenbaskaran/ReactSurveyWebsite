@@ -1,20 +1,20 @@
 import React from "react";
+import { Container, Button, Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../styles";
-import LinearWithValueLabel from "../progressBar";
+import useStyles from "../../styles";
+import LinearWithValueLabel from "../../progressBar";
 
-function ThankYou() {
+function HumanCheck() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="100" />
+        <LinearWithValueLabel value="25" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>Thank you for participating</h1>
+            <h1>This is the human check</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
               nunc id leo tristique blandit. Integer at dolor ornare, blandit
@@ -31,25 +31,39 @@ function ThankYou() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
+          <Grid item xs={12} container justify="center">
+            <div
+              style={{
+                "background-color": "grey",
+                height: "300px",
+                width: "300px",
+                "text-align": "center",
+                "line-height": "300px",
+              }}
+            >
+              Human check (in progress)
+            </div>
+          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/competitionparticipation"
+              to="personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to competition participation
+              Back to personal info page
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
+              component={Link}
+              to="/firstsurvey"
               variant="contained"
               color="primary"
               className={classes.button}
-              href="https://alkohologsamfund.dk/"
             >
-              Go to alkohologsamfund
+              Go to first survey
             </Button>
           </Grid>
         </Grid>
@@ -58,4 +72,4 @@ function ThankYou() {
   );
 }
 
-export default ThankYou;
+export default HumanCheck;

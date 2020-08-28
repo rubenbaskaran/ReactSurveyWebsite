@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import RatingScale from "../ratingScale";
-import useStyles from "../styles";
+import RatingScale from "../../questionTypes/ratingScale";
+import useStyles from "../../styles";
 import { Link } from "react-router-dom";
-import LinearWithValueLabel from "../progressBar";
+import LinearWithValueLabel from "../../progressBar";
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
