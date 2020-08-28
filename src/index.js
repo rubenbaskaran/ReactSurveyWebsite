@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import Introduction from "./components/introduction";
+import Consent from "./components/consent";
+import PersonalInfo from "./components/personalInfo";
 import HumanCheck from "./components/humanCheck";
 import FirstSurvey from "./components/firstSurvey";
 import RandomVideo from "./components/randomVideo";
@@ -15,7 +16,8 @@ import "fontsource-roboto";
 ReactDOM.render(
   <HashRouter>
     <Switch>
-      <Route exact path="/" component={Introduction} />
+      <Route exact path="/" component={Consent} />
+      <Route path="/personalinfo" component={PersonalInfo} />
       <Route path="/humancheck" component={HumanCheck} />
       <Route path="/firstsurvey" component={FirstSurvey} />
       <Route path="/randomvideo" component={RandomVideo} />

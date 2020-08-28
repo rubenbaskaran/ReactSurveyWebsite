@@ -8,17 +8,17 @@ import AgeQuestion from "../age";
 import EducationQuestion from "../education";
 import OccupationQuestion from "../occupation";
 
-function Introduction() {
+function Consent() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="10" />
+        <LinearWithValueLabel value="0" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the introduction page</h1>
+            <h1>This is the consent page</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
               nunc id leo tristique blandit. Integer at dolor ornare, blandit
@@ -35,18 +35,6 @@ function Introduction() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
-          <Grid item xs={12}>
-            <GenderQuestion question="Gender" />
-          </Grid>
-          <Grid item xs={12}>
-            <AgeQuestion question="Age" />
-          </Grid>
-          <Grid item xs={12}>
-            <EducationQuestion question="Education" />
-          </Grid>
-          <Grid item xs={12}>
-            <OccupationQuestion question="Occupation" />
-          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               variant="contained"
@@ -60,12 +48,12 @@ function Introduction() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/humancheck"
+              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Go to human check
+              Go to personal info page
             </Button>
           </Grid>
         </Grid>
@@ -74,4 +62,4 @@ function Introduction() {
   );
 }
 
-export default Introduction;
+export default Consent;
