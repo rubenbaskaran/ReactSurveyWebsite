@@ -3,10 +3,20 @@ import { Container, Button, Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import Recaptcha from "../../reCAPTCHA";
+
+function temp() {
+  console.log("TEST!");
+}
 
 function HumanCheck() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  document.body.appendChild(script);
 
   return (
     <div>
@@ -32,17 +42,7 @@ function HumanCheck() {
             </p>
           </Grid>
           <Grid item xs={12} container justify="center">
-            <div
-              style={{
-                "background-color": "grey",
-                height: "300px",
-                width: "300px",
-                "text-align": "center",
-                "line-height": "300px",
-              }}
-            >
-              Human check (in progress)
-            </div>
+            <Recaptcha />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
