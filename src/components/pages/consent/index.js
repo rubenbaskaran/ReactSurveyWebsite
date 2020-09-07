@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 
+// TODO: I have to change the order of personal info and human check
+
 function Consent() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
@@ -31,17 +33,7 @@ function Consent() {
               laoreet ac pretium non, condimentum vel ex.
             </p>
           </Grid>
-          <Grid container item sm={6} xs={12}>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              href="https://alkohologsamfund.dk/"
-            >
-              Back to alkohologsamfund
-            </Button>
-          </Grid>
-          <Grid container item sm={6} xs={12}>
+          <Grid container item xs={12}>
             <Button
               component={Link}
               to="/personalinfo"

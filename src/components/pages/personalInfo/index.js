@@ -6,6 +6,8 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
 
+// TODO: children (yes/no), children adults? (yes/no)
+
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

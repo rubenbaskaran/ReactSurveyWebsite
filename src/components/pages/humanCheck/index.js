@@ -5,6 +5,8 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 
+// TODO: Disable next button until human verified
+
 function temp() {
   console.log("TEST!");
 }

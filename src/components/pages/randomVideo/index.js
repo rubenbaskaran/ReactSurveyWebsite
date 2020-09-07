@@ -4,6 +4,9 @@ import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 
+// TODO: Remove redundant youtube buttons
+// TODO: Add randomization
+
 function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
