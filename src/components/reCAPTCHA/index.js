@@ -8,7 +8,7 @@ class Recaptcha extends Component {
   }
 
   handleRecaptcha() {
-    alert("You can handle captcha inside the class here");
+    console.log("Verified");
   }
 
   render() {
