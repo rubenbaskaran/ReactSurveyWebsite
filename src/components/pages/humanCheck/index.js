@@ -23,7 +23,7 @@ function HumanCheck() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="25" />
+        <LinearWithValueLabel value="10" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the human check</h1>
@@ -49,23 +49,23 @@ function HumanCheck() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="personalinfo"
+              to="/"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to personal info page
+              Back to consent page
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/firstsurvey"
+              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Go to first survey
+              Go to personal info page
             </Button>
           </Grid>
         </Grid>

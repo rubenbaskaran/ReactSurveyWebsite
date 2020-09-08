@@ -95,12 +95,12 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/humancheck"
+              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to human check
+              Back to personal info page
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>

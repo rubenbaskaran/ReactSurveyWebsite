@@ -52,7 +52,7 @@ function PersonalInfo() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="10" />
+        <LinearWithValueLabel value="25" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the personal info page</h1>
@@ -106,23 +106,23 @@ function PersonalInfo() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Back to consent page
-            </Button>
-          </Grid>
-          <Grid container item sm={6} xs={12}>
-            <Button
-              component={Link}
               to="/humancheck"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Go to human check
+              Back to human check page
+            </Button>
+          </Grid>
+          <Grid container item sm={6} xs={12}>
+            <Button
+              component={Link}
+              to="/firstsurvey"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              Go to first survey
             </Button>
           </Grid>
         </Grid>
