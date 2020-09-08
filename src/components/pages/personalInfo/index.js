@@ -5,8 +5,7 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
-
-// TODO: children (yes/no), children adults? (yes/no)
+import ChildrenQuestion from "../../questionTypes/children";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
@@ -97,6 +96,12 @@ function PersonalInfo() {
               items={occupationItems}
               placeholder="Choose your occupation..."
             />
+          </Grid>
+          <Grid item xs={12}>
+            <ChildrenQuestion question="Do you have children?" />
+          </Grid>
+          <Grid item xs={12}>
+            <ChildrenQuestion question="If yes, are they adults?" />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
