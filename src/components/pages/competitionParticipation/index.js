@@ -6,6 +6,8 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
 
+// TODO: Merge the last two pages together
+
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

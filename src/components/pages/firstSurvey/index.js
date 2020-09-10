@@ -5,6 +5,10 @@ import useStyles from "../../styles";
 import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 
+// TODO: Add ”Don’t want to answer” option to all questions
+// TODO: Hide questions on conditional statement
+// TODO: Remove pre-choice for questions
+
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

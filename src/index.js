@@ -13,6 +13,8 @@ import CompetitionParticipation from "./components/pages/competitionParticipatio
 import ThankYou from "./components/pages/thankYou";
 import "fontsource-roboto";
 
+// TODO: Add REDCap connection
+
 ReactDOM.render(
   <HashRouter>
     <Switch>
