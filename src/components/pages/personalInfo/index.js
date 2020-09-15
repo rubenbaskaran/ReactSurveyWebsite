@@ -52,7 +52,7 @@ function PersonalInfo() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="25" />
+        <LinearWithValueLabel value="20" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the personal info page</h1>
@@ -106,12 +106,12 @@ function PersonalInfo() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/humancheck"
+              to="/"
               variant="contained"
               color="primary"
               className={classes.button}
             >
-              Back to human check page
+              Tilbage til forsiden
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>

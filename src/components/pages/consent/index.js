@@ -3,10 +3,16 @@ import { Container, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import Recaptcha from "../../reCAPTCHA";
 
 function Consent() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  document.body.appendChild(script);
 
   return (
     <div>
@@ -52,10 +58,13 @@ function Consent() {
               Spørgsmål om projektet kan sendes til VEM (går bra med min mejl)
             </p>
           </Grid>
+          <Grid item xs={12} container justify="center">
+            <Recaptcha />
+          </Grid>
           <Grid container item xs={12}>
             <Button
               component={Link}
-              to="/humancheck"
+              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}

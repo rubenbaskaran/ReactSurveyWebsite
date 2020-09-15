@@ -5,12 +5,10 @@ import * as serviceWorker from "./serviceWorker";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Consent from "./components/pages/consent";
 import PersonalInfo from "./components/pages/personalInfo";
-import HumanCheck from "./components/pages/humanCheck";
 import FirstSurvey from "./components/pages/firstSurvey";
 import RandomVideo from "./components/pages/randomVideo";
 import SecondSurvey from "./components/pages/secondSurvey";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
-import ThankYou from "./components/pages/thankYou";
 import "fontsource-roboto";
 
 // TODO: Add REDCap connection
@@ -20,7 +18,6 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={Consent} />
       <Route path="/personalinfo" component={PersonalInfo} />
-      <Route path="/humancheck" component={HumanCheck} />
       <Route path="/firstsurvey" component={FirstSurvey} />
       <Route path="/randomvideo" component={RandomVideo} />
       <Route path="/secondsurvey" component={SecondSurvey} />
@@ -28,7 +25,6 @@ ReactDOM.render(
         path="/competitionparticipation"
         component={CompetitionParticipation}
       />
-      <Route path="/thankyou" component={ThankYou} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

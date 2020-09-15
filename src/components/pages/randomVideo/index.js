@@ -14,7 +14,7 @@ function RandomVideo() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="55" />
+        <LinearWithValueLabel value="60" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the random video</h1>

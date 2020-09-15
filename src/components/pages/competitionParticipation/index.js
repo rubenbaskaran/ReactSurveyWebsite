@@ -15,7 +15,7 @@ function CompetitionParticipation() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="85" />
+        <LinearWithValueLabel value="100" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>This is the competition participation page</h1>
@@ -54,13 +54,12 @@ function CompetitionParticipation() {
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
-              component={Link}
-              to="/thankyou"
               variant="contained"
               color="primary"
               className={classes.button}
+              href="https://alkohologsamfund.dk/"
             >
-              Go to thank you page
+              Go to alkohologsamfund
             </Button>
           </Grid>
         </Grid>
