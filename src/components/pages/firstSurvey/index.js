@@ -136,8 +136,75 @@ function FirstSurvey() {
             />
           </Grid>
           <Grid item xs={12}>
+            <h1>Hvor uenig eller enig er du i følgende udsagn?</h1>
+          </Grid>
+          <Grid item xs={12}>
             <RatingScale
               question={agreeDisagreeOne}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeTwo}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeThree}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeFour}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeFive}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeSix}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeSeven}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeEight}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeNine}
               answers={numberRatingScale}
               required={true}
               agreeDisagree={true}
