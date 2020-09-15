@@ -104,7 +104,7 @@ function FirstSurvey() {
               color="primary"
               className={classes.button}
             >
-              Back to personal info page
+              Tilbage
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -115,7 +115,7 @@ function FirstSurvey() {
               color="primary"
               className={classes.button}
             >
-              Go to random video
+              Næste
             </Button>
           </Grid>
         </Grid>

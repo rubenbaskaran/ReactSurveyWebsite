@@ -52,7 +52,7 @@ function RandomVideo() {
               color="primary"
               className={classes.button}
             >
-              Back to first survey
+              Tilbage
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -63,7 +63,7 @@ function RandomVideo() {
               color="primary"
               className={classes.button}
             >
-              Go to second survey
+              Næste
             </Button>
           </Grid>
         </Grid>

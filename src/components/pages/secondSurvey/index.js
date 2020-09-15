@@ -100,7 +100,7 @@ function SecondSurvey() {
               color="primary"
               className={classes.button}
             >
-              Back to random video
+              Tilbage
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -111,7 +111,7 @@ function SecondSurvey() {
               color="primary"
               className={classes.button}
             >
-              Go to competition participation
+              Næste
             </Button>
           </Grid>
         </Grid>

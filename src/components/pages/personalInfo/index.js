@@ -111,7 +111,7 @@ function PersonalInfo() {
               color="primary"
               className={classes.button}
             >
-              Tilbage til forsiden
+              Tilbage
             </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -122,7 +122,7 @@ function PersonalInfo() {
               color="primary"
               className={classes.button}
             >
-              Go to first survey
+              Næste
             </Button>
           </Grid>
         </Grid>
