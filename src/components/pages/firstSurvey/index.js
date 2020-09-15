@@ -82,6 +82,7 @@ function FirstSurvey() {
               question={firstQuestion}
               answers={firstQuestionAnswers}
               required={true}
+              agreeDisagree={false}
             />
           </Grid>
           <Grid item xs={12}>
@@ -89,6 +90,7 @@ function FirstSurvey() {
               question={secondQuestion}
               answers={secondQuestionAnswers}
               required={true}
+              agreeDisagree={false}
             />
           </Grid>
           <Grid item xs={12}>
@@ -96,6 +98,7 @@ function FirstSurvey() {
               question={thirdQuestion}
               answers={thirdQuestionAnswers}
               required={true}
+              agreeDisagree={true}
             />
           </Grid>
           <Grid item xs={12}>
