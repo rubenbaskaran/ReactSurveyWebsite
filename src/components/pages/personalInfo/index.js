@@ -11,6 +11,13 @@ function PersonalInfo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
+  const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
+  const genderItems = gender.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
   const ageItems = [];
   for (var i = 16; i < 100; i++) {
     ageItems.push(
@@ -21,11 +28,12 @@ function PersonalInfo() {
   }
 
   const education = [
-    "Primary school",
-    "High school",
-    "Bachelor's degree",
-    "Master's degree",
-    "PhD",
+    "Grundskole",
+    "Gymnasial uddannelse",
+    "Erhvervsfaglig uddannelse",
+    "Kort/mellemlang videregående uddannelse",
+    "Lang videregående uddannelse",
+    "Vil ikke svare",
   ];
   const educationItems = education.map((item) => (
     <MenuItem key={item} value={item}>
@@ -34,16 +42,57 @@ function PersonalInfo() {
   ));
 
   const occupation = [
-    "Unemployed",
-    "Student",
-    "Junior employee",
-    "Senior employee",
-    "Manager",
-    "Leader",
-    "Self-employed",
+    "Er i arbejde",
+    "Ledig",
+    "Pensionist, efterlønsmodtager eller lign.",
+    "Hjemmegående",
+    "Under uddannelse",
+    "Andet",
+    "Vil ikke svare",
   ];
-
   const occupationItems = occupation.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
+  const maritalStatus = [
+    "Ugift",
+    "I et forhold",
+    "Samboende",
+    "Enke/enkemand",
+    "Vil ikke svare",
+  ];
+  const maritalItems = maritalStatus.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
+  const childrenStatus = [
+    "Ja, mindreårige",
+    "Ja, voksne",
+    "Ja, både mindreårige og voksne",
+    "Nej",
+    "Vil ikke svare",
+  ];
+  const childrenItems = childrenStatus.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
+  const origin = [
+    "Danmark",
+    "Norden (Norge, Island, Finland eller Sverige)",
+    "Europa (ej Danmark, Norge, Island, Finland eller Sverige)",
+    "Afrika",
+    "Asien",
+    "Nordamerika (Canada, USA) eller Oceania (Australien)",
+    "Sydamerika",
+    "Vil ikke svare",
+  ];
+  const originItems = origin.map((item) => (
     <MenuItem key={item} value={item}>
       {item.toString()}
     </MenuItem>
@@ -55,29 +104,19 @@ function PersonalInfo() {
         <LinearWithValueLabel value="20" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the personal info page</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
-              nunc id leo tristique blandit. Integer at dolor ornare, blandit
-              nunc tristique, volutpat tortor. Phasellus quis magna posuere,
-              faucibus lectus sit amet, venenatis nibh. Proin efficitur
-              dignissim accumsan. Maecenas magna sem, suscipit nec odio ac,
-              accumsan blandit felis. Suspendisse tincidunt massa sit amet
-              consequat mattis. Curabitur interdum faucibus justo, et
-              ullamcorper odio euismod ut. Nulla pellentesque feugiat nunc, ut
-              luctus urna elementum a. Proin in cursus mauris. Donec tempor
-              porttitor porttitor. Quisque at erat auctor, malesuada velit
-              eleifend, malesuada urna. Donec in elit sit amet tellus consequat
-              placerat. Mauris sit amet tempor elit. Mauris libero turpis,
-              laoreet ac pretium non, condimentum vel ex.
-            </p>
-          </Grid>
-          <Grid item xs={12}>
-            <GenderQuestion question="Gender" required={true} />
+            <h1>Vi starter med nogle baggrundsspørgsmål</h1>
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              question="Age"
+              question="Hvad er dit køn?"
+              items={genderItems}
+              placeholder="Choose your age..."
+              required={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <DropdownList
+              question="Hvad er din alder?"
               items={ageItems}
               placeholder="Choose your age..."
               required={true}
@@ -85,23 +124,38 @@ function PersonalInfo() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              question="Education"
+              question="Hvad er din beskæftigelse?"
+              items={occupationItems}
+              placeholder="Choose your occupation..."
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <DropdownList
+              question="Hvilken uddannelse har du?"
               items={educationItems}
               placeholder="Choose your educational level..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              question="Occupation"
-              items={occupationItems}
-              placeholder="Choose your occupation..."
+              question="Hvad er din civilstand?"
+              items={maritalItems}
+              placeholder="Choose your educational level..."
             />
           </Grid>
           <Grid item xs={12}>
-            <ChildrenQuestion question="Do you have children?" />
+            <DropdownList
+              question="Har du børn?"
+              items={childrenItems}
+              placeholder="Choose your educational level..."
+            />
           </Grid>
           <Grid item xs={12}>
-            <ChildrenQuestion question="If yes, are they adults?" />
+            <DropdownList
+              question="Hvor er du født?"
+              items={originItems}
+              placeholder="Choose your educational level..."
+            />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button

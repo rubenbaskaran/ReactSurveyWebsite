@@ -54,7 +54,7 @@ function GenderQuestion(props) {
     setRating(event.target.value);
   };
 
-  const gender = ["Male", "Female"];
+  const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 
   const genderItems = gender.map((item) => (
     <FormControlLabel
