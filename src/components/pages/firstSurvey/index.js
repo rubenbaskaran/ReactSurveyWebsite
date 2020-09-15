@@ -89,6 +89,18 @@ function FirstSurvey() {
   const agreeDisagreeNine =
     "Personer med alkoholproblemer har selv forårsaget deres sygdom";
 
+  const drinkingTooMuch = [
+    "Ja",
+    "Nej, men har gjort det tidligere i livet",
+    "Nej",
+    "Vil ikke svare",
+  ];
+  const drinkingTooMuchItems = drinkingTooMuch.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
+
   return (
     <div>
       <Container fixed>
@@ -132,6 +144,13 @@ function FirstSurvey() {
             <DropdownList
               question="Kender du nogen, der har eller har haft alkoholproblemer?"
               items={addictionAmongstFriendsItems}
+              placeholder="Angiv et svar..."
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <DropdownList
+              question="Føler du at du drikker for meget?"
+              items={drinkingTooMuchItems}
               placeholder="Angiv et svar..."
             />
           </Grid>
@@ -209,6 +228,12 @@ function FirstSurvey() {
               required={true}
               agreeDisagree={true}
             />
+          </Grid>
+          <Grid item xs={12}>
+            <h1>
+              Hvor ofte i de sidste 90 dage har du haft disse tanker og
+              følelser?
+            </h1>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
