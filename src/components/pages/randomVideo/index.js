@@ -17,21 +17,11 @@ function RandomVideo() {
         <LinearWithValueLabel value="60" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the random video</h1>
+            <h1>RESPEKT kampagne video</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
-              nunc id leo tristique blandit. Integer at dolor ornare, blandit
-              nunc tristique, volutpat tortor. Phasellus quis magna posuere,
-              faucibus lectus sit amet, venenatis nibh. Proin efficitur
-              dignissim accumsan. Maecenas magna sem, suscipit nec odio ac,
-              accumsan blandit felis. Suspendisse tincidunt massa sit amet
-              consequat mattis. Curabitur interdum faucibus justo, et
-              ullamcorper odio euismod ut. Nulla pellentesque feugiat nunc, ut
-              luctus urna elementum a. Proin in cursus mauris. Donec tempor
-              porttitor porttitor. Quisque at erat auctor, malesuada velit
-              eleifend, malesuada urna. Donec in elit sit amet tellus consequat
-              placerat. Mauris sit amet tempor elit. Mauris libero turpis,
-              laoreet ac pretium non, condimentum vel ex.
+              Nu vil du se en film, der varer ca. et minut. Husk at have lyden
+              tændt, mens du ser filmen. Når filmen er færdig, skal du besvare
+              nogle af de sidste spørgsmål.
             </p>
           </Grid>
           <Grid item xs={12} container justify="center">

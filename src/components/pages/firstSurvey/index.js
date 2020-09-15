@@ -101,6 +101,26 @@ function FirstSurvey() {
     </MenuItem>
   ));
 
+  const ninetyDayThoughts = [
+    "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
+    "Jeg tænker, at jeg burde skamme mig.",
+    "Jeg tænker, at jeg fortjener de dårlige ting, der er sket med mig.",
+    "Jeg tænker, at jeg ikke er til at stole på.",
+    "Jeg føler mig ringere end mennesker, der aldrig har haft et problem med alkohol.",
+    "Jeg føler mig udenfor på grund af mine problemer med alkohol.",
+    "Jeg tænker, at jeg permanent har ødelagt mit liv ved at bruge alkohol.",
+    "Jeg skammer mig over mig selv.",
+  ];
+
+  const ninetyDayThoughtsScale = [
+    "Aldrig",
+    "Sjældent",
+    "Nogle gange",
+    "Ofte",
+    "Meget ofte",
+    "Vil ikke svare",
+  ];
+
   return (
     <div>
       <Container fixed>
@@ -234,6 +254,73 @@ function FirstSurvey() {
               Hvor ofte i de sidste 90 dage har du haft disse tanker og
               følelser?
             </h1>
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[0]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[1]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[2]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[3]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[4]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[5]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[6]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={ninetyDayThoughts[7]}
+              answers={ninetyDayThoughtsScale}
+              required={true}
+              agreeDisagree={false}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <h1>Disse spørgsmål stilles til alle informanter</h1>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
