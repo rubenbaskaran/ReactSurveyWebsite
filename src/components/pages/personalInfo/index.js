@@ -110,7 +110,7 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er dit køn?"
               items={genderItems}
-              placeholder="Choose your age..."
+              placeholder="Vælg dit køn..."
               required={true}
             />
           </Grid>
@@ -118,7 +118,7 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er din alder?"
               items={ageItems}
-              placeholder="Choose your age..."
+              placeholder="Vælg din alder..."
               required={true}
             />
           </Grid>
@@ -126,35 +126,35 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er din beskæftigelse?"
               items={occupationItems}
-              placeholder="Choose your occupation..."
+              placeholder="Vælg din beskæftigelse..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvilken uddannelse har du?"
               items={educationItems}
-              placeholder="Choose your educational level..."
+              placeholder="Vælg dit uddannelsesniveau..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er din civilstand?"
               items={maritalItems}
-              placeholder="Choose your educational level..."
+              placeholder="Vælg din civilstand..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Har du børn?"
               items={childrenItems}
-              placeholder="Choose your educational level..."
+              placeholder="Angiv om du har børn..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvor er du født?"
               items={originItems}
-              placeholder="Choose your educational level..."
+              placeholder="Vælg dit fødested..."
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
