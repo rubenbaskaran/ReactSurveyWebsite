@@ -51,39 +51,13 @@ const useStyles = makeStyles({
   },
 });
 
-function Converter(value) {
-  let output;
-  switch (value) {
-    case "Aldrig":
-      output = 0;
-      break;
-    case "Sjældent":
-      output = 1;
-      break;
-    case "Månedligt":
-      output = 2;
-      break;
-    case "Ugentligt":
-      output = 3;
-      break;
-    case "Dagligt eller næsten dagligt":
-      output = 4;
-      break;
-    case "Vil ikke svare":
-      output = 5;
-      break;
-  }
-
-  return output;
-}
-
 function RatingScale(props) {
   const [rating, setRating] = React.useState("");
   const classes = useStyles();
 
   const handleChange = (event) => {
     console.log(event.target.value);
-    setRating(event.target.value);
+    setRating(Number(event.target.value));
   };
 
   return (
@@ -93,19 +67,12 @@ function RatingScale(props) {
           <b>{props.question}</b>
         </FormLabel>
         <div className={classes.ratingScale}>
-          {[
-            ["0", "Aldrig"],
-            ["1", "Sjældent"],
-            ["2", "Månedligt"],
-            ["3", "Ugentligt"],
-            ["4", "Dagligt eller næsten dagligt"],
-            ["5", "Vil ikke svare"],
-          ].map((value) => (
+          {props.answers.map((value) => (
             <FormControlLabel
-              key={value[0]}
-              value={value[0]}
+              key={props.answers.indexOf(value)}
+              value={props.answers.indexOf(value)}
               control={<Radio />}
-              label={value[1]}
+              label={value}
               className={classes.evenly}
             />
           ))}
