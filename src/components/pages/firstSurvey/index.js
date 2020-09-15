@@ -44,6 +44,29 @@ function FirstSurvey() {
     "Vil ikke svare",
   ];
 
+  // const occupation = [
+  //   "Er i arbejde",
+  //   "Ledig",
+  //   "Pensionist, efterlønsmodtager eller lign.",
+  //   "Hjemmegående",
+  //   "Under uddannelse",
+  //   "Andet",
+  //   "Vil ikke svare",
+  // ];
+  // const occupationItems = occupation.map((item) => (
+  //   <MenuItem key={item} value={item}>
+  //     {item.toString()}
+  //   </MenuItem>
+  // ));
+
+  //   <Grid item xs={12}>
+  //   <DropdownList
+  //     question="Hvad er din beskæftigelse?"
+  //     items={occupationItems}
+  //     placeholder="Vælg din beskæftigelse..."
+  //   />
+  // </Grid>
+
   return (
     <div>
       <Container fixed>
@@ -73,55 +96,9 @@ function FirstSurvey() {
               required={true}
             />
           </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 4: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 5: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 6: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 7: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 8: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 9: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra lacus sed turpis viverra, laoreet sagittis lacus vulputate. Sed quis elementum enim. Donec bibendum tristique ipsum, quis gravida metus condimentum vitae?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <RatingScale
-              question="Question 10: Phasellus sollicitudin, ante sed facilisis ultrices, massa lectus commodo quam, id molestie mi nulla sit amet mauris. Ut non placerat quam, placerat varius lacus?"
-              answers={thirdQuestionAnswers}
-              required={true}
-            />
-          </Grid>
+
+          {/* indsæt */}
+
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}

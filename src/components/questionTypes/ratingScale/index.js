@@ -45,10 +45,6 @@ const useStyles = makeStyles({
     "margin-top": "20px",
     "margin-right": "20px",
   },
-  evenly: {
-    display: "inline-block",
-    "margin-left": "20px",
-  },
 });
 
 function RatingScale(props) {
@@ -73,7 +69,7 @@ function RatingScale(props) {
               value={props.answers.indexOf(value)}
               control={<Radio />}
               label={value}
-              className={classes.evenly}
+              labelPlacement="top"
             />
           ))}
         </div>
