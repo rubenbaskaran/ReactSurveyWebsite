@@ -84,7 +84,7 @@ function DropdownList(props) {
       </RadioGroup>
       {props.required == true && (
         <div className={classes.required}>
-          <label>*required</label>
+          <label>*påkrævet</label>
         </div>
       )}
     </Paper>
