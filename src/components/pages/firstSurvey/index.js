@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import useStyles from "../../styles";
 import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
+import DropdownList from "../../questionTypes/DropdownList";
 
 // TODO: Add ”Don’t want to answer” option to all questions
 // TODO: Hide questions on conditional statement
@@ -44,28 +45,29 @@ function FirstSurvey() {
     "Vil ikke svare",
   ];
 
-  // const occupation = [
-  //   "Er i arbejde",
-  //   "Ledig",
-  //   "Pensionist, efterlønsmodtager eller lign.",
-  //   "Hjemmegående",
-  //   "Under uddannelse",
-  //   "Andet",
-  //   "Vil ikke svare",
-  // ];
-  // const occupationItems = occupation.map((item) => (
-  //   <MenuItem key={item} value={item}>
-  //     {item.toString()}
-  //   </MenuItem>
-  // ));
+  const previousTreatment = [
+    "Ja, en gang",
+    "Ja, flere gange",
+    "Nej, det har jeg ikke",
+    "Vil ikke svare",
+  ];
+  const previousTreatmentItems = previousTreatment.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
 
-  //   <Grid item xs={12}>
-  //   <DropdownList
-  //     question="Hvad er din beskæftigelse?"
-  //     items={occupationItems}
-  //     placeholder="Vælg din beskæftigelse..."
-  //   />
-  // </Grid>
+  const addictionAmongstFriends = [
+    "Ja, en person",
+    "Ja, flere mennesker",
+    "Nej, jeg kender ikke nogen",
+    "Vil ikke svare",
+  ];
+  const addictionAmongstFriendsItems = addictionAmongstFriends.map((item) => (
+    <MenuItem key={item} value={item}>
+      {item.toString()}
+    </MenuItem>
+  ));
 
   return (
     <div>
@@ -96,8 +98,20 @@ function FirstSurvey() {
               required={true}
             />
           </Grid>
-
-          {/* indsæt */}
+          <Grid item xs={12}>
+            <DropdownList
+              question="Har du tidligere søgt behandling for at ændre dine alkoholvaner?"
+              items={previousTreatmentItems}
+              placeholder="Angiv et svar..."
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <DropdownList
+              question="Kender du nogen, der har eller har haft alkoholproblemer?"
+              items={addictionAmongstFriendsItems}
+              placeholder="Angiv et svar..."
+            />
+          </Grid>
 
           <Grid container item sm={6} xs={12}>
             <Button
