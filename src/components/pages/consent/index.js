@@ -14,21 +14,42 @@ function Consent() {
         <LinearWithValueLabel value="0" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>This is the consent page</h1>
+            <h1>Velkommen til projektet XYZ</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu
-              nunc id leo tristique blandit. Integer at dolor ornare, blandit
-              nunc tristique, volutpat tortor. Phasellus quis magna posuere,
-              faucibus lectus sit amet, venenatis nibh. Proin efficitur
-              dignissim accumsan. Maecenas magna sem, suscipit nec odio ac,
-              accumsan blandit felis. Suspendisse tincidunt massa sit amet
-              consequat mattis. Curabitur interdum faucibus justo, et
-              ullamcorper odio euismod ut. Nulla pellentesque feugiat nunc, ut
-              luctus urna elementum a. Proin in cursus mauris. Donec tempor
-              porttitor porttitor. Quisque at erat auctor, malesuada velit
-              eleifend, malesuada urna. Donec in elit sit amet tellus consequat
-              placerat. Mauris sit amet tempor elit. Mauris libero turpis,
-              laoreet ac pretium non, condimentum vel ex.
+              I dette projekt vil vi gerne vide mere om, hvordan folk generelt
+              ser på dét at søge alkoholbehandling.
+            </p>
+            <p>
+              Vi vil gerne undersøge den almindelige holdning. Du behøver derfor
+              ikke selv at opleve et behov for behandling eller at have
+              gennemgået behandling. Vi er interesserede i alles svar - uanset
+              hvordan dine egne alkoholvaner ser ud.
+            </p>
+            <p>
+              Ved at deltage i undersøgelsen kan du bidrage til at skabe viden
+              om, hvordan vi bedst kan kommunikere om alkoholbehandling, og det
+              vil på længere sigt gøre os i stand til at skabe bedre måder at nå
+              ud til flere personer, der har behov for behandling.
+            </p>
+            <p>
+              Det tager cirka XYZ minutter at gennemføre undersøgelsen. Du skal
+              først at besvare nogle spørsmål, derefter vil du se en lille film.
+              Husk at have slået lyden til. Derefter skal du besvare nogle af
+              spørgsmålene engang til. Du er anonym i undersøgelsen, og dine
+              svar, vil kun blive brugt i dette forskningsprojekt. Du skal være
+              mindst 16 år for at kunne deltage.
+            </p>
+            <p>
+              Som tak for deltagelsen kan du - hvis du vil - oplyse din
+              e-mail-adresse for at deltage i en lodtrækning om (AV VADÅ?).
+            </p>
+            <p>
+              Vi, der er ansvarlige for undersøgelsen og dermed hjemmesiden,, er
+              en gruppe forskere ved Syddansk Universitet i Odense ledet af
+              Professor Anette Søgaard Nielsen.
+            </p>
+            <p>
+              Spørgsmål om projektet kan sendes til VEM (går bra med min mejl)
             </p>
           </Grid>
           <Grid container item xs={12}>
@@ -39,7 +60,7 @@ function Consent() {
               color="primary"
               className={classes.button}
             >
-              Go to human check page
+              Deltag
             </Button>
           </Grid>
         </Grid>
