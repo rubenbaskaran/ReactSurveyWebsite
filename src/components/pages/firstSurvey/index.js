@@ -69,6 +69,26 @@ function FirstSurvey() {
     </MenuItem>
   ));
 
+  const numberRatingScale = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const agreeDisagreeOne =
+    "Personer med alkoholproblemer er anderledes end resten af befolkningen";
+  const agreeDisagreeTwo =
+    "Personer med alkoholproblemer er lig resten af befolkningen";
+  const agreeDisagreeThree =
+    "Personer med alkoholproblemer er sammenlignelige med resten af befolkningen";
+  const agreeDisagreeFour =
+    "Personer med alkoholproblemer er værre/dårligere personer end resten af befolkningen";
+  const agreeDisagreeFive =
+    "Personer med alkoholproblemer respekteres mindre sammenlignet med resten af befolkningen";
+  const agreeDisagreeSix =
+    "Personer med alkoholproblemer er ikke gavnlige sammenlignet med resten af befolkningen";
+  const agreeDisagreeSeven =
+    "Personer med alkoholproblemer har selv ansvaret for deres sygdom";
+  const agreeDisagreeEight =
+    "Personer med alkoholproblemer bebrejdes selv for deres sygdom";
+  const agreeDisagreeNine =
+    "Personer med alkoholproblemer har selv forårsaget deres sygdom";
+
   return (
     <div>
       <Container fixed>
@@ -98,7 +118,7 @@ function FirstSurvey() {
               question={thirdQuestion}
               answers={thirdQuestionAnswers}
               required={true}
-              agreeDisagree={true}
+              agreeDisagree={false}
             />
           </Grid>
           <Grid item xs={12}>
@@ -115,7 +135,14 @@ function FirstSurvey() {
               placeholder="Angiv et svar..."
             />
           </Grid>
-
+          <Grid item xs={12}>
+            <RatingScale
+              question={agreeDisagreeOne}
+              answers={numberRatingScale}
+              required={true}
+              agreeDisagree={true}
+            />
+          </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
