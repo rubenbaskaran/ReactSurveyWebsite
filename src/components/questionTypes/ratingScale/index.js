@@ -63,7 +63,8 @@ function RatingScale(props) {
           <b>{props.question}</b>
         </FormLabel>
         <div className={classes.ratingScale}>
-          {props.agreeDisagree == true && <label>Meget uenig</label>}
+          {(props.agreeDisagree == true && <label>Meget uenig</label>) ||
+            (props.notAtAllVeryMuch == true && <label>Slet ikke</label>)}
           {props.answers.map((value) => (
             <FormControlLabel
               key={props.answers.indexOf(value)}
@@ -73,7 +74,8 @@ function RatingScale(props) {
               labelPlacement="top"
             />
           ))}
-          {props.agreeDisagree == true && <label>Meget enig</label>}
+          {(props.agreeDisagree == true && <label>Meget enig</label>) ||
+            (props.notAtAllVeryMuch == true && <label>I meget høj grad</label>)}
         </div>
       </RadioGroup>
       {props.required == true && (

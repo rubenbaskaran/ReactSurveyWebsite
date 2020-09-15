@@ -121,6 +121,13 @@ function FirstSurvey() {
     "Vil ikke svare",
   ];
 
+  const questionsForAll = [
+    "I hvor høj grad har du lyst til at ændre dine alkoholvaner?",
+    "I hvor høj grad har du lyst at tage en snak med nogen om deres alkoholvaner?",
+    "I hvor høj grad har du lyst at søge mere information om alkoholbehandling?",
+    "I hvor høj grad har du lyst til at søge behandling for at ændre dine alkoholvaner?",
+  ];
+
   return (
     <div>
       <Container fixed>
@@ -321,6 +328,38 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <h1>Disse spørgsmål stilles til alle informanter</h1>
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={questionsForAll[0]}
+              answers={numberRatingScale}
+              required={true}
+              notAtAllVeryMuch={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={questionsForAll[1]}
+              answers={numberRatingScale}
+              required={true}
+              notAtAllVeryMuch={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={questionsForAll[2]}
+              answers={numberRatingScale}
+              required={true}
+              notAtAllVeryMuch={true}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <RatingScale
+              question={questionsForAll[3]}
+              answers={numberRatingScale}
+              required={true}
+              notAtAllVeryMuch={true}
+            />
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
