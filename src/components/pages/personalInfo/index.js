@@ -76,7 +76,7 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er dit køn?"
               items={gender}
-              placeholder="Vælg dit køn..."
+              placeholder="Angiv et svar..."
               required={true}
             />
           </Grid>
@@ -84,7 +84,7 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er din alder?"
               items={age}
-              placeholder="Vælg din alder..."
+              placeholder="Angiv et svar..."
               required={true}
             />
           </Grid>
@@ -92,35 +92,35 @@ function PersonalInfo() {
             <DropdownList
               question="Hvad er din beskæftigelse?"
               items={occupation}
-              placeholder="Vælg din beskæftigelse..."
+              placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvilken uddannelse har du?"
               items={education}
-              placeholder="Vælg dit uddannelsesniveau..."
+              placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er din civilstand?"
               items={maritalStatus}
-              placeholder="Vælg din civilstand..."
+              placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Har du børn?"
               items={childrenStatus}
-              placeholder="Angiv om du har børn..."
+              placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvor er du født?"
               items={origin}
-              placeholder="Vælg dit fødested..."
+              placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
