@@ -19,9 +19,12 @@ function RandomVideo() {
           <Grid item xs={12}>
             <h1>RESPEKT kampagne video</h1>
             <p>
-              Nu vil du se en film, der varer ca. et minut. Husk at have lyden
-              tændt, mens du ser filmen. Når filmen er færdig, skal du besvare
-              nogle af de sidste spørgsmål.
+              Nu vil du se en film, der varer ca. et minut.
+              <br />
+              Husk at have lyden tændt, mens du ser filmen.
+              <br />
+              Når filmen er færdig, skal du besvare nogle af de sidste
+              spørgsmål.
             </p>
           </Grid>
           <Grid item xs={12} container justify="center">

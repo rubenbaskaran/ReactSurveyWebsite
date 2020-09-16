@@ -47,7 +47,8 @@ function Consent() {
             </p>
             <p>
               Som tak for deltagelsen kan du - hvis du vil - oplyse din
-              e-mail-adresse for at deltage i en lodtrækning om (AV VADÅ?).
+              e-mail-adresse for at deltage i en lodtrækning om
+              <b> (AV VADÅ?)</b>.
             </p>
             <p>
               Vi, der er ansvarlige for undersøgelsen og dermed hjemmesiden,, er
@@ -55,7 +56,8 @@ function Consent() {
               Professor Anette Søgaard Nielsen.
             </p>
             <p>
-              Spørgsmål om projektet kan sendes til VEM (går bra med min mejl)
+              Spørgsmål om projektet kan sendes til
+              <b> VEM (går bra med min mejl)</b>.
             </p>
           </Grid>
           <Grid item xs={12} container justify="center">
