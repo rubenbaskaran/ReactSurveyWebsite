@@ -77,7 +77,7 @@ function SecondSurvey() {
             <DropdownList
               question="Kan du huske at have set denne film før?"
               placeholder="Angiv et svar..."
-              required={true}
+              required={false}
               items={doYouRememberItems}
             />
           </Grid>
@@ -85,7 +85,7 @@ function SecondSurvey() {
             <DropdownList
               question="Føler du at du drikker for meget?"
               placeholder="Angiv et svar..."
-              required={true}
+              required={false}
               items={drinkingTooMuchItems}
             />
           </Grid>
@@ -96,7 +96,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeOne}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -104,7 +104,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeTwo}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -112,7 +112,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeThree}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -120,7 +120,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeFour}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -128,7 +128,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeFive}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -136,7 +136,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeSix}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -144,7 +144,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeSeven}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -152,7 +152,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeEight}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -160,7 +160,7 @@ function SecondSurvey() {
             <RatingScale
               question={agreeDisagreeNine}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -174,7 +174,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[0]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -182,7 +182,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[1]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -190,7 +190,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[2]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -198,7 +198,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[3]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -206,7 +206,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[4]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -214,7 +214,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[5]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -222,7 +222,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[6]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -230,7 +230,7 @@ function SecondSurvey() {
             <RatingScale
               question={ninetyDayThoughts[7]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -241,7 +241,7 @@ function SecondSurvey() {
             <RatingScale
               question={questionsForAll[0]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -249,7 +249,7 @@ function SecondSurvey() {
             <RatingScale
               question={questionsForAll[1]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -257,7 +257,7 @@ function SecondSurvey() {
             <RatingScale
               question={questionsForAll[2]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -265,7 +265,7 @@ function SecondSurvey() {
             <RatingScale
               question={questionsForAll[3]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>

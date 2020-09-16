@@ -124,7 +124,7 @@ function FirstSurvey() {
             <RatingScale
               question={firstQuestion}
               answers={firstQuestionAnswers}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -132,7 +132,7 @@ function FirstSurvey() {
             <RatingScale
               question={secondQuestion}
               answers={secondQuestionAnswers}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -140,7 +140,7 @@ function FirstSurvey() {
             <RatingScale
               question={thirdQuestion}
               answers={thirdQuestionAnswers}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -172,7 +172,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeOne}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -180,7 +180,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeTwo}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -188,7 +188,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeThree}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -196,7 +196,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeFour}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -204,7 +204,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeFive}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -212,7 +212,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeSix}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -220,7 +220,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeSeven}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -228,7 +228,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeEight}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -236,7 +236,7 @@ function FirstSurvey() {
             <RatingScale
               question={agreeDisagreeNine}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               agreeDisagree={true}
             />
           </Grid>
@@ -250,7 +250,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[0]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -258,7 +258,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[1]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -266,7 +266,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[2]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -274,7 +274,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[3]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -282,7 +282,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[4]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -290,7 +290,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[5]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -298,7 +298,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[6]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -306,7 +306,7 @@ function FirstSurvey() {
             <RatingScale
               question={ninetyDayThoughts[7]}
               answers={ninetyDayThoughtsScale}
-              required={true}
+              required={false}
               agreeDisagree={false}
             />
           </Grid>
@@ -317,7 +317,7 @@ function FirstSurvey() {
             <RatingScale
               question={questionsForAll[0]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -325,7 +325,7 @@ function FirstSurvey() {
             <RatingScale
               question={questionsForAll[1]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -333,7 +333,7 @@ function FirstSurvey() {
             <RatingScale
               question={questionsForAll[2]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>
@@ -341,7 +341,7 @@ function FirstSurvey() {
             <RatingScale
               question={questionsForAll[3]}
               answers={numberRatingScale}
-              required={true}
+              required={false}
               notAtAllVeryMuch={true}
             />
           </Grid>

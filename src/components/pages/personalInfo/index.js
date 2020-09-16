@@ -77,7 +77,7 @@ function PersonalInfo() {
               question="Hvad er dit køn?"
               items={gender}
               placeholder="Vælg dit køn..."
-              required={false}
+              required={true}
             />
           </Grid>
           <Grid item xs={12}>
