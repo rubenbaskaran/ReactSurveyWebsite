@@ -5,6 +5,8 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 
+// TODO: Disable the next button until the user has been verified
+
 function Consent() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
