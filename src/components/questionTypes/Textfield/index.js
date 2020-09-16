@@ -64,7 +64,7 @@ function Textfield(props) {
         <TextField
           id="standard-full-width"
           className={classes.textField}
-          placeholder="Enter email address..."
+          placeholder="Angiv e-mail adresse..."
           fullWidth
         />
       </RadioGroup>

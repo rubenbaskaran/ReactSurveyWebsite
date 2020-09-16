@@ -17,13 +17,11 @@ function CompetitionParticipation() {
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Tak for din deltagelse!</h1>
-            <p>
-              Angiv din e-mail adresse for at deltage i lodtrækningen om XXX.
-            </p>
           </Grid>
           <Grid item xs={12}>
             <Textfield
-              question="Enter email address for participating in the competition"
+              question="Hvis du ønsker at deltage i lodtrækningen, bedes du efterlade din
+              e-mail-adresse her"
               required={false}
             />
           </Grid>
