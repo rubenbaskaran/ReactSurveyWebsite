@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 
-// TODO: Add ”Don’t want to answer” option to all questions
 // TODO: Hide questions on conditional statement
 
 function FirstSurvey() {
@@ -51,11 +50,6 @@ function FirstSurvey() {
     "Nej, det har jeg ikke",
     "Vil ikke svare",
   ];
-  const previousTreatmentItems = previousTreatment.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const addictionAmongstFriends = [
     "Ja, en person",
@@ -63,11 +57,6 @@ function FirstSurvey() {
     "Nej, jeg kender ikke nogen",
     "Vil ikke svare",
   ];
-  const addictionAmongstFriendsItems = addictionAmongstFriends.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const numberRatingScale = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const agreeDisagreeOne =
@@ -95,11 +84,6 @@ function FirstSurvey() {
     "Nej",
     "Vil ikke svare",
   ];
-  const drinkingTooMuchItems = drinkingTooMuch.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const ninetyDayThoughts = [
     "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
@@ -163,21 +147,21 @@ function FirstSurvey() {
           <Grid item xs={12}>
             <DropdownList
               question="Har du tidligere søgt behandling for at ændre dine alkoholvaner?"
-              items={previousTreatmentItems}
+              items={previousTreatment}
               placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Kender du nogen, der har eller har haft alkoholproblemer?"
-              items={addictionAmongstFriendsItems}
+              items={addictionAmongstFriends}
               placeholder="Angiv et svar..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Føler du at du drikker for meget?"
-              items={drinkingTooMuchItems}
+              items={drinkingTooMuch}
               placeholder="Angiv et svar..."
             />
           </Grid>

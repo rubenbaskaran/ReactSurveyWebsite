@@ -12,19 +12,10 @@ function PersonalInfo() {
   const classes = useStyles();
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
-  const genderItems = gender.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
-  const ageItems = [];
+  const age = [];
   for (var i = 16; i < 100; i++) {
-    ageItems.push(
-      <MenuItem key={i} value={i}>
-        {i.toString()}
-      </MenuItem>
-    );
+    age.push(i.toString());
   }
 
   const education = [
@@ -35,11 +26,6 @@ function PersonalInfo() {
     "Lang videregående uddannelse",
     "Vil ikke svare",
   ];
-  const educationItems = education.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const occupation = [
     "Er i arbejde",
@@ -50,11 +36,6 @@ function PersonalInfo() {
     "Andet",
     "Vil ikke svare",
   ];
-  const occupationItems = occupation.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const maritalStatus = [
     "Ugift",
@@ -63,11 +44,6 @@ function PersonalInfo() {
     "Enke/enkemand",
     "Vil ikke svare",
   ];
-  const maritalItems = maritalStatus.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const childrenStatus = [
     "Ja, mindreårige",
@@ -76,11 +52,6 @@ function PersonalInfo() {
     "Nej",
     "Vil ikke svare",
   ];
-  const childrenItems = childrenStatus.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   const origin = [
     "Danmark",
@@ -92,11 +63,6 @@ function PersonalInfo() {
     "Sydamerika",
     "Vil ikke svare",
   ];
-  const originItems = origin.map((item) => (
-    <MenuItem key={item} value={item}>
-      {item.toString()}
-    </MenuItem>
-  ));
 
   return (
     <div>
@@ -109,7 +75,7 @@ function PersonalInfo() {
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er dit køn?"
-              items={genderItems}
+              items={gender}
               placeholder="Vælg dit køn..."
               required={false}
             />
@@ -117,7 +83,7 @@ function PersonalInfo() {
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er din alder?"
-              items={ageItems}
+              items={age}
               placeholder="Vælg din alder..."
               required={true}
             />
@@ -125,35 +91,35 @@ function PersonalInfo() {
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er din beskæftigelse?"
-              items={occupationItems}
+              items={occupation}
               placeholder="Vælg din beskæftigelse..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvilken uddannelse har du?"
-              items={educationItems}
+              items={education}
               placeholder="Vælg dit uddannelsesniveau..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvad er din civilstand?"
-              items={maritalItems}
+              items={maritalStatus}
               placeholder="Vælg din civilstand..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Har du børn?"
-              items={childrenItems}
+              items={childrenStatus}
               placeholder="Angiv om du har børn..."
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
               question="Hvor er du født?"
-              items={originItems}
+              items={origin}
               placeholder="Vælg dit fødested..."
             />
           </Grid>

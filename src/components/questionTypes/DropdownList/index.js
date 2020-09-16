@@ -77,7 +77,11 @@ function DropdownList(props) {
               <MenuItem value="" disabled>
                 <em>{props.placeholder}</em>
               </MenuItem>
-              {props.items}
+              {props.items.map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item.toString()}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </div>
