@@ -4,7 +4,6 @@ import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 
-// TODO: Remove redundant youtube buttons
 // TODO: Add randomization
 
 function RandomVideo() {
@@ -31,10 +30,9 @@ function RandomVideo() {
             <iframe
               width="760"
               height="515"
-              src="https://www.youtube.com/embed/ElIl2gXQUnw?controls=0"
+              src="https://www.youtube.com/embed/ElIl2gXQUnw?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1"
               frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
           <Grid container item sm={6} xs={12}>
