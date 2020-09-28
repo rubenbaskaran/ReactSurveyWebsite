@@ -17,11 +17,12 @@ ReactDOM.render(
   <HashRouter>
     <Switch>
       <Route exact path="/" component={Consent} />
-      <Route path="/personalinfo" component={PersonalInfo} />
-      <Route path="/firstsurvey" component={FirstSurvey} />
-      <Route path="/randomvideo" component={RandomVideo} />
-      <Route path="/secondsurvey" component={SecondSurvey} />
+      <Route exact path="/personalinfo" component={PersonalInfo} />
+      <Route exact path="/firstsurvey" component={FirstSurvey} />
+      <Route exact path="/randomvideo" component={RandomVideo} />
+      <Route exact path="/secondsurvey" component={SecondSurvey} />
       <Route
+        exact
         path="/competitionparticipation"
         component={CompetitionParticipation}
       />
