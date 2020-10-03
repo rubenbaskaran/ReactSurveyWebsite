@@ -59,7 +59,8 @@ function PersonalInfo() {
     "Europa (ej Danmark, Norge, Island, Finland eller Sverige)",
     "Afrika",
     "Asien",
-    "Nordamerika (Canada, USA) eller Oceania (Australien)",
+    "Nordamerika (Canada, USA)",
+    "Oceania (Australien)",
     "Sydamerika",
     "Vil ikke svare",
   ];
@@ -77,7 +78,7 @@ function PersonalInfo() {
               question="Hvad er dit køn?"
               items={gender}
               placeholder="Angiv et svar..."
-              required={true}
+              required={false}
             />
           </Grid>
           <Grid item xs={12}>
@@ -85,7 +86,7 @@ function PersonalInfo() {
               question="Hvad er din alder?"
               items={age}
               placeholder="Angiv et svar..."
-              required={true}
+              required={false}
             />
           </Grid>
           <Grid item xs={12}>

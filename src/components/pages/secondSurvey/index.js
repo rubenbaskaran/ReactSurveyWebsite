@@ -71,7 +71,7 @@ function SecondSurvey() {
         <LinearWithValueLabel value="80" />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>Nu bliver du nødt til at besvare de sidste spørgsmål</h1>
+            <h1>Nu er du kommet til de sidste spørgsmål</h1>
           </Grid>
           <Grid item xs={12}>
             <DropdownList
@@ -83,7 +83,7 @@ function SecondSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              question="Føler du at du drikker for meget?"
+              question="Nu hvor du har set filmen, føler du så, at du drikker for meget?"
               placeholder="Angiv et svar..."
               required={false}
               items={drinkingTooMuchItems}
@@ -235,7 +235,7 @@ function SecondSurvey() {
             />
           </Grid>
           <Grid item xs={12}>
-            <h1>Disse spørgsmål stilles til alle informanter</h1>
+            <h1>Tanker om fremtiden</h1>
           </Grid>
           <Grid item xs={12}>
             <RatingScale

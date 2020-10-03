@@ -146,6 +146,13 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
+              question="Føler du at du drikker for meget?"
+              items={drinkingTooMuch}
+              placeholder="Angiv et svar..."
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <DropdownList
               question="Har du tidligere søgt behandling for at ændre dine alkoholvaner?"
               items={previousTreatment}
               placeholder="Angiv et svar..."
@@ -155,13 +162,6 @@ function FirstSurvey() {
             <DropdownList
               question="Kender du nogen, der har eller har haft alkoholproblemer?"
               items={addictionAmongstFriends}
-              placeholder="Angiv et svar..."
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <DropdownList
-              question="Føler du at du drikker for meget?"
-              items={drinkingTooMuch}
               placeholder="Angiv et svar..."
             />
           </Grid>
@@ -311,7 +311,7 @@ function FirstSurvey() {
             />
           </Grid>
           <Grid item xs={12}>
-            <h1>Disse spørgsmål stilles til alle informanter</h1>
+            <h1>Tanker om fremtiden</h1>
           </Grid>
           <Grid item xs={12}>
             <RatingScale

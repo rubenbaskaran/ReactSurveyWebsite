@@ -18,7 +18,7 @@ function RandomVideo() {
           <Grid item xs={12}>
             <h1>RESPEKT kampagne video</h1>
             <p>
-              Nu vil du se en film, der varer ca. et minut.
+              Nu vil du se en film, der varer ca. et halvt minut.
               <br />
               Husk at have lyden tændt, mens du ser filmen.
               <br />
