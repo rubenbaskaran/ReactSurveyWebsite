@@ -41,4 +41,4 @@ function LinearProgressWithLabel(props) {
   );
 }
 
-export default withStyles(useStyles)(LinearProgressWithLabel);
+export default LinearProgressWithLabel;
