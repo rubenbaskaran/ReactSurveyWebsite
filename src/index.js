@@ -6,6 +6,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import Consent from "./components/pages/consent";
 import PersonalInfo from "./components/pages/personalInfo";
 import FirstSurvey from "./components/pages/firstSurvey";
+import VideoText from "./components/pages/videoText";
 import RandomVideo from "./components/pages/randomVideo";
 import SecondSurvey from "./components/pages/secondSurvey";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route exact path="/" component={Consent} />
       <Route exact path="/personalinfo" component={PersonalInfo} />
       <Route exact path="/firstsurvey" component={FirstSurvey} />
+      <Route exact path="/videotext" component={VideoText} />
       <Route exact path="/randomvideo" component={RandomVideo} />
       <Route exact path="/secondsurvey" component={SecondSurvey} />
       <Route

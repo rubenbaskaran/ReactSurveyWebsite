@@ -359,7 +359,7 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/randomvideo"
+              to="/videotext"
               variant="contained"
               color="primary"
               className={classes.button}
