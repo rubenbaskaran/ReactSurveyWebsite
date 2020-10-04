@@ -113,7 +113,7 @@ function FirstSurvey() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="40" />
+        <LinearWithValueLabel value={40} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil vi stille nogle spørgsmål om alkohol</h1>

@@ -68,7 +68,7 @@ function SecondSurvey() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="80" />
+        <LinearWithValueLabel value={80} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu er du kommet til de sidste spørgsmål</h1>

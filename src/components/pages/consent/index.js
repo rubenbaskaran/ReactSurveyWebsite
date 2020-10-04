@@ -22,7 +22,7 @@ function Consent() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="0" />
+        <LinearWithValueLabel value={0} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Velkommen til projektet XYZ</h1>

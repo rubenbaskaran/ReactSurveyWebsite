@@ -13,7 +13,7 @@ function CompetitionParticipation() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="100" />
+        <LinearWithValueLabel value={100} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Tak for din deltagelse!</h1>

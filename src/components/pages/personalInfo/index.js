@@ -68,7 +68,7 @@ function PersonalInfo() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="20" />
+        <LinearWithValueLabel value={20} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Vi starter med nogle baggrundsspørgsmål</h1>

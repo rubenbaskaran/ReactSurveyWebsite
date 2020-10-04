@@ -20,9 +20,9 @@ function LinearProgressWithLabel(props) {
           <LinearProgress
             variant="determinate"
             style={{
-              "background-color": "#f3f3f3",
+              backgroundColor: "#f3f3f3",
               height: "20px",
-              "border-radius": "5px",
+              borderRadius: "5px",
             }}
             {...props}
             classes={{
@@ -33,7 +33,7 @@ function LinearProgressWithLabel(props) {
         <Box minWidth={35}>
           <Typography
             variant="body2"
-            style={{ color: "black", "font-size": "1.25rem" }}
+            style={{ color: "black", fontSize: "1.25rem" }}
           >{`${Math.round(props.value)}%`}</Typography>
         </Box>
       </Box>
