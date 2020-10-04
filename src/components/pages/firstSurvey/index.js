@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 
-// TODO: Hide questions on conditional statement
-
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

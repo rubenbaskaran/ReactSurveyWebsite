@@ -12,8 +12,6 @@ import SecondSurvey from "./components/pages/secondSurvey";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
 import "fontsource-roboto";
 
-// TODO: Add REDCap connection
-
 ReactDOM.render(
   <HashRouter>
     <Switch>
