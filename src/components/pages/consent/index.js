@@ -9,7 +9,12 @@ import Recaptcha from "../../reCAPTCHA";
 
 function Consent() {
   const [spacing] = React.useState(1);
+  const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
+
+  function handleRecaptcha() {
+    setDisabled(!disabled);
+  }
 
   const script = document.createElement("script");
   script.src = "https://www.google.com/recaptcha/api.js";
@@ -19,7 +24,7 @@ function Consent() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value="0" />
+        {/* <LinearWithValueLabel value="0" /> */}
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Velkommen til projektet XYZ</h1>
@@ -63,7 +68,7 @@ function Consent() {
             </p>
           </Grid>
           <Grid item xs={12} container justify="center">
-            <Recaptcha />
+            <Recaptcha handleRecaptcha={handleRecaptcha} />
           </Grid>
           <Grid container item xs={12}>
             <Button
@@ -72,6 +77,7 @@ function Consent() {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={disabled}
             >
               Deltag
             </Button>

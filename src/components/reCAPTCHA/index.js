@@ -4,11 +4,7 @@ import SecurityKey from "./SecurityKey";
 class Recaptcha extends Component {
   constructor(props) {
     super(props);
-    window.handleRecaptcha = this.handleRecaptcha;
-  }
-
-  handleRecaptcha() {
-    console.log("Verified");
+    window.handleRecaptcha = props.handleRecaptcha;
   }
 
   render() {
