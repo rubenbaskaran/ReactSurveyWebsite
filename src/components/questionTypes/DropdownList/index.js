@@ -56,6 +56,7 @@ function DropdownList(props) {
   const handleChange = (event) => {
     console.log(event.target.value);
     setRating(event.target.value);
+    // TODO: Publish to global state variable but only for "drinking too much questions"
   };
 
   return (
@@ -88,7 +89,7 @@ function DropdownList(props) {
       </RadioGroup>
       {props.required == true && (
         <div className={classes.required}>
-          <label>*påkrævet</label>
+          <label>*svar mangler</label>
         </div>
       )}
     </Paper>

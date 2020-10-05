@@ -11,7 +11,7 @@ function SecondSurvey() {
   const classes = useStyles();
   const [nextPageUrl, setNextPage] = React.useState("/postninetydaythoughts");
 
-  // TODO: Get true/false value for whether paticipant think they drink too much
+  // TODO: Subscribe to global state variable
   const SetPageUrl = (ShowExtraQuestions) => {
     if (ShowExtraQuestions) {
       setNextPage("/postninetydaythoughts");

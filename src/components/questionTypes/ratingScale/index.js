@@ -80,7 +80,7 @@ function RatingScale(props) {
       </RadioGroup>
       {props.required == true && (
         <div className={classes.required}>
-          <label>*påkrævet</label>
+          <label>*svar mangler</label>
         </div>
       )}
     </Paper>
