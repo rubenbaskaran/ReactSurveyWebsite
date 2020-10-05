@@ -4,6 +4,8 @@ import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 
+// TODO: Get global state for determining where to go back
+
 function VideoText() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

@@ -6,6 +6,8 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
 
+// TODO: Get global state for determining where to go back
+
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
