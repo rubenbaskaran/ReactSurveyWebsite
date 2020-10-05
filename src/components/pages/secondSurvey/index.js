@@ -9,17 +9,6 @@ import LinearWithValueLabel from "../../progressBar";
 function SecondSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-  const [nextPageUrl, setNextPage] = React.useState(
-    "/competitionparticipation"
-  );
-
-  const SetPageUrl = (ShowExtraQuestions) => {
-    if (ShowExtraQuestions) {
-      setNextPage("/postninetydaythoughts");
-    } else {
-      setNextPage("/competitionparticipation");
-    }
-  };
 
   const doYouRememberItems = ["Ja", "Nej", "Ved ikke", "Vil ikke svare"];
   const drinkingTooMuchItems = [
@@ -70,6 +59,7 @@ function SecondSurvey() {
               placeholder="Angiv et svar..."
               required={false}
               items={doYouRememberItems}
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -78,8 +68,7 @@ function SecondSurvey() {
               placeholder="Angiv et svar..."
               required={false}
               items={drinkingTooMuchItems}
-              showExtraSectionBool={true}
-              showExtraSectionCallback={SetPageUrl}
+              showExtraSection="second"
             />
           </Grid>
           <Grid item xs={12}>
@@ -206,7 +195,7 @@ function SecondSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to={nextPageUrl}
+              to={window.localStorage.getItem("secondNextPage")}
               variant="contained"
               color="primary"
               className={classes.button}

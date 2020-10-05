@@ -9,15 +9,6 @@ import DropdownList from "../../questionTypes/DropdownList";
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-  const [nextPageUrl, setNextPageUrl] = React.useState("/videotext");
-
-  const SetPageUrl = (ShowExtraQuestions) => {
-    if (ShowExtraQuestions) {
-      setNextPageUrl("/preninetydaythoughts");
-    } else {
-      setNextPageUrl("/videotext");
-    }
-  };
 
   const firstQuestion = "Hvor tit drikker du noget, der indeholder alkohol?";
   const firstQuestionAnswers = [
@@ -136,8 +127,7 @@ function FirstSurvey() {
               question="Føler du at du drikker for meget?"
               items={drinkingTooMuch}
               placeholder="Angiv et svar..."
-              showExtraSectionBool={true}
-              showExtraSectionCallback={SetPageUrl}
+              showExtraSection="first"
             />
           </Grid>
           <Grid item xs={12}>
@@ -145,6 +135,7 @@ function FirstSurvey() {
               question="Har du tidligere søgt behandling for at ændre dine alkoholvaner?"
               items={previousTreatment}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -152,6 +143,7 @@ function FirstSurvey() {
               question="Kender du nogen, der har eller har haft alkoholproblemer?"
               items={addictionAmongstFriends}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -278,7 +270,7 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to={nextPageUrl}
+              to={window.localStorage.getItem("firstNextPage")}
               variant="contained"
               color="primary"
               className={classes.button}

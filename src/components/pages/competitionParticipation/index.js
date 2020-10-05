@@ -30,7 +30,7 @@ function CompetitionParticipation() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/postninetydaythoughts"
+              to={window.localStorage.getItem("secondPreviousPage")}
               variant="contained"
               color="primary"
               className={classes.button}

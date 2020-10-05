@@ -57,16 +57,52 @@ function DropdownList(props) {
     console.log(event.target.value);
     setRating(event.target.value);
 
-    if (
-      (props.showExtraSectionBool && event.target.value == "Ja") ||
-      (props.showExtraSectionBool &&
-        event.target.value == "Nej, men har gjort det tidligere i livet")
-    ) {
-      props.showExtraSectionCallback(true);
-      // TODO: Set global state for determining where to go back
-    } else {
-      props.showExtraSectionCallback(false);
-      // TODO: Set global state for determining where to go back
+    if (props.showExtraSection != "none") {
+      if (props.showExtraSection == "first") {
+        if (
+          event.target.value == "Ja" ||
+          event.target.value == "Nej, men har gjort det tidligere i livet"
+        ) {
+          window.localStorage.setItem("firstNextPage", "/preninetydaythoughts");
+          window.localStorage.setItem(
+            "firstPreviousPage",
+            "/preninetydaythoughts"
+          );
+          console.log("done");
+        } else if (
+          event.target.value == "Nej" ||
+          event.target.value == "Vil ikke svare"
+        ) {
+          window.localStorage.setItem("firstNextPage", "/videotext");
+          window.localStorage.setItem("firstPreviousPage", "/firstsurvey");
+          console.log("done");
+        }
+      } else if (props.showExtraSection == "second") {
+        if (
+          event.target.value == "Ja" ||
+          event.target.value == "Nej, men har gjort det tidligere i livet"
+        ) {
+          window.localStorage.setItem(
+            "secondNextPage",
+            "/postninetydaythoughts"
+          );
+          window.localStorage.setItem(
+            "secondPreviousPage",
+            "/postninetydaythoughts"
+          );
+          console.log("done");
+        } else if (
+          event.target.value == "Nej" ||
+          event.target.value == "Vil ikke svare"
+        ) {
+          window.localStorage.setItem(
+            "secondNextPage",
+            "/competitionparticipation"
+          );
+          window.localStorage.setItem("secondPreviousPage", "/secondsurvey");
+          console.log("done");
+        }
+      }
     }
   };
 

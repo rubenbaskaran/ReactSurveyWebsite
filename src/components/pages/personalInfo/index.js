@@ -79,6 +79,7 @@ function PersonalInfo() {
               items={gender}
               placeholder="Angiv et svar..."
               required={false}
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -87,6 +88,7 @@ function PersonalInfo() {
               items={age}
               placeholder="Angiv et svar..."
               required={false}
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -94,6 +96,7 @@ function PersonalInfo() {
               question="Hvad er din beskæftigelse?"
               items={occupation}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -101,6 +104,7 @@ function PersonalInfo() {
               question="Hvilken uddannelse har du?"
               items={education}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -108,6 +112,7 @@ function PersonalInfo() {
               question="Hvad er din civilstand?"
               items={maritalStatus}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -115,6 +120,7 @@ function PersonalInfo() {
               question="Har du børn?"
               items={childrenStatus}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid item xs={12}>
@@ -122,6 +128,7 @@ function PersonalInfo() {
               question="Hvor er du født?"
               items={origin}
               placeholder="Angiv et svar..."
+              showExtraSection="none"
             />
           </Grid>
           <Grid container item sm={6} xs={12}>

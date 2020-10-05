@@ -30,7 +30,7 @@ function VideoText() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/preninetydaythoughts"
+              to={window.localStorage.getItem("firstPreviousPage")}
               variant="contained"
               color="primary"
               className={classes.button}

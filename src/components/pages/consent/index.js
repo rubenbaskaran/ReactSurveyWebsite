@@ -10,6 +10,12 @@ function Consent() {
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
 
+  window.localStorage.clear();
+  window.localStorage.setItem("firstNextPage", "/videotext");
+  window.localStorage.setItem("firstPreviousPage", "/firstsurvey");
+  window.localStorage.setItem("secondNextPage", "/competitionparticipation");
+  window.localStorage.setItem("secondPreviousPage", "/secondsurvey");
+
   function handleRecaptcha() {
     setDisabled(!disabled);
   }
