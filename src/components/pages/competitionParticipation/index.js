@@ -6,8 +6,6 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
 
-// TODO: Get global state for determining where to go back
-
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
@@ -30,7 +28,7 @@ function CompetitionParticipation() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to={window.localStorage.getItem("secondPreviousPage")}
+              to={window.localStorage.getItem("secondPreviousPage")} // TODO: Replace localStorage with REDUX
               variant="contained"
               color="primary"
               className={classes.button}

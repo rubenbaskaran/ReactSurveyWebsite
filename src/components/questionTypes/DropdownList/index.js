@@ -57,6 +57,7 @@ function DropdownList(props) {
     console.log(event.target.value);
     setRating(event.target.value);
 
+    // TODO: Replace localStorage with REDUX
     if (props.showExtraSection != "none") {
       if (props.showExtraSection == "first") {
         if (

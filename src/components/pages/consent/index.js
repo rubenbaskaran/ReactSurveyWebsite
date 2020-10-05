@@ -10,6 +10,7 @@ function Consent() {
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
 
+  // TODO: Replace localStorage with REDUX
   window.localStorage.clear();
   window.localStorage.setItem("firstNextPage", "/videotext");
   window.localStorage.setItem("firstPreviousPage", "/firstsurvey");
