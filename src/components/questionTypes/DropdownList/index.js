@@ -63,8 +63,10 @@ function DropdownList(props) {
         event.target.value == "Nej, men har gjort det tidligere i livet")
     ) {
       props.showExtraSectionCallback(true);
+      // TODO: Set global state for determining where to go back
     } else {
       props.showExtraSectionCallback(false);
+      // TODO: Set global state for determining where to go back
     }
   };
 
