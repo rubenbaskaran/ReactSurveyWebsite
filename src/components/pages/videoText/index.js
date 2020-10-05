@@ -21,13 +21,12 @@ function VideoText() {
               Når filmen er færdig, skal du besvare nogle af de sidste
               spørgsmål.
               <br />
-              Dine svar er nu blevet gemt. Når du klikker på "Gem og gå til
-              næste", vil det ikke længere være muligt at gå tilbage. Ønsker du
-              at gå videre?
+              Dine svar er nu blevet gemt. Når du klikker på "Næste", vil det
+              ikke længere være muligt at gå tilbage. Ønsker du at gå videre?
             </p>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            {/* <Button
+            <Button
               component={Link}
               to="/firstsurvey"
               variant="contained"
@@ -35,7 +34,7 @@ function VideoText() {
               className={classes.button}
             >
               Tilbage
-            </Button> */}
+            </Button>
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
@@ -45,7 +44,7 @@ function VideoText() {
               color="primary"
               className={classes.button}
             >
-              Gem og gå til næste
+              Næste
             </Button>
           </Grid>
         </Grid>
