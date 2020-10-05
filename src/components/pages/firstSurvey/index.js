@@ -113,7 +113,7 @@ function FirstSurvey() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value={40} />
+        <LinearWithValueLabel value={20} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil vi stille nogle spørgsmål om alkohol</h1>
@@ -357,7 +357,7 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/videotext"
+              to="/preninetydaythoughts"
               variant="contained"
               color="primary"
               className={classes.button}

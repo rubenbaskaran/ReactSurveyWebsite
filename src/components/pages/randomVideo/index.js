@@ -29,7 +29,7 @@ function RandomVideo() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value={60} />
+        <LinearWithValueLabel value={50} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12} container justify="center">
             <iframe

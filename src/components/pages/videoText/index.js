@@ -11,7 +11,7 @@ function VideoText() {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value={50} />
+        <LinearWithValueLabel value={40} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil du se en film, der varer ca. et halvt minut</h1>
@@ -28,7 +28,7 @@ function VideoText() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/firstsurvey"
+              to="/preninetydaythoughts"
               variant="contained"
               color="primary"
               className={classes.button}
