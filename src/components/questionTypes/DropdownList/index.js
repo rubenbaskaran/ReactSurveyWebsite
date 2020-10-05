@@ -56,7 +56,16 @@ function DropdownList(props) {
   const handleChange = (event) => {
     console.log(event.target.value);
     setRating(event.target.value);
-    // TODO: Publish to global state variable but only for "drinking too much questions"
+
+    if (
+      (props.showExtraSectionBool && event.target.value == "Ja") ||
+      (props.showExtraSectionBool &&
+        event.target.value == "Nej, men har gjort det tidligere i livet")
+    ) {
+      props.showExtraSectionCallback(true);
+    } else {
+      props.showExtraSectionCallback(false);
+    }
   };
 
   return (

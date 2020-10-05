@@ -9,9 +9,10 @@ import LinearWithValueLabel from "../../progressBar";
 function SecondSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-  const [nextPageUrl, setNextPage] = React.useState("/postninetydaythoughts");
+  const [nextPageUrl, setNextPage] = React.useState(
+    "/competitionparticipation"
+  );
 
-  // TODO: Subscribe to global state variable
   const SetPageUrl = (ShowExtraQuestions) => {
     if (ShowExtraQuestions) {
       setNextPage("/postninetydaythoughts");
@@ -77,6 +78,8 @@ function SecondSurvey() {
               placeholder="Angiv et svar..."
               required={false}
               items={drinkingTooMuchItems}
+              showExtraSectionBool={true}
+              showExtraSectionCallback={SetPageUrl}
             />
           </Grid>
           <Grid item xs={12}>

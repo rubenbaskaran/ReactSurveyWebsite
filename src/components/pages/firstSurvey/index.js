@@ -9,14 +9,13 @@ import DropdownList from "../../questionTypes/DropdownList";
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-  const [nextPageUrl, setNextPage] = React.useState("/preninetydaythoughts");
+  const [nextPageUrl, setNextPageUrl] = React.useState("/videotext");
 
-  // TODO: Subscribe to global state variable
   const SetPageUrl = (ShowExtraQuestions) => {
     if (ShowExtraQuestions) {
-      setNextPage("/preninetydaythoughts");
+      setNextPageUrl("/preninetydaythoughts");
     } else {
-      setNextPage("/videotext");
+      setNextPageUrl("/videotext");
     }
   };
 
@@ -137,6 +136,8 @@ function FirstSurvey() {
               question="Føler du at du drikker for meget?"
               items={drinkingTooMuch}
               placeholder="Angiv et svar..."
+              showExtraSectionBool={true}
+              showExtraSectionCallback={SetPageUrl}
             />
           </Grid>
           <Grid item xs={12}>
