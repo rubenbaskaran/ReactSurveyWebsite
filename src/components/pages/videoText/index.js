@@ -14,18 +14,20 @@ function VideoText() {
         <LinearWithValueLabel value={50} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>RESPEKT kampagne video</h1>
+            <h1>Nu vil du se en film, der varer ca. et halvt minut</h1>
             <p>
-              Nu vil du se en film, der varer ca. et halvt minut.
-              <br />
               Husk at have lyden tændt, mens du ser filmen.
               <br />
               Når filmen er færdig, skal du besvare nogle af de sidste
               spørgsmål.
+              <br />
+              Dine svar er nu blevet gemt. Når du klikker på "Gem og gå til
+              næste", vil det ikke længere være muligt at gå tilbage. Ønsker du
+              at gå videre?
             </p>
           </Grid>
           <Grid container item sm={6} xs={12}>
-            <Button
+            {/* <Button
               component={Link}
               to="/firstsurvey"
               variant="contained"
@@ -33,7 +35,7 @@ function VideoText() {
               className={classes.button}
             >
               Tilbage
-            </Button>
+            </Button> */}
           </Grid>
           <Grid container item sm={6} xs={12}>
             <Button
@@ -43,7 +45,7 @@ function VideoText() {
               color="primary"
               className={classes.button}
             >
-              Næste
+              Gem og gå til næste
             </Button>
           </Grid>
         </Grid>

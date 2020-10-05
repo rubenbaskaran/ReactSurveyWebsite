@@ -143,7 +143,7 @@ function PersonalInfo() {
               color="primary"
               className={classes.button}
             >
-              Næste
+              Gem og gå til næste
             </Button>
           </Grid>
         </Grid>
