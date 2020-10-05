@@ -9,6 +9,16 @@ import DropdownList from "../../questionTypes/DropdownList";
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const [nextPageUrl, setNextPage] = React.useState("/preninetydaythoughts");
+
+  // TODO: Get true/false value for whether paticipant think they drink too much
+  const SetPageUrl = (ShowExtraQuestions) => {
+    if (ShowExtraQuestions) {
+      setNextPage("/preninetydaythoughts");
+    } else {
+      setNextPage("/videotext");
+    }
+  };
 
   const firstQuestion = "Hvor tit drikker du noget, der indeholder alkohol?";
   const firstQuestionAnswers = [
@@ -80,26 +90,6 @@ function FirstSurvey() {
     "Ja",
     "Nej, men har gjort det tidligere i livet",
     "Nej",
-    "Vil ikke svare",
-  ];
-
-  const ninetyDayThoughts = [
-    "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
-    "Jeg tænker, at jeg burde skamme mig.",
-    "Jeg tænker, at jeg fortjener de dårlige ting, der er sket med mig.",
-    "Jeg tænker, at jeg ikke er til at stole på.",
-    "Jeg føler mig ringere end mennesker, der aldrig har haft et problem med alkohol.",
-    "Jeg føler mig udenfor på grund af mine problemer med alkohol.",
-    "Jeg tænker, at jeg permanent har ødelagt mit liv ved at bruge alkohol.",
-    "Jeg skammer mig over mig selv.",
-  ];
-
-  const ninetyDayThoughtsScale = [
-    "Aldrig",
-    "Sjældent",
-    "Nogle gange",
-    "Ofte",
-    "Meget ofte",
     "Vil ikke svare",
   ];
 
@@ -287,7 +277,7 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/preninetydaythoughts"
+              to={nextPageUrl}
               variant="contained"
               color="primary"
               className={classes.button}

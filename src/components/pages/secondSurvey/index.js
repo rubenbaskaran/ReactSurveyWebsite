@@ -9,6 +9,16 @@ import LinearWithValueLabel from "../../progressBar";
 function SecondSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const [nextPageUrl, setNextPage] = React.useState("/postninetydaythoughts");
+
+  // TODO: Get true/false value for whether paticipant think they drink too much
+  const SetPageUrl = (ShowExtraQuestions) => {
+    if (ShowExtraQuestions) {
+      setNextPage("/postninetydaythoughts");
+    } else {
+      setNextPage("/competitionparticipation");
+    }
+  };
 
   const doYouRememberItems = ["Ja", "Nej", "Ved ikke", "Vil ikke svare"];
   const drinkingTooMuchItems = [
@@ -37,26 +47,6 @@ function SecondSurvey() {
     "Personer med alkoholproblemer bebrejdes selv for deres sygdom";
   const agreeDisagreeNine =
     "Personer med alkoholproblemer har selv forårsaget deres sygdom";
-
-  const ninetyDayThoughts = [
-    "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
-    "Jeg tænker, at jeg burde skamme mig.",
-    "Jeg tænker, at jeg fortjener de dårlige ting, der er sket med mig.",
-    "Jeg tænker, at jeg ikke er til at stole på.",
-    "Jeg føler mig ringere end mennesker, der aldrig har haft et problem med alkohol.",
-    "Jeg føler mig udenfor på grund af mine problemer med alkohol.",
-    "Jeg tænker, at jeg permanent har ødelagt mit liv ved at bruge alkohol.",
-    "Jeg skammer mig over mig selv.",
-  ];
-
-  const ninetyDayThoughtsScale = [
-    "Aldrig",
-    "Sjældent",
-    "Nogle gange",
-    "Ofte",
-    "Meget ofte",
-    "Vil ikke svare",
-  ];
 
   const questionsForAll = [
     "I hvor høj grad har du lyst til at ændre dine alkoholvaner?",
@@ -213,7 +203,7 @@ function SecondSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/postninetydaythoughts"
+              to={nextPageUrl}
               variant="contained"
               color="primary"
               className={classes.button}
