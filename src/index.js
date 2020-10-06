@@ -13,6 +13,43 @@ import SecondSurvey from "./components/pages/secondSurvey";
 import PostNinetyDayThoughts from "./components/pages/postNinetyDayThoughts";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
 import "fontsource-roboto";
+import { createStore, combineReducers } from "redux";
+
+//ACTION - Describes what you gonna do
+const togglePreExtraSection = () => {
+  return {
+    type: "togglePreExtraSection",
+  };
+};
+
+const togglePostExtraSection = () => {
+  return {
+    type: "togglePostExtraSection",
+  };
+};
+
+//REDUCER - Describes how actions transform the state
+const toggle = (state = false, action) => {
+  switch (action.type) {
+    case "togglePreExtraSection":
+      return !state;
+    case "togglePostExtraSection":
+      return !state;
+  }
+};
+
+//STORE - Globalized state
+let store = createStore(toggle);
+
+// DISPLAY
+store.subscribe(() => console.log(store.getState()));
+
+//DISPATCH - Execute the action to the reducer
+store.dispatch(togglePreExtraSection());
+store.dispatch(togglePreExtraSection());
+store.dispatch(togglePreExtraSection());
+store.dispatch(togglePreExtraSection());
+store.dispatch(togglePostExtraSection());
 
 const App = () => {
   return (
