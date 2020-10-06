@@ -13,35 +13,47 @@ import SecondSurvey from "./components/pages/secondSurvey";
 import PostNinetyDayThoughts from "./components/pages/postNinetyDayThoughts";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
 import "fontsource-roboto";
+import ContextData from "./context";
 
-ReactDOM.render(
-  <HashRouter>
-    <Switch>
-      <Route exact path="/" component={Consent} />
-      <Route exact path="/personalinfo" component={PersonalInfo} />
-      <Route exact path="/firstsurvey" component={FirstSurvey} />
-      <Route
-        exact
-        path="/preninetydaythoughts"
-        component={PreNinetyDayThoughts}
-      />
-      <Route exact path="/videotext" component={VideoText} />
-      <Route exact path="/randomvideo" component={RandomVideo} />
-      <Route exact path="/secondsurvey" component={SecondSurvey} />
-      <Route
-        exact
-        path="/postninetydaythoughts"
-        component={PostNinetyDayThoughts}
-      />
-      <Route
-        exact
-        path="/competitionparticipation"
-        component={CompetitionParticipation}
-      />
-    </Switch>
-  </HashRouter>,
-  document.getElementById("root")
-);
+const App = () => {
+  const [firstExtraSection, setFirstExtraSection] = React.useState("hide");
+  const firstExtra = { firstExtraSection, setFirstExtraSection };
+
+  // const [secondExtraSection, setSecondExtraSection] = React.useState("hide");
+  // const secondExtra = { secondExtraSection, setSecondExtraSection };
+
+  return (
+    <HashRouter>
+      <Switch>
+        <ContextData.Provider value={firstExtra}>
+          <Route exact path="/" component={Consent} />
+          <Route exact path="/personalinfo" component={PersonalInfo} />
+          <Route exact path="/firstsurvey" component={FirstSurvey} />
+          <Route
+            exact
+            path="/preninetydaythoughts"
+            component={PreNinetyDayThoughts}
+          />
+          <Route exact path="/videotext" component={VideoText} />
+          <Route exact path="/randomvideo" component={RandomVideo} />
+          <Route exact path="/secondsurvey" component={SecondSurvey} />
+          <Route
+            exact
+            path="/postninetydaythoughts"
+            component={PostNinetyDayThoughts}
+          />
+          <Route
+            exact
+            path="/competitionparticipation"
+            component={CompetitionParticipation}
+          />
+        </ContextData.Provider>
+      </Switch>
+    </HashRouter>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
