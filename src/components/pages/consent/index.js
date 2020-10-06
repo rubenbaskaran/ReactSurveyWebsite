@@ -4,24 +4,11 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
-import ContextData from "../../../context";
 
 function Consent() {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
-
-  const { firstExtraSection, setFirstExtraSection } = React.useContext(
-    ContextData
-  );
-  console.log("consent: " + firstExtraSection);
-
-  // TODO: Replace localStorage with REDUX
-  window.localStorage.clear();
-  window.localStorage.setItem("firstNextPage", "/videotext");
-  window.localStorage.setItem("firstPreviousPage", "/firstsurvey");
-  window.localStorage.setItem("secondNextPage", "/competitionparticipation");
-  window.localStorage.setItem("secondPreviousPage", "/secondsurvey");
 
   function handleRecaptcha() {
     setDisabled(!disabled);
@@ -89,9 +76,6 @@ function Consent() {
               color="primary"
               className={classes.button}
               disabled={disabled}
-              onClick={() => {
-                setFirstExtraSection("show");
-              }}
             >
               Deltag
             </Button>

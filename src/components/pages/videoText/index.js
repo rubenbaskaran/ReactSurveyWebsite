@@ -28,7 +28,7 @@ function VideoText() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to={window.localStorage.getItem("firstPreviousPage")} // TODO: Replace localStorage with REDUX
+              to="preninetydaythoughts"
               variant="contained"
               color="primary"
               className={classes.button}

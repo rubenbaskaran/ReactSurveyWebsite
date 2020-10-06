@@ -6,16 +6,10 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
 import ChildrenQuestion from "../../questionTypes/children";
-import ContextData from "../../../context";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-
-  const { firstExtraSection, setFirstExtraSection } = React.useContext(
-    ContextData
-  );
-  console.log("personal info: " + firstExtraSection);
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 

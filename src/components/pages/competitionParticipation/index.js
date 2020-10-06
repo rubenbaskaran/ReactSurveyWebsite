@@ -28,7 +28,7 @@ function CompetitionParticipation() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to={window.localStorage.getItem("secondPreviousPage")} // TODO: Replace localStorage with REDUX
+              to="/postninetydaythoughts"
               variant="contained"
               color="primary"
               className={classes.button}
