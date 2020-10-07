@@ -16,7 +16,7 @@ const togglePostExtraSectionAction = (data) => {
 };
 
 // REDUCER
-const togglePreExtraSectionReducer = (state = "/videotext", action) => {
+const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
     case "togglePreExtraSection":
       return action.payload;
@@ -25,10 +25,7 @@ const togglePreExtraSectionReducer = (state = "/videotext", action) => {
   }
 };
 
-const togglePostExtraSectionReducer = (
-  state = "/competitionparticipation",
-  action
-) => {
+const togglePostExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
     case "togglePostExtraSection":
       return action.payload;
@@ -38,8 +35,8 @@ const togglePostExtraSectionReducer = (
 };
 
 const allReducers = combineReducers({
-  togglePreExtraSection: togglePreExtraSectionReducer,
-  togglePostExtraSection: togglePostExtraSectionReducer,
+  showPreExtraSection: togglePreExtraSectionReducer,
+  showPostExtraSection: togglePostExtraSectionReducer,
 });
 
 // STORE

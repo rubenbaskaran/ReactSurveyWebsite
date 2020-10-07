@@ -3,10 +3,18 @@ import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import { useSelector } from "react-redux";
 
 function VideoText() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  let conditionalPreviousPage = "";
+  if (useSelector((state) => state.showPreExtraSection)) {
+    conditionalPreviousPage = "/preninetydaythoughts";
+  } else {
+    conditionalPreviousPage = "/firstsurvey";
+  }
 
   return (
     <div>
@@ -28,7 +36,7 @@ function VideoText() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="preninetydaythoughts"
+              to={conditionalPreviousPage}
               variant="contained"
               color="primary"
               className={classes.button}

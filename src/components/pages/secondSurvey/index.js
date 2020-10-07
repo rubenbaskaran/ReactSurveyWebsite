@@ -5,10 +5,18 @@ import RatingScale from "../../questionTypes/ratingScale";
 import DropdownList from "../../questionTypes/DropdownList";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import { useSelector } from "react-redux";
 
 function SecondSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  let conditionalNextPage = "";
+  if (useSelector((state) => state.showPostExtraSection)) {
+    conditionalNextPage = "/postninetydaythoughts";
+  } else {
+    conditionalNextPage = "/competitionparticipation";
+  }
 
   const doYouRememberItems = ["Ja", "Nej", "Ved ikke", "Vil ikke svare"];
   const drinkingTooMuchItems = [
@@ -195,7 +203,7 @@ function SecondSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="postninetydaythoughts"
+              to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}

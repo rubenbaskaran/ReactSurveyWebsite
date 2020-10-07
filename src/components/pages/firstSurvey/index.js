@@ -5,10 +5,18 @@ import useStyles from "../../styles";
 import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
+import { useSelector } from "react-redux";
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  let conditionalNextPage = "";
+  if (useSelector((state) => state.showPreExtraSection)) {
+    conditionalNextPage = "/preninetydaythoughts";
+  } else {
+    conditionalNextPage = "/videotext";
+  }
 
   const firstQuestion = "Hvor tit drikker du noget, der indeholder alkohol?";
   const firstQuestionAnswers = [
@@ -270,7 +278,7 @@ function FirstSurvey() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/preninetydaythoughts"
+              to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}

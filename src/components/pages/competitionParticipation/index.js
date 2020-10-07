@@ -5,10 +5,18 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
+import { useSelector } from "react-redux";
 
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+
+  let conditionalPreviousPage = "";
+  if (useSelector((state) => state.showPostExtraSection)) {
+    conditionalPreviousPage = "/postninetydaythoughts";
+  } else {
+    conditionalPreviousPage = "/secondsurvey";
+  }
 
   return (
     <div>
@@ -28,7 +36,7 @@ function CompetitionParticipation() {
           <Grid container item sm={6} xs={12}>
             <Button
               component={Link}
-              to="/postninetydaythoughts"
+              to={conditionalPreviousPage}
               variant="contained"
               color="primary"
               className={classes.button}
