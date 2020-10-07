@@ -13,11 +13,14 @@ import SecondSurvey from "./components/pages/secondSurvey";
 import PostNinetyDayThoughts from "./components/pages/postNinetyDayThoughts";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
 import "fontsource-roboto";
-import store, { togglePreExtraSectionAction } from "./globalVariables";
+import store, {
+  togglePreExtraSectionAction,
+  togglePostExtraSectionAction,
+} from "./globalVariables";
 
 store.subscribe(() => console.log(store.getState()));
 store.dispatch(togglePreExtraSectionAction());
-store.dispatch(togglePreExtraSectionAction());
+store.dispatch(togglePostExtraSectionAction());
 
 const App = () => {
   return (
