@@ -1,15 +1,17 @@
 import { createStore, combineReducers } from "redux";
 
 // ACTION
-const togglePreExtraSectionAction = () => {
+const togglePreExtraSectionAction = (data) => {
   return {
     type: "togglePreExtraSection",
+    payload: data,
   };
 };
 
-const togglePostExtraSectionAction = () => {
+const togglePostExtraSectionAction = (data) => {
   return {
     type: "togglePostExtraSection",
+    payload: data,
   };
 };
 
@@ -17,7 +19,7 @@ const togglePostExtraSectionAction = () => {
 const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
     case "togglePreExtraSection":
-      return !state;
+      return action.payload;
     default:
       return state;
   }
@@ -26,7 +28,7 @@ const togglePreExtraSectionReducer = (state = false, action) => {
 const togglePostExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
     case "togglePostExtraSection":
-      return !state;
+      return action.payload;
     default:
       return state;
   }

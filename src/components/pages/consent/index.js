@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import store, {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
@@ -25,10 +25,11 @@ function Consent() {
     console.log();
   });
 
-  store.dispatch(togglePreExtraSectionAction());
-  store.dispatch(togglePostExtraSectionAction());
-  store.dispatch(togglePreExtraSectionAction());
-  store.dispatch(togglePostExtraSectionAction());
+  const dispatch = useDispatch();
+  dispatch(togglePreExtraSectionAction("hello"));
+  dispatch(togglePostExtraSectionAction("world"));
+  dispatch(togglePreExtraSectionAction("bye"));
+  dispatch(togglePostExtraSectionAction("moon"));
 
   console.log(
     "useSelector PRE: " + useSelector((state) => state.togglePreExtraSection)
