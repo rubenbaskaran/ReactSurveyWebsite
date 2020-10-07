@@ -3,15 +3,24 @@ import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
+import { useSelector, useDispatch } from "react-redux";
+import { randomVideoNumberAction } from "../../../globalVariables";
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   let url = "";
+  let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
   const urlConfigs = "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1";
 
-  switch (Math.floor(Math.random() * 3) + 1) {
+  if (randomVideoNumber == 0) {
+    randomVideoNumber = Math.floor(Math.random() * 3) + 1;
+    dispatch(randomVideoNumberAction(randomVideoNumber));
+  }
+
+  switch (randomVideoNumber) {
     case 1:
       url = "https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs;
       console.log("video 1");

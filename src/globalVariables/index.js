@@ -15,6 +15,13 @@ const togglePostExtraSectionAction = (data) => {
   };
 };
 
+const randomVideoNumberAction = (data) => {
+  return {
+    type: "setRandomVideo",
+    payload: data,
+  };
+};
+
 // REDUCER
 const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
@@ -34,9 +41,19 @@ const togglePostExtraSectionReducer = (state = false, action) => {
   }
 };
 
+const setRandomVideoReducer = (state = 0, action) => {
+  switch (action.type) {
+    case "setRandomVideo":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const allReducers = combineReducers({
   showPreExtraSection: togglePreExtraSectionReducer,
   showPostExtraSection: togglePostExtraSectionReducer,
+  randomVideoNumber: setRandomVideoReducer,
 });
 
 // STORE
@@ -46,7 +63,11 @@ const store = createStore(
 );
 
 export default store;
-export { togglePreExtraSectionAction, togglePostExtraSectionAction };
+export {
+  togglePreExtraSectionAction,
+  togglePostExtraSectionAction,
+  randomVideoNumberAction,
+};
 
 // CONSUMER
 
