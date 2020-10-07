@@ -30,15 +30,13 @@ function Consent() {
   store.dispatch(togglePreExtraSectionAction());
   store.dispatch(togglePostExtraSectionAction());
 
-  // console.log(
-  //   "useSelector PRE: " +
-  //     useSelector((state) => state.togglePreExtraSectionReducer)
-  // );
+  console.log(
+    "useSelector PRE: " + useSelector((state) => state.togglePreExtraSection)
+  );
 
-  // console.log(
-  //   "useSelector POST: " +
-  //     useSelector((state) => state.togglePostExtraSectionReducer)
-  // );
+  console.log(
+    "useSelector POST: " + useSelector((state) => state.togglePostExtraSection)
+  );
 
   function handleRecaptcha() {
     setDisabled(!disabled);
