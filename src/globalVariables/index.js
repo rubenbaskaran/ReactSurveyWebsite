@@ -16,7 +16,7 @@ const togglePostExtraSectionAction = (data) => {
 };
 
 // REDUCER
-const togglePreExtraSectionReducer = (state = false, action) => {
+const togglePreExtraSectionReducer = (state = "/videotext", action) => {
   switch (action.type) {
     case "togglePreExtraSection":
       return action.payload;
@@ -25,7 +25,10 @@ const togglePreExtraSectionReducer = (state = false, action) => {
   }
 };
 
-const togglePostExtraSectionReducer = (state = false, action) => {
+const togglePostExtraSectionReducer = (
+  state = "/competitionparticipation",
+  action
+) => {
   switch (action.type) {
     case "togglePostExtraSection":
       return action.payload;
@@ -47,3 +50,35 @@ const store = createStore(
 
 export default store;
 export { togglePreExtraSectionAction, togglePostExtraSectionAction };
+
+// CONSUMER
+
+// import { useSelector, useDispatch } from "react-redux";
+// import store, {
+//   togglePreExtraSectionAction,
+//   togglePostExtraSectionAction,
+// } from "../../../globalVariables";
+
+// store.subscribe(() => {
+//   console.log(
+//     "PRE: " +
+//       store.getState().togglePreExtraSection +
+//       ". POST: " +
+//       store.getState().togglePostExtraSection
+//   );
+//   console.log();
+// });
+
+// const dispatch = useDispatch();
+// dispatch(togglePreExtraSectionAction("hello"));
+// dispatch(togglePostExtraSectionAction("world"));
+// dispatch(togglePreExtraSectionAction("bye"));
+// dispatch(togglePostExtraSectionAction("moon"));
+
+// console.log(
+//   "useSelector PRE: " + useSelector((state) => state.togglePreExtraSection)
+// );
+
+// console.log(
+//   "useSelector POST: " + useSelector((state) => state.togglePostExtraSection)
+// );

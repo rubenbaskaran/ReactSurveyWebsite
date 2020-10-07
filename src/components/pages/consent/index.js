@@ -4,40 +4,11 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
-import { useSelector, useDispatch } from "react-redux";
-import store, {
-  togglePreExtraSectionAction,
-  togglePostExtraSectionAction,
-} from "../../../globalVariables";
 
 function Consent() {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
-
-  store.subscribe(() => {
-    console.log(
-      "PRE: " +
-        store.getState().togglePreExtraSection +
-        ". POST: " +
-        store.getState().togglePostExtraSection
-    );
-    console.log();
-  });
-
-  const dispatch = useDispatch();
-  dispatch(togglePreExtraSectionAction("hello"));
-  dispatch(togglePostExtraSectionAction("world"));
-  dispatch(togglePreExtraSectionAction("bye"));
-  dispatch(togglePostExtraSectionAction("moon"));
-
-  console.log(
-    "useSelector PRE: " + useSelector((state) => state.togglePreExtraSection)
-  );
-
-  console.log(
-    "useSelector POST: " + useSelector((state) => state.togglePostExtraSection)
-  );
 
   function handleRecaptcha() {
     setDisabled(!disabled);
