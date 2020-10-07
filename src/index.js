@@ -13,10 +13,7 @@ import SecondSurvey from "./components/pages/secondSurvey";
 import PostNinetyDayThoughts from "./components/pages/postNinetyDayThoughts";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
 import "fontsource-roboto";
-import store, {
-  togglePreExtraSectionAction,
-  togglePostExtraSectionAction,
-} from "./globalVariables";
+import store from "./globalVariables";
 import { Provider } from "react-redux";
 
 const App = () => {
