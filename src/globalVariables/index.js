@@ -33,8 +33,8 @@ const togglePostExtraSectionReducer = (state = false, action) => {
 };
 
 const allReducers = combineReducers({
-  togglePreExtraSectionReducer,
-  togglePostExtraSectionReducer,
+  togglePreExtraSection: togglePreExtraSectionReducer,
+  togglePostExtraSection: togglePostExtraSectionReducer,
 });
 
 // STORE

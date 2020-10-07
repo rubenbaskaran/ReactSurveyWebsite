@@ -4,11 +4,41 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
+import { useSelector } from "react-redux";
+import store, {
+  togglePreExtraSectionAction,
+  togglePostExtraSectionAction,
+} from "../../../globalVariables";
 
 function Consent() {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
+
+  store.subscribe(() => {
+    console.log(
+      "PRE: " +
+        store.getState().togglePreExtraSection +
+        ". POST: " +
+        store.getState().togglePostExtraSection
+    );
+    console.log();
+  });
+
+  store.dispatch(togglePreExtraSectionAction());
+  store.dispatch(togglePostExtraSectionAction());
+  store.dispatch(togglePreExtraSectionAction());
+  store.dispatch(togglePostExtraSectionAction());
+
+  // console.log(
+  //   "useSelector PRE: " +
+  //     useSelector((state) => state.togglePreExtraSectionReducer)
+  // );
+
+  // console.log(
+  //   "useSelector POST: " +
+  //     useSelector((state) => state.togglePostExtraSectionReducer)
+  // );
 
   function handleRecaptcha() {
     setDisabled(!disabled);

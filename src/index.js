@@ -17,38 +17,35 @@ import store, {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
 } from "./globalVariables";
-
-store.subscribe(() => console.log(store.getState()));
-store.dispatch(togglePreExtraSectionAction());
-store.dispatch(togglePostExtraSectionAction());
-// store.dispatch(togglePreExtraSectionAction());
-// store.dispatch(togglePostExtraSectionAction());
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path="/" component={Consent} />
-        <Route exact path="/personalinfo" component={PersonalInfo} />
-        <Route exact path="/firstsurvey" component={FirstSurvey} />
-        <Route
-          exact
-          path="/preninetydaythoughts"
-          component={PreNinetyDayThoughts}
-        />
-        <Route exact path="/videotext" component={VideoText} />
-        <Route exact path="/randomvideo" component={RandomVideo} />
-        <Route exact path="/secondsurvey" component={SecondSurvey} />
-        <Route
-          exact
-          path="/postninetydaythoughts"
-          component={PostNinetyDayThoughts}
-        />
-        <Route
-          exact
-          path="/competitionparticipation"
-          component={CompetitionParticipation}
-        />
+        <Provider store={store}>
+          <Route exact path="/" component={Consent} />
+          <Route exact path="/personalinfo" component={PersonalInfo} />
+          <Route exact path="/firstsurvey" component={FirstSurvey} />
+          <Route
+            exact
+            path="/preninetydaythoughts"
+            component={PreNinetyDayThoughts}
+          />
+          <Route exact path="/videotext" component={VideoText} />
+          <Route exact path="/randomvideo" component={RandomVideo} />
+          <Route exact path="/secondsurvey" component={SecondSurvey} />
+          <Route
+            exact
+            path="/postninetydaythoughts"
+            component={PostNinetyDayThoughts}
+          />
+          <Route
+            exact
+            path="/competitionparticipation"
+            component={CompetitionParticipation}
+          />
+        </Provider>
       </Switch>
     </HashRouter>
   );
