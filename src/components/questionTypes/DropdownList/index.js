@@ -12,6 +12,11 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { useDispatch } from "react-redux";
+import store, {
+  togglePreExtraSectionAction,
+  togglePostExtraSectionAction,
+} from "../../../globalVariables";
 
 const useStyles = makeStyles({
   paper: {
@@ -52,10 +57,33 @@ const useStyles = makeStyles({
 function DropdownList(props) {
   const [rating, setRating] = React.useState("");
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const handleChange = (event) => {
+  const HandleChange = (event) => {
     console.log(event.target.value);
     setRating(event.target.value);
+
+    if (props.showExtraSection != "none") {
+      if (props.showExtraSection == "first") {
+        if (
+          event.target.value == "Ja" ||
+          event.target.value == "Nej, men har gjort det tidligere i livet"
+        ) {
+          dispatch(togglePreExtraSectionAction(true));
+        } else {
+          dispatch(togglePreExtraSectionAction(false));
+        }
+      } else if (props.showExtraSection == "second") {
+        if (
+          event.target.value == "Ja" ||
+          event.target.value == "Nej, men har gjort det tidligere i livet"
+        ) {
+          dispatch(togglePostExtraSectionAction(true));
+        } else {
+          dispatch(togglePostExtraSectionAction(false));
+        }
+      }
+    }
   };
 
   return (
@@ -69,7 +97,7 @@ function DropdownList(props) {
           <FormControl className={classes.formControl}>
             <Select
               value={rating}
-              onChange={handleChange}
+              onChange={HandleChange}
               displayEmpty
               className={classes.selectEmpty}
               inputProps={{ "aria-label": "Without label" }}
