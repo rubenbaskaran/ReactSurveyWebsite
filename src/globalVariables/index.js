@@ -38,7 +38,10 @@ const allReducers = combineReducers({
 });
 
 // STORE
-const store = createStore(allReducers);
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default store;
 export { togglePreExtraSectionAction, togglePostExtraSectionAction };

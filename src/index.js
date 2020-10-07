@@ -21,6 +21,8 @@ import store, {
 store.subscribe(() => console.log(store.getState()));
 store.dispatch(togglePreExtraSectionAction());
 store.dispatch(togglePostExtraSectionAction());
+// store.dispatch(togglePreExtraSectionAction());
+// store.dispatch(togglePostExtraSectionAction());
 
 const App = () => {
   return (
