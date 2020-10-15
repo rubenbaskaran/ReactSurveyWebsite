@@ -26,7 +26,6 @@ function SecondSurvey() {
     "Vil ikke svare",
   ];
 
-  // TODO: Add "Vil ikke svare"
   const numberRatingScale = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const agreeDisagreeOne =
     "Personer med alkoholproblemer er anderledes end resten af befolkningen";
