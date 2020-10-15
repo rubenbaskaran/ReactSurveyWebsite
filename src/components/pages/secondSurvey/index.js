@@ -7,8 +7,8 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 
-// 4. Pass down callback method for saving question number + question text + answer for each question as states
-// 4a. Save all data in local storage and DB when user presses 'Næste'
+// TODO: 4. Pass down callback method for saving question number + question text + answer for each question as states
+// TODO: 4a. Save all data in local storage and DB when user presses 'Næste'
 
 function SecondSurvey() {
   const [spacing] = React.useState(1);

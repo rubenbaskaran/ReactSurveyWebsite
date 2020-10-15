@@ -7,8 +7,8 @@ import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useSelector } from "react-redux";
 
-// 2. Pass down callback method for saving question number + question text + answer for each question as states
-// 2a. Save all data in local storage and DB when user presses 'Næste'
+// TODO: 2. Pass down callback method for saving question number + question text + answer for each question as states
+// TODO: 2a. Save all data in local storage and DB when user presses 'Næste'
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
