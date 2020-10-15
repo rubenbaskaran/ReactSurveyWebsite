@@ -76,6 +76,13 @@ function RatingScale(props) {
           ))}
           {(props.agreeDisagree == true && <label>Meget enig</label>) ||
             (props.notAtAllVeryMuch == true && <label>I meget høj grad</label>)}
+          <FormControlLabel
+            key={10}
+            value={10}
+            control={<Radio />}
+            label={"Vil ikke svare"}
+            labelPlacement="top"
+          />
         </div>
       </RadioGroup>
       {props.required == true && (

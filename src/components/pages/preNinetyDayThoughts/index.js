@@ -27,7 +27,6 @@ function PreNinetyDayThoughts() {
     "Nogle gange",
     "Ofte",
     "Meget ofte",
-    "Vil ikke svare",
   ];
 
   return (

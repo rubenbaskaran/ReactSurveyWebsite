@@ -25,7 +25,6 @@ function FirstSurvey() {
     "2-4 gange om måneden",
     "2-3 gange om ugen",
     "4 gange om ugen eller oftere",
-    "Vil ikke svare",
   ];
 
   const secondQuestion =
@@ -36,7 +35,6 @@ function FirstSurvey() {
     "5-6 genstande",
     "7-9 genstande",
     "10 eller flere genstande",
-    "Vil ikke svare",
   ];
 
   const thirdQuestion =
@@ -47,7 +45,6 @@ function FirstSurvey() {
     "Månedligt",
     "Ugentligt",
     "Dagligt eller næsten dagligt",
-    "Vil ikke svare",
   ];
 
   const previousTreatment = [
@@ -65,7 +62,7 @@ function FirstSurvey() {
   ];
 
   // TODO: Add "Vil ikke svare"
-  const numberRatingScale = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const numberRatingScale = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const agreeDisagreeOne =
     "Personer med alkoholproblemer er anderledes end resten af befolkningen";
   const agreeDisagreeTwo =
