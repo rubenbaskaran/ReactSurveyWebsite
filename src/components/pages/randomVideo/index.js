@@ -45,7 +45,7 @@ function RandomVideo() {
               width="760"
               height="515"
               src={url}
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
