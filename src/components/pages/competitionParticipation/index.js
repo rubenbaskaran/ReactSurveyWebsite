@@ -7,6 +7,9 @@ import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
 import { useSelector } from "react-redux";
 
+// 6. Pass down callback method for saving question number + question text + answer for each question as states
+// 6a. Save all data in local storage and DB when user presses 'Næste'
+
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

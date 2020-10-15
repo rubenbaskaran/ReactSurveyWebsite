@@ -7,6 +7,9 @@ import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
 import ChildrenQuestion from "../../questionTypes/children";
 
+// 1. Pass down callback method for saving question number + question text + answer for each question as states
+// 1a. Save all data in local storage and DB when user presses 'Næste'
+
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();

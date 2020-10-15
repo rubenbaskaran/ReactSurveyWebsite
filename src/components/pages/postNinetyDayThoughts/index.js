@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 
+// 5. Pass down callback method for saving question number + question text + answer for each question as states
+// 5a. Save all data in local storage and DB when user presses 'Næste'
+
 function PostNinetyDayThoughts() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
