@@ -17,6 +17,7 @@ function PersonalInfo() {
   for (var i = 16; i < 100; i++) {
     age.push(i.toString());
   }
+  age.push("Vil ikke svare");
 
   const education = [
     "Grundskole",
