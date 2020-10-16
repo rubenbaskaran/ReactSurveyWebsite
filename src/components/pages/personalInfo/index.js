@@ -66,7 +66,7 @@ function PersonalInfo() {
     "Vil ikke svare",
   ];
 
-  // TODO: 1a. Save all data in local storage and DB when user presses 'Næste'
+  // TODO: 1a. Save all data in states and then in DB when user presses 'Næste'
   const SaveUserInputAsState = (id, question, answer) => {
     console.log("ID: " + id + ". Question: " + question + " Answer: " + answer);
   };

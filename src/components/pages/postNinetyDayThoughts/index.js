@@ -7,7 +7,7 @@ import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 
 // TODO: 5. Pass down callback method for saving question number + question text + answer for each question as states
-// TODO: 5a. Save all data in local storage and DB when user presses 'Næste'
+// TODO: 5a. Save all data in states and then in DB when user presses 'Næste'
 
 function PostNinetyDayThoughts() {
   const [spacing] = React.useState(1);
