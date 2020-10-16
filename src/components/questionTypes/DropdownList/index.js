@@ -60,7 +60,7 @@ function DropdownList(props) {
   const dispatch = useDispatch();
 
   const HandleChange = (event) => {
-    props.callback(event.target.value);
+    props.callback(props.id, props.question, event.target.value);
     setRating(event.target.value);
 
     if (props.showExtraSection != "none") {
