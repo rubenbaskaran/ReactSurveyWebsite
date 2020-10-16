@@ -66,9 +66,34 @@ function PersonalInfo() {
     "Vil ikke svare",
   ];
 
-  // TODO: 1a. Save all data in states and then in DB when user presses 'Næste'
+  let data = [];
   const SaveUserInputAsState = (id, question, answer) => {
-    console.log("ID: " + id + ". Question: " + question + " Answer: " + answer);
+    console.log(
+      "[Saving state] - ID: " +
+        id +
+        ". Question: " +
+        question +
+        " Answer: " +
+        answer
+    );
+
+    data[id] = { id: id, question: question, answer: answer };
+  };
+
+  const SaveStateDataInDb = () => {
+    console.log("Printing out all state data: ");
+    data.forEach(function (item, index, array) {
+      console.log(
+        "Index: " +
+          index +
+          ". Value: " +
+          item.id +
+          ". " +
+          item.question +
+          " " +
+          item.answer
+      );
+    });
   };
 
   return (
@@ -169,6 +194,7 @@ function PersonalInfo() {
               variant="contained"
               color="primary"
               className={classes.button}
+              onClick={SaveStateDataInDb}
             >
               Gem og gå til næste
             </Button>
