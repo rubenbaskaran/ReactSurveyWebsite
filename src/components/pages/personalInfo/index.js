@@ -69,6 +69,10 @@ function PersonalInfo() {
     "Vil ikke svare",
   ];
 
+  const temp = (name) => {
+    console.log("Hello from: " + name);
+  };
+
   return (
     <div>
       <Container fixed>
@@ -84,6 +88,7 @@ function PersonalInfo() {
               placeholder="Angiv et svar..."
               required={false}
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -93,6 +98,7 @@ function PersonalInfo() {
               placeholder="Angiv et svar..."
               required={false}
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -101,6 +107,7 @@ function PersonalInfo() {
               items={occupation}
               placeholder="Angiv et svar..."
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -109,6 +116,7 @@ function PersonalInfo() {
               items={education}
               placeholder="Angiv et svar..."
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -117,6 +125,7 @@ function PersonalInfo() {
               items={maritalStatus}
               placeholder="Angiv et svar..."
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -125,6 +134,7 @@ function PersonalInfo() {
               items={childrenStatus}
               placeholder="Angiv et svar..."
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid item xs={12}>
@@ -133,6 +143,7 @@ function PersonalInfo() {
               items={origin}
               placeholder="Angiv et svar..."
               showExtraSection="none"
+              callback={temp}
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
