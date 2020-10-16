@@ -56,10 +56,12 @@ const useStyles = makeStyles({
 
 function DropdownList(props) {
   const [rating, setRating] = React.useState("");
+  const [dirty, setDirty] = React.useState(false);
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const HandleChange = (event) => {
+    setDirty(true);
     props.callback(props.id, props.question, event.target.value);
     setRating(event.target.value);
 
@@ -114,7 +116,7 @@ function DropdownList(props) {
           </FormControl>
         </div>
       </RadioGroup>
-      {props.required == true && (
+      {dirty == false && (
         <div className={classes.required}>
           <label>*svar mangler</label>
         </div>

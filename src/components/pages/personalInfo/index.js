@@ -9,6 +9,7 @@ import ChildrenQuestion from "../../questionTypes/children";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
+  const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
@@ -77,23 +78,27 @@ function PersonalInfo() {
         answer
     );
 
-    data[id] = { id: id, question: question, answer: answer };
+    data[id - 1] = { id: id, question: question, answer: answer };
+    if (data.length == 7 && !data.includes(undefined)) {
+      setDisabled(false);
+      console.log("Printing out all state data: ");
+      data.forEach(function (item, index, array) {
+        console.log(
+          "Index: " +
+            index +
+            ". Value: " +
+            item.id +
+            ". " +
+            item.question +
+            " " +
+            item.answer
+        );
+      });
+    }
   };
 
   const SaveStateDataInDb = () => {
-    console.log("Printing out all state data: ");
-    data.forEach(function (item, index, array) {
-      console.log(
-        "Index: " +
-          index +
-          ". Value: " +
-          item.id +
-          ". " +
-          item.question +
-          " " +
-          item.answer
-      );
-    });
+    data = [];
   };
 
   return (
@@ -195,6 +200,7 @@ function PersonalInfo() {
               color="primary"
               className={classes.button}
               onClick={SaveStateDataInDb}
+              disabled={disabled}
             >
               Gem og gå til næste
             </Button>
