@@ -69,36 +69,35 @@ function PersonalInfo() {
 
   let data = [];
   const SaveUserInputAsState = (id, question, answer) => {
-    console.log(
-      "[Saving state] - ID: " +
-        id +
-        ". Question: " +
-        question +
-        " Answer: " +
-        answer
-    );
-
     data[id - 1] = { id: id, question: question, answer: answer };
     if (data.length == 7 && !data.includes(undefined)) {
-      setDisabled(false);
-      console.log("Printing out all state data: ");
-      data.forEach(function (item, index, array) {
-        console.log(
-          "Index: " +
-            index +
-            ". Value: " +
-            item.id +
-            ". " +
-            item.question +
-            " " +
-            item.answer
-        );
-      });
+      if (disabled) {
+        // TODO: Re-render happens here, i.e. data variable is reset (FIX!)
+        PrintOut();
+        setDisabled(false);
+      }
     }
   };
 
   const SaveStateDataInDb = () => {
-    data = [];
+    console.log("called");
+    PrintOut();
+  };
+
+  const PrintOut = () => {
+    console.log("Printing out all state data: ");
+    data.forEach(function (item, index, array) {
+      console.log(
+        "Index: " +
+          index +
+          ". Value: " +
+          item.id +
+          ". " +
+          item.question +
+          " " +
+          item.answer
+      );
+    });
   };
 
   return (
