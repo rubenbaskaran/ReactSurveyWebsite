@@ -10,9 +10,10 @@ import { useEffect } from "react";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
-  const [disabled, setDisabled] = React.useState(true);
+  const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
   const classes = useStyles();
+  const numberOfQuestions = 7;
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 
@@ -70,21 +71,46 @@ function PersonalInfo() {
   ];
 
   const SaveUserInputAsState = (id, question, answer) => {
-    setData((oldState) => [
-      ...oldState,
-      { id: id, question: question, answer: answer },
-    ]);
+    let dataPlaceholder = [...data];
+    let updated = false;
+
+    dataPlaceholder.forEach((item) => {
+      if (item.id == id) {
+        console.log("update existing item");
+        item.answer = answer;
+        setData(dataPlaceholder);
+        updated = true;
+      }
+    });
+
+    if (updated == false) {
+      console.log("add new item");
+      setData((oldState) => [
+        ...oldState,
+        { id: id, question: question, answer: answer },
+      ]);
+    }
   };
 
   useEffect(() => {
-    if (data.length >= 7) {
-      if (disabled) {
-        setDisabled(false);
+    if (data.length == numberOfQuestions) {
+      if (nextButtonDisabled) {
+        setNextButtonDisabled(false);
       }
     }
-
-    console.log(data);
   });
+
+  const PrintAllData = () => {
+    let output = "";
+
+    // TODO: Sort array before saving
+    data.forEach((item) => {
+      let concatenated = item.question + " , " + item.answer + "\n";
+      output += concatenated;
+    });
+
+    alert(output);
+  };
 
   return (
     <div>
@@ -184,8 +210,8 @@ function PersonalInfo() {
               variant="contained"
               color="primary"
               className={classes.button}
-              onClick={PrintOutAllData}
-              disabled={disabled}
+              disabled={nextButtonDisabled}
+              onClick={PrintAllData}
             >
               Gem og gå til næste
             </Button>
