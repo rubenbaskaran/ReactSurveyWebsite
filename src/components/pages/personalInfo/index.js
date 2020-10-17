@@ -101,11 +101,12 @@ function PersonalInfo() {
   });
 
   const PrintAllData = () => {
-    let output = "";
+    let dataPlaceholder = [...data];
+    dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    // TODO: Sort array before saving
-    data.forEach((item) => {
-      let concatenated = item.question + " , " + item.answer + "\n";
+    let output = "";
+    dataPlaceholder.forEach((item) => {
+      let concatenated = item.question + " - " + item.answer + "\n";
       output += concatenated;
     });
 
