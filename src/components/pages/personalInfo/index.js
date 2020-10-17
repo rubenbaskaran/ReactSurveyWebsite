@@ -10,6 +10,8 @@ import ChildrenQuestion from "../../questionTypes/children";
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
+  const [questionOne, setQuestionOne] = React.useState();
+
   const classes = useStyles();
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
@@ -77,6 +79,19 @@ function PersonalInfo() {
         setDisabled(false);
       }
     }
+
+    // TODO: Append to state array instead of overwriting
+    setQuestionOne({
+      ...questionOne,
+      temp: [{ id: "a", question: "b", answer: "c" }],
+    });
+
+    setQuestionOne({
+      ...questionOne,
+      temp: [{ id: "d", question: "e", answer: "f" }],
+    });
+
+    console.log(questionOne);
   };
 
   const SaveStateDataInDb = () => {
