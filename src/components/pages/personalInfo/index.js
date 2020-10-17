@@ -6,12 +6,12 @@ import LinearWithValueLabel from "../../progressBar";
 import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
 import ChildrenQuestion from "../../questionTypes/children";
+import { useEffect } from "react";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
-  const [questionOne, setQuestionOne] = React.useState();
-
+  const [data, setData] = React.useState([]);
   const classes = useStyles();
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
@@ -69,51 +69,22 @@ function PersonalInfo() {
     "Vil ikke svare",
   ];
 
-  let data = [];
   const SaveUserInputAsState = (id, question, answer) => {
-    data[id - 1] = { id: id, question: question, answer: answer };
-    if (data.length == 7 && !data.includes(undefined)) {
+    setData((oldState) => [
+      ...oldState,
+      { id: id, question: question, answer: answer },
+    ]);
+  };
+
+  useEffect(() => {
+    if (data.length >= 7) {
       if (disabled) {
-        // TODO: Re-render happens here, i.e. data variable is reset (FIX!)
-        PrintOut();
         setDisabled(false);
       }
     }
 
-    // TODO: Append to state array instead of overwriting
-    setQuestionOne({
-      ...questionOne,
-      temp: [{ id: "a", question: "b", answer: "c" }],
-    });
-
-    setQuestionOne({
-      ...questionOne,
-      temp: [{ id: "d", question: "e", answer: "f" }],
-    });
-
-    console.log(questionOne);
-  };
-
-  const SaveStateDataInDb = () => {
-    console.log("called");
-    PrintOut();
-  };
-
-  const PrintOut = () => {
-    console.log("Printing out all state data: ");
-    data.forEach(function (item, index, array) {
-      console.log(
-        "Index: " +
-          index +
-          ". Value: " +
-          item.id +
-          ". " +
-          item.question +
-          " " +
-          item.answer
-      );
-    });
-  };
+    console.log(data);
+  });
 
   return (
     <div>
@@ -213,7 +184,7 @@ function PersonalInfo() {
               variant="contained"
               color="primary"
               className={classes.button}
-              onClick={SaveStateDataInDb}
+              onClick={PrintOutAllData}
               disabled={disabled}
             >
               Gem og gå til næste
