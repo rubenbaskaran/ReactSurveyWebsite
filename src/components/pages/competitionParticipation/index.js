@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
-import GenderQuestion from "../../questionTypes/gender";
 import Textfield from "../../questionTypes/Textfield";
 import { useSelector } from "react-redux";
 

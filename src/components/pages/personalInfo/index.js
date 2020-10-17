@@ -3,16 +3,14 @@ import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
-import GenderQuestion from "../../questionTypes/gender";
 import DropdownList from "../../questionTypes/DropdownList";
-import ChildrenQuestion from "../../questionTypes/children";
 import { useEffect } from "react";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
+  const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
-  const classes = useStyles();
   const numberOfQuestions = 7;
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
@@ -70,13 +68,13 @@ function PersonalInfo() {
     "Vil ikke svare",
   ];
 
-  const SaveUserInputAsState = (id, question, answer) => {
+  const SaveUserInputInState = (id, question, answer) => {
     let dataPlaceholder = [...data];
     let updated = false;
 
     dataPlaceholder.forEach((item) => {
       if (item.id == id) {
-        console.log("update existing item");
+        console.log("updating existing item");
         item.answer = answer;
         setData(dataPlaceholder);
         updated = true;
@@ -85,8 +83,8 @@ function PersonalInfo() {
 
     if (updated == false) {
       console.log("add new item");
-      setData((oldState) => [
-        ...oldState,
+      setData((oldData) => [
+        ...oldData,
         { id: id, question: question, answer: answer },
       ]);
     }
@@ -129,7 +127,7 @@ function PersonalInfo() {
               placeholder="Angiv et svar..."
               required={false}
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -140,7 +138,7 @@ function PersonalInfo() {
               placeholder="Angiv et svar..."
               required={false}
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -150,7 +148,7 @@ function PersonalInfo() {
               items={occupation}
               placeholder="Angiv et svar..."
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -160,7 +158,7 @@ function PersonalInfo() {
               items={education}
               placeholder="Angiv et svar..."
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -170,7 +168,7 @@ function PersonalInfo() {
               items={maritalStatus}
               placeholder="Angiv et svar..."
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -180,7 +178,7 @@ function PersonalInfo() {
               items={childrenStatus}
               placeholder="Angiv et svar..."
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -190,7 +188,7 @@ function PersonalInfo() {
               items={origin}
               placeholder="Angiv et svar..."
               showExtraSection="none"
-              callback={SaveUserInputAsState}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
