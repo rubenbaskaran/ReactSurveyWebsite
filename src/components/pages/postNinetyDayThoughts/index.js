@@ -56,6 +56,10 @@ function PostNinetyDayThoughts() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (data.length == numberOfQuestions) {
       if (nextButtonDisabled) {
         setNextButtonDisabled(false);

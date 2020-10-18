@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
+import { useEffect } from "react";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -18,6 +19,10 @@ function Consent() {
   script.src = "https://www.google.com/recaptcha/api.js";
   script.async = true;
   document.body.appendChild(script);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
