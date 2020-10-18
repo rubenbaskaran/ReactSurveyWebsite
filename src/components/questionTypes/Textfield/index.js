@@ -50,13 +50,21 @@ const useStyles = makeStyles({
 function Textfield(props) {
   const classes = useStyles();
   const [dirty, setDirty] = React.useState(true); // Change to false for future purposes
+  const [emailInvalid, setEmailInvalid] = React.useState(false);
 
   const handleChange = (event) => {
     // setDirty(true); // Uncomment for future purposes
+    if (
+      (event.target.value.includes("@") && event.target.value.includes(".")) ||
+      event.target.value == ""
+    ) {
+      setEmailInvalid(false);
+    } else {
+      setEmailInvalid(true);
+    }
     props.callback(props.id, props.question, event.target.value);
   };
 
-  // TODO: Change textfield to e-mail field
   return (
     <Paper className={classes.paper}>
       <RadioGroup row>
@@ -70,6 +78,7 @@ function Textfield(props) {
           placeholder="Angiv e-mail adresse..."
           fullWidth
           onChange={handleChange}
+          helperText={emailInvalid ? "Ugyldig email" : ""}
         />
       </RadioGroup>
       {dirty == false && (
