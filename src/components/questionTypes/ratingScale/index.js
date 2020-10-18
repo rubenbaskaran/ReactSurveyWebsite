@@ -54,6 +54,7 @@ function RatingScale(props) {
 
   const handleChange = (event) => {
     setDirty(true);
+    // TODO: Map answer option ID to answer option text
     props.callback(props.id, props.question, event.target.value);
     setRating(Number(event.target.value));
   };

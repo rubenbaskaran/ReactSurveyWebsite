@@ -56,6 +56,7 @@ function Textfield(props) {
     props.callback(props.id, props.question, event.target.value);
   };
 
+  // TODO: Change textfield to e-mail field
   return (
     <Paper className={classes.paper}>
       <RadioGroup row>
