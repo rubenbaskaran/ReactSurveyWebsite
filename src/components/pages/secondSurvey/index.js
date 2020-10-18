@@ -6,13 +6,14 @@ import DropdownList from "../../questionTypes/DropdownList";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
-
-// TODO: 4. Pass down callback method for saving question number + question text + answer for each question as states
-// TODO: 4a. Save all data in states and then in DB when user presses 'Næste'
+import { useEffect } from "react";
 
 function SecondSurvey() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
+  const [data, setData] = React.useState([]);
+  const numberOfQuestions = 0; // TODO: Set back to 8 (or whatever number of questions)
 
   let conditionalNextPage = "";
   if (useSelector((state) => state.showPostExtraSection)) {
@@ -56,6 +57,49 @@ function SecondSurvey() {
     "I hvor høj grad har du lyst til at søge behandling for at ændre dine alkoholvaner?",
   ];
 
+  const SaveUserInputInState = (id, question, answer) => {
+    let dataPlaceholder = [...data];
+    let updated = false;
+
+    dataPlaceholder.forEach((item) => {
+      if (item.id == id) {
+        console.log("updating existing item");
+        item.answer = answer;
+        setData(dataPlaceholder);
+        updated = true;
+      }
+    });
+
+    if (updated == false) {
+      console.log("add new item");
+      setData((oldData) => [
+        ...oldData,
+        { id: id, question: question, answer: answer },
+      ]);
+    }
+  };
+
+  useEffect(() => {
+    if (data.length == numberOfQuestions) {
+      if (nextButtonDisabled) {
+        setNextButtonDisabled(false);
+      }
+    }
+  });
+
+  const PrintAllData = () => {
+    let dataPlaceholder = [...data];
+    dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
+
+    let output = "";
+    dataPlaceholder.forEach((item) => {
+      let concatenated = item.question + " - " + item.answer + "\n";
+      output += concatenated;
+    });
+
+    alert(output);
+  };
+
   return (
     <div>
       <Container fixed>
@@ -66,20 +110,24 @@ function SecondSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
+              id={1}
               question="Kan du huske at have set denne film før?"
               placeholder="Angiv et svar..."
               required={false}
               items={doYouRememberItems}
               showExtraSection="none"
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <DropdownList
+              id={2}
               question="Nu hvor du har set filmen, føler du så, at du drikker for meget?"
               placeholder="Angiv et svar..."
               required={false}
               items={drinkingTooMuchItems}
               showExtraSection="second"
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -87,74 +135,92 @@ function SecondSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={3}
               question={agreeDisagreeOne}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={4}
               question={agreeDisagreeTwo}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={5}
               question={agreeDisagreeThree}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={6}
               question={agreeDisagreeFour}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={7}
               question={agreeDisagreeFive}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={8}
               question={agreeDisagreeSix}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={9}
               question={agreeDisagreeSeven}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={10}
               question={agreeDisagreeEight}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={11}
               question={agreeDisagreeNine}
               answers={numberRatingScale}
               required={false}
               agreeDisagree={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
@@ -162,34 +228,42 @@ function SecondSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={12}
               question={questionsForAll[0]}
               answers={numberRatingScale}
               required={false}
               notAtAllVeryMuch={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={13}
               question={questionsForAll[1]}
               answers={numberRatingScale}
               required={false}
               notAtAllVeryMuch={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={14}
               question={questionsForAll[2]}
               answers={numberRatingScale}
               required={false}
               notAtAllVeryMuch={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={15}
               question={questionsForAll[3]}
               answers={numberRatingScale}
               required={false}
               notAtAllVeryMuch={true}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -210,6 +284,8 @@ function SecondSurvey() {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={nextButtonDisabled}
+              onClick={PrintAllData}
             >
               Gem og gå til næste
             </Button>
