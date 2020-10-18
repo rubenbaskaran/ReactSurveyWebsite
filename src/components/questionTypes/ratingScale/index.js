@@ -54,7 +54,7 @@ function RatingScale(props) {
 
   const handleChange = (event) => {
     setDirty(true);
-    console.log(event.target.value);
+    props.callback(props.id, props.question, event.target.value);
     setRating(Number(event.target.value));
   };
 
