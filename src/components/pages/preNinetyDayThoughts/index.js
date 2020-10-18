@@ -12,7 +12,7 @@ function PreNinetyDayThoughts() {
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
-  const numberOfQuestions = 0; // TODO: Set back to 8 (or whatever number of questions)
+  const numberOfQuestions = 8;
 
   const ninetyDayThoughts = [
     "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",

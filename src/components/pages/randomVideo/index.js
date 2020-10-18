@@ -49,18 +49,7 @@ function RandomVideo() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
-          <Grid container item sm={6} xs={12}>
-            <Button
-              component={Link}
-              to="/videotext"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Tilbage
-            </Button>
-          </Grid>
-          <Grid container item sm={6} xs={12}>
+          <Grid container xs={12}>
             <Button
               component={Link}
               to="/secondsurvey"

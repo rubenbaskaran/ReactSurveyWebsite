@@ -13,7 +13,7 @@ function FirstSurvey() {
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
-  const numberOfQuestions = 0; // TODO: Set back to 19 (or whatever number of questions)
+  const numberOfQuestions = 19;
 
   let conditionalNextPage = "";
   if (useSelector((state) => state.showPreExtraSection)) {

@@ -23,7 +23,9 @@ function CompetitionParticipation() {
   };
 
   const PrintAllData = () => {
-    alert(data.question + " - " + data.answer);
+    if (data.answer != undefined) {
+      alert(data.question + " - " + data.answer);
+    }
   };
 
   return (
