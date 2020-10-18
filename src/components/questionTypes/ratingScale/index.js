@@ -7,6 +7,7 @@ import {
   Radio,
   Grid,
 } from "@material-ui/core";
+import { useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -50,12 +51,26 @@ const useStyles = makeStyles({
 function RatingScale(props) {
   const [rating, setRating] = React.useState("");
   const [dirty, setDirty] = React.useState(false);
+  const [listOfAnswerOptions, setListOfAnswerOptions] = React.useState([]);
   const classes = useStyles();
+
+  if (listOfAnswerOptions.length == 0) {
+    props.answers.map((value) => {
+      setListOfAnswerOptions((oldList) => [...oldList, value]);
+    });
+  }
 
   const handleChange = (event) => {
     setDirty(true);
-    // TODO: Map answer option ID to answer option text
-    props.callback(props.id, props.question, event.target.value);
+
+    let answer = "";
+    if (event.target.value == 10) {
+      answer = "Vil ikke svare";
+    } else {
+      answer = listOfAnswerOptions[event.target.value];
+    }
+
+    props.callback(props.id, props.question, answer);
     setRating(Number(event.target.value));
   };
 
