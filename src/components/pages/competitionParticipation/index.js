@@ -23,7 +23,7 @@ function CompetitionParticipation() {
   };
 
   const PrintAllData = () => {
-    if (data.answer != undefined && data.answer != "") {
+    if (data.answer != undefined && data.answer.trim().length != 0) {
       alert(data.id + " - " + data.question + " - " + data.answer);
     }
   };

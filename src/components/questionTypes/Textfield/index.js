@@ -56,7 +56,7 @@ function Textfield(props) {
     // setDirty(true); // Uncomment for future purposes
     if (
       (event.target.value.includes("@") && event.target.value.includes(".")) ||
-      event.target.value == ""
+      event.target.value.trim().length == 0
     ) {
       setEmailInvalid(false);
     } else {
@@ -78,7 +78,7 @@ function Textfield(props) {
           placeholder="Angiv e-mail adresse..."
           fullWidth
           onChange={handleChange}
-          helperText={emailInvalid ? "Ugyldig email" : ""}
+          helperText={emailInvalid ? "Ugyldig e-mail adresse" : ""}
         />
       </RadioGroup>
       {dirty == false && (
