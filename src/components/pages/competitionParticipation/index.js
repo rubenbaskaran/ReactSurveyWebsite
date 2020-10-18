@@ -6,12 +6,10 @@ import LinearWithValueLabel from "../../progressBar";
 import Textfield from "../../questionTypes/Textfield";
 import { useSelector } from "react-redux";
 
-// TODO: 6. Pass down callback method for saving question number + question text + answer for each question as states
-// TODO: 6a. Save all data in states and then in DB when user presses 'Næste'
-
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const [data, setData] = React.useState({});
 
   let conditionalPreviousPage = "";
   if (useSelector((state) => state.showPostExtraSection)) {
@@ -19,6 +17,14 @@ function CompetitionParticipation() {
   } else {
     conditionalPreviousPage = "/secondsurvey";
   }
+
+  const SaveUserInputInState = (id, question, answer) => {
+    setData({ id: id, question: question, answer: answer });
+  };
+
+  const PrintAllData = () => {
+    alert(data.question + " - " + data.answer);
+  };
 
   return (
     <div>
@@ -30,9 +36,11 @@ function CompetitionParticipation() {
           </Grid>
           <Grid item xs={12}>
             <Textfield
+              id={1}
               question="Hvis du ønsker at deltage i lodtrækningen, bedes du efterlade din
               e-mail-adresse her"
               required={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -52,6 +60,7 @@ function CompetitionParticipation() {
               color="primary"
               className={classes.button}
               href="https://alkohologsamfund.dk/"
+              onClick={PrintAllData}
             >
               Afslut
             </Button>

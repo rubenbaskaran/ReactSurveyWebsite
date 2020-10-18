@@ -49,9 +49,11 @@ const useStyles = makeStyles({
 
 function Textfield(props) {
   const classes = useStyles();
+  const [dirty, setDirty] = React.useState(true); // Change to false for future purposes
 
   const handleChange = (event) => {
-    console.log(event.target.value);
+    // setDirty(true); // Uncomment for future purposes
+    props.callback(props.id, props.question, event.target.value);
   };
 
   return (
@@ -66,11 +68,12 @@ function Textfield(props) {
           className={classes.textField}
           placeholder="Angiv e-mail adresse..."
           fullWidth
+          onChange={handleChange}
         />
       </RadioGroup>
-      {props.required == true && (
+      {dirty == false && (
         <div className={classes.required}>
-          <label>*required</label>
+          <label>*svar mangler</label>
         </div>
       )}
     </Paper>
