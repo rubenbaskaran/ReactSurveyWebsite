@@ -108,7 +108,8 @@ function PersonalInfo() {
 
     let output = "";
     dataPlaceholder.forEach((item) => {
-      let concatenated = item.question + " - " + item.answer + "\n";
+      let concatenated =
+        item.id + " - " + item.question + " - " + item.answer + "\n";
       output += concatenated;
     });
 

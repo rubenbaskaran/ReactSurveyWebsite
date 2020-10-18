@@ -139,7 +139,8 @@ function FirstSurvey() {
 
     let output = "";
     dataPlaceholder.forEach((item) => {
-      let concatenated = item.question + " - " + item.answer + "\n";
+      let concatenated =
+        item.id + " - " + item.question + " - " + item.answer + "\n";
       output += concatenated;
     });
 
@@ -156,7 +157,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={1}
+              id={8}
               question={firstQuestion}
               answers={firstQuestionAnswers}
               required={false}
@@ -166,7 +167,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={2}
+              id={9}
               question={secondQuestion}
               answers={secondQuestionAnswers}
               required={false}
@@ -176,7 +177,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={3}
+              id={10}
               question={thirdQuestion}
               answers={thirdQuestionAnswers}
               required={false}
@@ -186,7 +187,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              id={4}
+              id={11}
               question="Føler du at du drikker for meget?"
               items={drinkingTooMuch}
               placeholder="Angiv et svar..."
@@ -196,7 +197,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              id={5}
+              id={12}
               question="Har du tidligere søgt behandling for at ændre dine alkoholvaner?"
               items={previousTreatment}
               placeholder="Angiv et svar..."
@@ -206,7 +207,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <DropdownList
-              id={6}
+              id={13}
               question="Kender du nogen, der har eller har haft alkoholproblemer?"
               items={addictionAmongstFriends}
               placeholder="Angiv et svar..."
@@ -219,7 +220,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={7}
+              id={14}
               question={agreeDisagreeOne}
               answers={numberRatingScale}
               required={false}
@@ -229,7 +230,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={8}
+              id={15}
               question={agreeDisagreeTwo}
               answers={numberRatingScale}
               required={false}
@@ -239,7 +240,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={9}
+              id={16}
               question={agreeDisagreeThree}
               answers={numberRatingScale}
               required={false}
@@ -249,7 +250,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={10}
+              id={17}
               question={agreeDisagreeFour}
               answers={numberRatingScale}
               required={false}
@@ -259,7 +260,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={11}
+              id={18}
               question={agreeDisagreeFive}
               answers={numberRatingScale}
               required={false}
@@ -269,7 +270,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={12}
+              id={19}
               question={agreeDisagreeSix}
               answers={numberRatingScale}
               required={false}
@@ -279,7 +280,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={13}
+              id={20}
               question={agreeDisagreeSeven}
               answers={numberRatingScale}
               required={false}
@@ -289,7 +290,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={14}
+              id={21}
               question={agreeDisagreeEight}
               answers={numberRatingScale}
               required={false}
@@ -299,7 +300,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={15}
+              id={22}
               question={agreeDisagreeNine}
               answers={numberRatingScale}
               required={false}
@@ -312,7 +313,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={16}
+              id={23}
               question={questionsForAll[0]}
               answers={numberRatingScale}
               required={false}
@@ -322,7 +323,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={17}
+              id={24}
               question={questionsForAll[1]}
               answers={numberRatingScale}
               required={false}
@@ -332,7 +333,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={18}
+              id={25}
               question={questionsForAll[2]}
               answers={numberRatingScale}
               required={false}
@@ -342,7 +343,7 @@ function FirstSurvey() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={19}
+              id={26}
               question={questionsForAll[3]}
               answers={numberRatingScale}
               required={false}

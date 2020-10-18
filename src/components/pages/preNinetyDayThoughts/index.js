@@ -73,7 +73,8 @@ function PreNinetyDayThoughts() {
 
     let output = "";
     dataPlaceholder.forEach((item) => {
-      let concatenated = item.question + " - " + item.answer + "\n";
+      let concatenated =
+        item.id + " - " + item.question + " - " + item.answer + "\n";
       output += concatenated;
     });
 
@@ -93,7 +94,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={1}
+              id={27}
               question={ninetyDayThoughts[0]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -103,7 +104,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={2}
+              id={28}
               question={ninetyDayThoughts[1]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -113,7 +114,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={3}
+              id={29}
               question={ninetyDayThoughts[2]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -123,7 +124,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={4}
+              id={30}
               question={ninetyDayThoughts[3]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -133,7 +134,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={5}
+              id={31}
               question={ninetyDayThoughts[4]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -143,7 +144,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={6}
+              id={32}
               question={ninetyDayThoughts[5]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -153,7 +154,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={7}
+              id={33}
               question={ninetyDayThoughts[6]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -163,7 +164,7 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={8}
+              id={34}
               question={ninetyDayThoughts[7]}
               answers={ninetyDayThoughtsScale}
               required={false}

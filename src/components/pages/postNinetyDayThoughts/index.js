@@ -73,7 +73,8 @@ function PostNinetyDayThoughts() {
 
     let output = "";
     dataPlaceholder.forEach((item) => {
-      let concatenated = item.question + " - " + item.answer + "\n";
+      let concatenated =
+        item.id + " - " + item.question + " - " + item.answer + "\n";
       output += concatenated;
     });
 
@@ -93,7 +94,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={1}
+              id={50}
               question={ninetyDayThoughts[0]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -103,7 +104,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={2}
+              id={51}
               question={ninetyDayThoughts[1]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -113,7 +114,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={3}
+              id={52}
               question={ninetyDayThoughts[2]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -123,7 +124,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={4}
+              id={53}
               question={ninetyDayThoughts[3]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -133,7 +134,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={5}
+              id={54}
               question={ninetyDayThoughts[4]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -143,7 +144,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={6}
+              id={55}
               question={ninetyDayThoughts[5]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -153,7 +154,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={7}
+              id={56}
               question={ninetyDayThoughts[6]}
               answers={ninetyDayThoughtsScale}
               required={false}
@@ -163,7 +164,7 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
-              id={8}
+              id={57}
               question={ninetyDayThoughts[7]}
               answers={ninetyDayThoughtsScale}
               required={false}

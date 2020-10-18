@@ -24,7 +24,7 @@ function CompetitionParticipation() {
 
   const PrintAllData = () => {
     if (data.answer != undefined) {
-      alert(data.question + " - " + data.answer);
+      alert(data.id + " - " + data.question + " - " + data.answer);
     }
   };
 
@@ -38,7 +38,7 @@ function CompetitionParticipation() {
           </Grid>
           <Grid item xs={12}>
             <Textfield
-              id={1}
+              id={58}
               question="Hvis du ønsker at deltage i lodtrækningen, bedes du efterlade din
               e-mail-adresse her"
               required={false}
