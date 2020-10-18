@@ -5,13 +5,14 @@ import useStyles from "../../styles";
 import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
-
-// TODO: 5. Pass down callback method for saving question number + question text + answer for each question as states
-// TODO: 5a. Save all data in states and then in DB when user presses 'Næste'
+import { useEffect } from "react";
 
 function PostNinetyDayThoughts() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
+  const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
+  const [data, setData] = React.useState([]);
+  const numberOfQuestions = 0; // TODO: Set back to 8 (or whatever number of questions)
 
   const ninetyDayThoughts = [
     "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
@@ -32,6 +33,49 @@ function PostNinetyDayThoughts() {
     "Meget ofte",
   ];
 
+  const SaveUserInputInState = (id, question, answer) => {
+    let dataPlaceholder = [...data];
+    let updated = false;
+
+    dataPlaceholder.forEach((item) => {
+      if (item.id == id) {
+        console.log("updating existing item");
+        item.answer = answer;
+        setData(dataPlaceholder);
+        updated = true;
+      }
+    });
+
+    if (updated == false) {
+      console.log("add new item");
+      setData((oldData) => [
+        ...oldData,
+        { id: id, question: question, answer: answer },
+      ]);
+    }
+  };
+
+  useEffect(() => {
+    if (data.length == numberOfQuestions) {
+      if (nextButtonDisabled) {
+        setNextButtonDisabled(false);
+      }
+    }
+  });
+
+  const PrintAllData = () => {
+    let dataPlaceholder = [...data];
+    dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
+
+    let output = "";
+    dataPlaceholder.forEach((item) => {
+      let concatenated = item.question + " - " + item.answer + "\n";
+      output += concatenated;
+    });
+
+    alert(output);
+  };
+
   return (
     <div>
       <Container fixed>
@@ -45,66 +89,82 @@ function PostNinetyDayThoughts() {
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={1}
               question={ninetyDayThoughts[0]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={2}
               question={ninetyDayThoughts[1]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={3}
               question={ninetyDayThoughts[2]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={4}
               question={ninetyDayThoughts[3]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={5}
               question={ninetyDayThoughts[4]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={6}
               question={ninetyDayThoughts[5]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={7}
               question={ninetyDayThoughts[6]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid item xs={12}>
             <RatingScale
+              id={8}
               question={ninetyDayThoughts[7]}
               answers={ninetyDayThoughtsScale}
               required={false}
               agreeDisagree={false}
+              callback={SaveUserInputInState}
             />
           </Grid>
           <Grid container item sm={6} xs={12}>
@@ -125,6 +185,8 @@ function PostNinetyDayThoughts() {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={nextButtonDisabled}
+              onClick={PrintAllData}
             >
               Gem og gå til næste
             </Button>

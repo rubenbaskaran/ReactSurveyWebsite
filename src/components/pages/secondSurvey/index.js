@@ -13,7 +13,7 @@ function SecondSurvey() {
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
-  const numberOfQuestions = 0; // TODO: Set back to 8 (or whatever number of questions)
+  const numberOfQuestions = 0; // TODO: Set back to 15 (or whatever number of questions)
 
   let conditionalNextPage = "";
   if (useSelector((state) => state.showPostExtraSection)) {
