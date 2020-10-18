@@ -11,7 +11,7 @@ function PersonalInfo() {
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
-  const numberOfQuestions = 7;
+  const numberOfQuestions = 0; // TODO: Set back to 7
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 

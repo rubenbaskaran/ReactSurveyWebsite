@@ -7,11 +7,11 @@ import Recaptcha from "../../reCAPTCHA";
 
 function Consent() {
   const [spacing] = React.useState(1);
-  const [disabled, setDisabled] = React.useState(true);
+  const [disabled, setDisabled] = React.useState(false); // TODO: Set back to false
   const classes = useStyles();
 
   function handleRecaptcha() {
-    setDisabled(!disabled);
+    //setDisabled(!disabled); TOOO: Set back to un-commented
   }
 
   const script = document.createElement("script");

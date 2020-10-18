@@ -49,9 +49,11 @@ const useStyles = makeStyles({
 
 function RatingScale(props) {
   const [rating, setRating] = React.useState("");
+  const [dirty, setDirty] = React.useState(false);
   const classes = useStyles();
 
   const handleChange = (event) => {
+    setDirty(true);
     console.log(event.target.value);
     setRating(Number(event.target.value));
   };
@@ -85,7 +87,7 @@ function RatingScale(props) {
           />
         </div>
       </RadioGroup>
-      {props.required == true && (
+      {dirty == false && (
         <div className={classes.required}>
           <label>*svar mangler</label>
         </div>
