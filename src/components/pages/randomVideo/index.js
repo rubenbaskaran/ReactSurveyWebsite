@@ -5,6 +5,7 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
+import { useEffect } from "react";
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
@@ -13,7 +14,8 @@ function RandomVideo() {
 
   let url = "";
   let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
-  const urlConfigs = "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1";
+  const urlConfigs =
+    "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
   if (randomVideoNumber == 0) {
     randomVideoNumber = Math.floor(Math.random() * 3) + 1;
@@ -35,6 +37,16 @@ function RandomVideo() {
       break;
   }
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "script.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div>
       <Container fixed>
@@ -42,6 +54,7 @@ function RandomVideo() {
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12} container justify="center">
             <iframe
+              id="existing-iframe-example"
               width="760"
               height="515"
               src={url}
