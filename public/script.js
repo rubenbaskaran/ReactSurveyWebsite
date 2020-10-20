@@ -14,6 +14,11 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerStateChange(event) {
   if (event.data == 0) {
-    console.log("ended");
+    document
+      .getElementById("nextButton")
+      .setAttribute(
+        "class",
+        "MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-2 MuiButton-containedPrimary"
+      );
   }
 }

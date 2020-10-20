@@ -64,11 +64,13 @@ function RandomVideo() {
           </Grid>
           <Grid container xs={12}>
             <Button
+              id="nextButton"
               component={Link}
               to="/secondsurvey"
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={true}
             >
               Næste
             </Button>
