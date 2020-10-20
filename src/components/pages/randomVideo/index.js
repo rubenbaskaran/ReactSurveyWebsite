@@ -6,6 +6,8 @@ import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
 
+// TODO: Add timer for enabling next button + show count as button text + enable button if video has already been watched
+
 function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
@@ -58,7 +60,6 @@ function RandomVideo() {
               variant="contained"
               color="primary"
               className={classes.button}
-              disabled={true}
             >
               Næste
             </Button>
