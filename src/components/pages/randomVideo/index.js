@@ -5,7 +5,6 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
-import { useEffect } from "react";
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
@@ -37,16 +36,6 @@ function RandomVideo() {
       break;
   }
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "script.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div>
       <Container fixed>
@@ -64,7 +53,6 @@ function RandomVideo() {
           </Grid>
           <Grid container xs={12}>
             <Button
-              id="nextButton"
               component={Link}
               to="/secondsurvey"
               variant="contained"
