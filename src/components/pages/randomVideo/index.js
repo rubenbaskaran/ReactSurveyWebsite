@@ -6,7 +6,7 @@ import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
 
-// TODO: Show count as button text + enable button if video has already been watched
+// TODO: Enable button if video has already been watched
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
@@ -46,8 +46,6 @@ function RandomVideo() {
   const [btnDisabled, setBtnDisabled] = React.useState(true);
   useEffect(() => {
     let myInterval = setInterval(() => {
-      console.log(timeLeft);
-
       if (timeLeft > 0) {
         setTimeLeft(timeLeft - 1);
       } else {
@@ -84,7 +82,7 @@ function RandomVideo() {
               className={classes.button}
               disabled={btnDisabled}
             >
-              Næste
+              {timeLeft != 0 ? timeLeft : "Næste"}
             </Button>
           </Grid>
         </Grid>
