@@ -53,7 +53,7 @@ function RandomVideo() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
-          <Grid container xs={12}>
+          <Grid container item xs={12}>
             <Button
               component={Link}
               to="/secondsurvey"
