@@ -11,13 +11,6 @@ function CompetitionParticipation() {
   const classes = useStyles();
   const [data, setData] = React.useState({});
 
-  let conditionalPreviousPage = "";
-  if (useSelector((state) => state.showPostExtraSection)) {
-    conditionalPreviousPage = "/postninetydaythoughts";
-  } else {
-    conditionalPreviousPage = "/secondsurvey";
-  }
-
   const SaveUserInputInState = (id, question, answer) => {
     setData({ id: id, question: question, answer: answer });
   };

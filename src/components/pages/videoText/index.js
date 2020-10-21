@@ -9,13 +9,6 @@ function VideoText() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
-  let conditionalPreviousPage = "";
-  if (useSelector((state) => state.showPreExtraSection)) {
-    conditionalPreviousPage = "/preninetydaythoughts";
-  } else {
-    conditionalPreviousPage = "/firstsurvey";
-  }
-
   return (
     <div>
       <Container fixed>
