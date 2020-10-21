@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
@@ -13,7 +13,6 @@ function RandomVideo() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  let url = "";
   let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
   const urlConfigs =
     "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
@@ -23,20 +22,42 @@ function RandomVideo() {
     dispatch(randomVideoNumberAction(randomVideoNumber));
   }
 
-  switch (randomVideoNumber) {
-    case 1:
-      url = "https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs;
-      console.log("video 1");
-      break;
-    case 2:
-      url = "https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs;
-      console.log("video 2");
-      break;
-    case 3:
-      url = "https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs;
-      console.log("video 3");
-      break;
+  const [url, setUrl] = React.useState("");
+  if (url == "") {
+    switch (randomVideoNumber) {
+      case 1:
+        setUrl("https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs);
+        console.log("Showing video 1");
+        break;
+      case 2:
+        setUrl("https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs);
+        console.log("Showing video 2");
+        break;
+      case 3:
+        setUrl("https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs);
+        console.log("Showing video 3");
+        break;
+    }
   }
+
+  const [btnDisabled, setBtnDisabled] = React.useState(true);
+  const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
+
+  useEffect(() => {
+    let myInterval = setInterval(() => {
+      console.log(timeLeft);
+
+      if (timeLeft > 0) {
+        setTimeLeft(timeLeft - 1);
+      } else {
+        setBtnDisabled(false);
+        clearInterval(myInterval);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
+  }, [timeLeft]);
 
   return (
     <div>
@@ -60,6 +81,7 @@ function RandomVideo() {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={btnDisabled}
             >
               Næste
             </Button>
