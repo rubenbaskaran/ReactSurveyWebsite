@@ -4,7 +4,10 @@ import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
-import { randomVideoNumberAction } from "../../../globalVariables";
+import {
+  randomVideoNumberAction,
+  setVideoWatchedAction,
+} from "../../../globalVariables";
 
 // TODO: Enable button if video has already been watched
 
@@ -43,19 +46,26 @@ function RandomVideo() {
     }
   }
 
+  let videoWatched = useSelector((state) => state.setVideoWatched);
   const [btnDisabled, setBtnDisabled] = React.useState(true);
+
   useEffect(() => {
-    let myInterval = setInterval(() => {
-      if (timeLeft > 0) {
-        setTimeLeft(timeLeft - 1);
-      } else {
-        setBtnDisabled(false);
+    if (videoWatched == false) {
+      let myInterval = setInterval(() => {
+        if (timeLeft > 0) {
+          setTimeLeft(timeLeft - 1);
+        } else {
+          setBtnDisabled(false);
+          dispatch(setVideoWatchedAction(true));
+          clearInterval(myInterval);
+        }
+      }, 1000);
+      return () => {
         clearInterval(myInterval);
-      }
-    }, 1000);
-    return () => {
-      clearInterval(myInterval);
-    };
+      };
+    } else {
+      setBtnDisabled(false);
+    }
   }, [timeLeft]);
 
   return (
@@ -82,7 +92,7 @@ function RandomVideo() {
               className={classes.button}
               disabled={btnDisabled}
             >
-              {timeLeft != 0 ? timeLeft : "Næste"}
+              {timeLeft != 0 && videoWatched != true ? timeLeft : "Næste"}
             </Button>
           </Grid>
         </Grid>

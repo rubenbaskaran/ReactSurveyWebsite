@@ -22,6 +22,13 @@ const randomVideoNumberAction = (data) => {
   };
 };
 
+const setVideoWatchedAction = (data) => {
+  return {
+    type: "setVideoWatched",
+    payload: data,
+  };
+};
+
 // REDUCER
 const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
@@ -50,15 +57,25 @@ const setRandomVideoReducer = (state = 0, action) => {
   }
 };
 
-const allReducers = combineReducers({
+const setVideoWatchedReducer = (state = false, action) => {
+  switch (action.type) {
+    case "setVideoWatched":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const allStates = combineReducers({
   showPreExtraSection: togglePreExtraSectionReducer,
   showPostExtraSection: togglePostExtraSectionReducer,
   randomVideoNumber: setRandomVideoReducer,
+  setVideoWatched: setVideoWatchedReducer,
 });
 
 // STORE
 const store = createStore(
-  allReducers,
+  allStates,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
@@ -67,6 +84,7 @@ export {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
   randomVideoNumberAction,
+  setVideoWatchedAction,
 };
 
 // CONSUMER
