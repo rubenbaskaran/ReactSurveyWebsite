@@ -5,6 +5,7 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
+import { useEffect } from "react";
 
 // TODO: Add timer for enabling next button + show count as button text + enable button if video has already been watched
 
@@ -12,31 +13,33 @@ function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const dispatch = useDispatch();
-
-  let url = "";
+  const [url, setUrl] = React.useState("");
   let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
-  const urlConfigs =
-    "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
-  if (randomVideoNumber == 0) {
-    randomVideoNumber = Math.floor(Math.random() * 3) + 1;
-    dispatch(randomVideoNumberAction(randomVideoNumber));
-  }
+  useEffect(() => {
+    const urlConfigs =
+      "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
-  switch (randomVideoNumber) {
-    case 1:
-      url = "https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs;
-      console.log("video 1");
-      break;
-    case 2:
-      url = "https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs;
-      console.log("video 2");
-      break;
-    case 3:
-      url = "https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs;
-      console.log("video 3");
-      break;
-  }
+    if (randomVideoNumber == 0) {
+      randomVideoNumber = Math.floor(Math.random() * 3) + 1;
+      dispatch(randomVideoNumberAction(randomVideoNumber));
+    }
+
+    switch (randomVideoNumber) {
+      case 1:
+        setUrl("https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs);
+        console.log("video 1");
+        break;
+      case 2:
+        setUrl("https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs);
+        console.log("video 2");
+        break;
+      case 3:
+        setUrl("https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs);
+        console.log("video 3");
+        break;
+    }
+  }, []);
 
   return (
     <div>
@@ -53,7 +56,7 @@ function RandomVideo() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
-          <Grid container xs={12}>
+          <Grid container item xs={12}>
             <Button
               component={Link}
               to="/secondsurvey"
