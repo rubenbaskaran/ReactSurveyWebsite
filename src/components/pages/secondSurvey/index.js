@@ -271,18 +271,7 @@ function SecondSurvey() {
               callback={SaveUserInputInState}
             />
           </Grid>
-          <Grid container item sm={6} xs={12}>
-            <Button
-              component={Link}
-              to="/randomvideo"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Tilbage
-            </Button>
-          </Grid>
-          <Grid container item sm={6} xs={12}>
+          <Grid container item xs={12}>
             <Button
               component={Link}
               to={conditionalNextPage}

@@ -22,29 +22,15 @@ function VideoText() {
         <LinearWithValueLabel value={40} />
         <Grid container spacing={spacing} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>Nu vil du se en film, der varer ca. et halvt minut</h1>
+            <h1>Nu vil du se en film, der varer ca. et minut</h1>
             <p>
               Husk at have lyden tændt, mens du ser filmen.
               <br />
               Når filmen er færdig, skal du besvare nogle af de sidste
               spørgsmål.
-              <br />
-              Dine svar er nu blevet gemt. Når du klikker på "Næste", vil det
-              ikke længere være muligt at gå tilbage. Ønsker du at gå videre?
             </p>
           </Grid>
-          <Grid container item sm={6} xs={12}>
-            <Button
-              component={Link}
-              to={conditionalPreviousPage}
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Tilbage
-            </Button>
-          </Grid>
-          <Grid container item sm={6} xs={12}>
+          <Grid container item xs={12}>
             <Button
               component={Link}
               to="/randomvideo"
