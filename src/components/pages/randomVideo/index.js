@@ -6,43 +6,44 @@ import LinearWithValueLabel from "../../progressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { randomVideoNumberAction } from "../../../globalVariables";
 
-// TODO: Add timer for enabling next button + show count as button text + enable button if video has already been watched
+// TODO: Show count as button text + enable button if video has already been watched
 
 function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const dispatch = useDispatch();
-
-  let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
   const urlConfigs =
     "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
+  let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
   if (randomVideoNumber == 0) {
     randomVideoNumber = Math.floor(Math.random() * 3) + 1;
     dispatch(randomVideoNumberAction(randomVideoNumber));
   }
 
   const [url, setUrl] = React.useState("");
+  const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
   if (url == "") {
     switch (randomVideoNumber) {
       case 1:
         setUrl("https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs);
+        setTimeLeft(5);
         console.log("Showing video 1");
         break;
       case 2:
         setUrl("https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs);
+        setTimeLeft(10);
         console.log("Showing video 2");
         break;
       case 3:
         setUrl("https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs);
+        setTimeLeft(15);
         console.log("Showing video 3");
         break;
     }
   }
 
   const [btnDisabled, setBtnDisabled] = React.useState(true);
-  const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
-
   useEffect(() => {
     let myInterval = setInterval(() => {
       console.log(timeLeft);
