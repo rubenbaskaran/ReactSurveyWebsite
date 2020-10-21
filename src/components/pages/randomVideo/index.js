@@ -9,8 +9,6 @@ import {
   setVideoWatchedAction,
 } from "../../../globalVariables";
 
-// TODO: Enable button if video has already been watched
-
 function RandomVideo() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
