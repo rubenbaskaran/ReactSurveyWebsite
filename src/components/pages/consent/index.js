@@ -5,6 +5,8 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
+import axios from "axios";
+import ApiToken from "../../../ApiToken";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -15,9 +17,53 @@ function Consent() {
     setDisabled(!disabled);
   }
 
-  function onClickHandler() {
-    console.log("hello world!");
-    // TODO: Call REDCap API
+  async function onClickHandler() {
+    console.log("onClickHandler");
+
+    let data = new FormData();
+    data.append("token", ApiToken.value);
+    data.append("content", "record");
+    data.append("format", "json");
+    data.append("type", "flat");
+    data.append("overwriteBehavior", "overwrite");
+    data.append("forceAutoNumber", "false");
+    data.append(
+      "data",
+      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"2" }]'
+    );
+    data.append("returnContent", "count");
+    data.append("returnFormat", "json");
+
+    let settings = {
+      method: "post",
+      body: data,
+    };
+
+    let url =
+      "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/";
+
+    try {
+      fetch(url, settings)
+        .then((response) => {
+          console.log("INSIDE FETCH");
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log("INSIDE FETCH CATCH");
+          console.log(error.message);
+        });
+
+      // const response = await axios.post(
+      //   "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/",
+      //   settings
+      // );
+      // console.log("RESPONSE:");
+      // console.log(response);
+      // console.log(response.data);
+    } catch (err) {
+      console.log("ERROR:");
+      console.log(err.message);
+    }
   }
 
   const script = document.createElement("script");
