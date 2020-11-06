@@ -8,11 +8,16 @@ import { useEffect } from "react";
 
 function Consent() {
   const [spacing] = React.useState(1);
-  const [disabled, setDisabled] = React.useState(true);
+  const [disabled, setDisabled] = React.useState(false); // TODO: Remember to set to true
   const classes = useStyles();
 
   function handleRecaptcha() {
     setDisabled(!disabled);
+  }
+
+  function onClickHandler() {
+    console.log("hello world!");
+    // TODO: Call REDCap API
   }
 
   const script = document.createElement("script");
@@ -81,6 +86,7 @@ function Consent() {
               color="primary"
               className={classes.button}
               disabled={disabled}
+              onClick={onClickHandler}
             >
               Deltag
             </Button>
