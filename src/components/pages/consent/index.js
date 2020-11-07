@@ -17,8 +17,18 @@ function Consent() {
     setDisabled(!disabled);
   }
 
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  document.body.appendChild(script);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   async function onClickHandler() {
-    console.log("onClickHandler");
+    let url =
+      "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
 
     let data = new FormData();
     data.append("token", ApiToken.value);
@@ -34,46 +44,15 @@ function Consent() {
     data.append("returnContent", "count");
     data.append("returnFormat", "json");
 
-    let settings = {
-      method: "post",
-      body: data,
-    };
-
-    let url =
-      "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/";
-
     try {
-      fetch(url, settings)
-        .then((response) => {
-          console.log("INSIDE FETCH");
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log("INSIDE FETCH CATCH");
-          console.log(error.message);
-        });
-
-      // const response = await axios.post(
-      //   "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/",
-      //   settings
-      // );
-      // console.log("RESPONSE:");
-      // console.log(response);
-      // console.log(response.data);
+      const response = await axios.post(url, data);
+      console.log("RESPONSE:");
+      console.log(response);
     } catch (err) {
       console.log("ERROR:");
       console.log(err.message);
     }
   }
-
-  const script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
-  script.async = true;
-  document.body.appendChild(script);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div>
