@@ -6,7 +6,6 @@ import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 import axios from "axios";
-import ApiToken from "../../../ApiToken";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -27,31 +26,7 @@ function Consent() {
   }, []);
 
   async function onClickHandler() {
-    let url =
-      "https://cors-anywhere.herokuapp.com/https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
-
-    let data = new FormData();
-    data.append("token", ApiToken.value);
-    data.append("content", "record");
-    data.append("format", "json");
-    data.append("type", "flat");
-    data.append("overwriteBehavior", "overwrite");
-    data.append("forceAutoNumber", "false");
-    data.append(
-      "data",
-      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"2" }]'
-    );
-    data.append("returnContent", "count");
-    data.append("returnFormat", "json");
-
-    try {
-      const response = await axios.post(url, data);
-      console.log("RESPONSE:");
-      console.log(response);
-    } catch (err) {
-      console.log("ERROR:");
-      console.log(err.message);
-    }
+    console.log("button clicked"); // TODO: Use for testing request to backend -> redcap
   }
 
   return (
