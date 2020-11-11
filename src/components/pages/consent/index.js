@@ -27,6 +27,32 @@ function Consent() {
 
   async function onClickHandler() {
     console.log("button clicked"); // TODO: Use for testing request to backend -> redcap
+
+    let url = "https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
+
+    let data = new FormData();
+    data.append("token", "XXXXXXXXXXXXXXXXXXX"); // INSERT KEY
+    data.append("content", "record");
+    data.append("format", "json");
+    data.append("type", "flat");
+    data.append("overwriteBehavior", "overwrite");
+    data.append("forceAutoNumber", "false");
+    data.append(
+      "data",
+      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"2" }]'
+    );
+    data.append("returnContent", "count");
+    data.append("returnFormat", "json");
+
+    try {
+      // let response = await axios.post(url, data);
+      let response = await axios.post(url, data);
+      console.log("RESPONSE:");
+      console.log(response);
+    } catch (err) {
+      console.log("ERROR:");
+      console.log(err);
+    }
   }
 
   return (
