@@ -25,7 +25,7 @@ function Consent() {
     window.scrollTo(0, 0);
   }, []);
 
-  async function onClickHandler() {
+  async function CallRedcapApi() {
     console.log("button clicked"); // TODO: Use for testing request to backend -> redcap
 
     let url = "https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
@@ -39,7 +39,7 @@ function Consent() {
     data.append("forceAutoNumber", "false");
     data.append(
       "data",
-      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"2" }]'
+      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"0" }]'
     );
     data.append("returnContent", "count");
     data.append("returnFormat", "json");
@@ -54,6 +54,7 @@ function Consent() {
       console.log(err);
     }
   }
+  CallRedcapApi();
 
   return (
     <div>
@@ -112,7 +113,6 @@ function Consent() {
               color="primary"
               className={classes.button}
               disabled={disabled}
-              onClick={onClickHandler}
             >
               Deltag
             </Button>
