@@ -6,6 +6,7 @@ import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 import axios from "axios";
+import token from "../../../token";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -31,7 +32,7 @@ function Consent() {
     let url = "https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
 
     let data = new FormData();
-    data.append("token", "XXXXXXXXXXXXXXXXXXX"); // INSERT KEY
+    data.append("token", token);
     data.append("content", "record");
     data.append("format", "json");
     data.append("type", "flat");
