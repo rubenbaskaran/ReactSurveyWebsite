@@ -10,7 +10,7 @@ import token from "../../../token";
 
 function Consent() {
   const [spacing] = React.useState(1);
-  const [disabled, setDisabled] = React.useState(false); // TODO: Remember to set to true
+  const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
 
   function handleRecaptcha() {
@@ -27,9 +27,10 @@ function Consent() {
   }, []);
 
   async function CallRedcapApi() {
-    console.log("button clicked"); // TODO: Use for testing request to backend -> redcap
+    // TODO: Remove after testing
+    console.log("button clicked");
 
-    let url = "https://open.rsyd.dk/redcap_uddannelse/api/"; // TODO: Remember to remove proxy in production
+    let url = "https://open.rsyd.dk/redcap_uddannelse/api/";
 
     let data = new FormData();
     data.append("token", token);
