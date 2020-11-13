@@ -26,35 +26,29 @@ function Consent() {
     window.scrollTo(0, 0);
   }, []);
 
-  async function CallRedcapApi() {
-    // TODO: Remove after testing
-    console.log("button clicked");
-
+  function CallRedcapApi() {
     let url = "https://open.rsyd.dk/redcap_uddannelse/api/";
 
     let data = new FormData();
     data.append("token", token);
     data.append("content", "record");
     data.append("format", "json");
-    data.append("type", "flat");
-    data.append("overwriteBehavior", "overwrite");
-    data.append("forceAutoNumber", "false");
-    data.append(
-      "data",
-      '[{"record_id":"3", "firstname":"TestName1", "lastname": "TestName2","age":"3","my_first_instrument_complete":"0" }]'
-    );
-    data.append("returnContent", "count");
-    data.append("returnFormat", "json");
 
-    try {
-      // let response = await axios.post(url, data);
-      let response = await axios.post(url, data);
-      console.log("RESPONSE:");
-      console.log(response);
-    } catch (err) {
-      console.log("ERROR:");
-      console.log(err);
-    }
+    axios
+      .post(url, data)
+      .then(function (response) {
+        console.log("**RESPONSE**");
+        console.log(response.data);
+        console.log(response.status);
+        console.log(response.statusText);
+        console.log(response.headers);
+        console.log(response.config);
+      })
+      .catch(function (error) {
+        console.log("**ERROR**");
+        console.log(error.response.status);
+        console.log(error.response.data);
+      });
   }
   CallRedcapApi();
 
