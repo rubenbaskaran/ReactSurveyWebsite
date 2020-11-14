@@ -26,31 +26,22 @@ function Consent() {
     window.scrollTo(0, 0);
   }, []);
 
-  function CallRedcapApi() {
-    let url = "https://open.rsyd.dk/redcap_uddannelse/api/";
-
-    let data = new FormData();
-    data.append("token", token);
-    data.append("content", "record");
-    data.append("format", "json");
+  function CallNodeBackend() {
+    let url = "http://localhost:3001/update";
+    let data = { firstname: "ruben", lastname: "baskaran" };
 
     axios
       .post(url, data)
       .then(function (response) {
         console.log("**RESPONSE**");
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.statusText);
-        console.log(response.headers);
-        console.log(response.config);
+        console.log(response);
       })
       .catch(function (error) {
         console.log("**ERROR**");
-        console.log(error.response.status);
-        console.log(error.response.data);
+        console.log(error);
       });
   }
-  CallRedcapApi();
+  CallNodeBackend();
 
   return (
     <div>
