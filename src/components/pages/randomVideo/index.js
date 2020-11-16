@@ -37,7 +37,7 @@ function RandomVideo() {
         console.log("Showing video 2");
         break;
       case 3:
-        setUrl("https://www.youtube.com/embed/HRCP0xfc7b8" + urlConfigs);
+        setUrl("https://www.youtube.com/embed/_wvkKixRIK0" + urlConfigs);
         setTimeLeft(15);
         console.log("Showing video 3");
         break;
