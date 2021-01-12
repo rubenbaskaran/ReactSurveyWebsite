@@ -6,7 +6,6 @@ import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 import axios from "axios";
-import token from "../../../token";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -26,6 +25,7 @@ function Consent() {
     window.scrollTo(0, 0);
   }, []);
 
+  // TODO: Create/update redcap record from here
   function CallNodeBackend() {
     let url = "http://localhost:3001/update";
     let data = { firstname: "ruben", lastname: "baskaran" };
@@ -43,6 +43,7 @@ function Consent() {
   }
   CallNodeBackend();
 
+  // TODO: Insert translated final consent text
   return (
     <div>
       <Container fixed>
