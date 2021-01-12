@@ -5,19 +5,13 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Textfield from "../../questionTypes/Textfield";
 import { useSelector } from "react-redux";
-import {
-  UploadFirst1To7,
-  UploadSecond8To26,
-  UploadThird27To34,
-  UploadFourth35To49,
-  UploadFifth50To57,
-  UploadSixth58,
-} from "../../CallsToBackend";
+import { UploadSixth58 } from "../../CallsToBackend";
 
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const [data, setData] = React.useState({});
+  let recordId = useSelector((state) => state.recordId);
 
   const SaveUserInputInState = (id, question, answer) => {
     setData({ id: id, question: question, answer: answer });
@@ -26,7 +20,7 @@ function CompetitionParticipation() {
   const UploadDataToRedcap = () => {
     if (data.answer != undefined && data.answer.trim().length != 0) {
       let payload = {
-        record_id: "22",
+        record_id: recordId,
         question_58: data.answer,
       };
       UploadSixth58(payload);

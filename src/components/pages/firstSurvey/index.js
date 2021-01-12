@@ -7,14 +7,7 @@ import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  UploadFirst1To7,
-  UploadSecond8To26,
-  UploadThird27To34,
-  UploadFourth35To49,
-  UploadFifth50To57,
-  UploadSixth58,
-} from "../../CallsToBackend";
+import { UploadSecond8To26 } from "../../CallsToBackend";
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
@@ -22,6 +15,7 @@ function FirstSurvey() {
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
   const numberOfQuestions = 19;
+  let recordId = useSelector((state) => state.recordId);
 
   let conditionalNextPage = "";
   if (useSelector((state) => state.showPreExtraSection)) {
@@ -145,9 +139,8 @@ function FirstSurvey() {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    // TODO: Get actual record_id
     let payload = {
-      record_id: "22",
+      record_id: recordId,
       question_8: dataPlaceholder[0].answer,
       question_9: dataPlaceholder[1].answer,
       question_10: dataPlaceholder[2].answer,

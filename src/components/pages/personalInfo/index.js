@@ -5,14 +5,8 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
-import {
-  UploadFirst1To7,
-  UploadSecond8To26,
-  UploadThird27To34,
-  UploadFourth35To49,
-  UploadFifth50To57,
-  UploadSixth58,
-} from "../../CallsToBackend";
+import { useDispatch } from "react-redux";
+import { UploadFirst1To7 } from "../../CallsToBackend";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
@@ -20,6 +14,7 @@ function PersonalInfo() {
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
   const numberOfQuestions = 7;
+  const dispatch = useDispatch();
 
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 
@@ -124,7 +119,8 @@ function PersonalInfo() {
       question_6: dataPlaceholder[5].answer,
       question_7: dataPlaceholder[6].answer,
     };
-    UploadFirst1To7(payload);
+
+    UploadFirst1To7(payload, dispatch);
   };
 
   return (

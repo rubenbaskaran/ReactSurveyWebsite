@@ -6,14 +6,8 @@ import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
-import {
-  UploadFirst1To7,
-  UploadSecond8To26,
-  UploadThird27To34,
-  UploadFourth35To49,
-  UploadFifth50To57,
-  UploadSixth58,
-} from "../../CallsToBackend";
+import { UploadFifth50To57 } from "../../CallsToBackend";
+import { useSelector } from "react-redux";
 
 function PostNinetyDayThoughts() {
   const [spacing] = React.useState(1);
@@ -21,6 +15,7 @@ function PostNinetyDayThoughts() {
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
   const numberOfQuestions = 8;
+  let recordId = useSelector((state) => state.recordId);
 
   const ninetyDayThoughts = [
     "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
@@ -79,9 +74,8 @@ function PostNinetyDayThoughts() {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    // TODO: Get actual record_id
     let payload = {
-      record_id: "22",
+      record_id: recordId,
       question_50: dataPlaceholder[0].answer,
       question_51: dataPlaceholder[1].answer,
       question_52: dataPlaceholder[2].answer,

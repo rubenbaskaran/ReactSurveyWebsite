@@ -1,7 +1,7 @@
 import axios from "axios";
+import { setRecordIdAction } from "../globalVariables";
 
-// TODO: Extract survey answers from data object
-function UploadFirst1To7(input) {
+function UploadFirst1To7(input, dispatch) {
   let url = "http://localhost:3001/create";
   let data = {
     record_id: input.record_id,
@@ -67,7 +67,7 @@ function UploadFirst1To7(input) {
   };
 
   console.log("UploadFirst1To7 - RESPONSE:");
-  AxiosCall(url, data);
+  AxiosCall(url, data, dispatch);
 }
 
 function UploadSecond8To26(input) {
@@ -415,12 +415,15 @@ function UploadSixth58(input) {
   AxiosCall(url, data);
 }
 
-function AxiosCall(url, data) {
+function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
-      // TODO: Save record_id
-      console.log(response.data.responseData);
+      if (url.includes("create")) {
+        dispatch(
+          setRecordIdAction(response.data.responseData[0].split(",")[0])
+        );
+      }
     })
     .catch(function (error) {
       // TODO: Alert user

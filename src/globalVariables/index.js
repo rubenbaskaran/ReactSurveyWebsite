@@ -29,6 +29,13 @@ const setVideoWatchedAction = (data) => {
   };
 };
 
+const setRecordIdAction = (data) => {
+  return {
+    type: "setRecordId",
+    payload: data,
+  };
+};
+
 // REDUCER
 const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
@@ -66,11 +73,21 @@ const setVideoWatchedReducer = (state = false, action) => {
   }
 };
 
+const setRecordIdReducer = (state = "null", action) => {
+  switch (action.type) {
+    case "setRecordId":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const allStates = combineReducers({
   showPreExtraSection: togglePreExtraSectionReducer,
   showPostExtraSection: togglePostExtraSectionReducer,
   randomVideoNumber: setRandomVideoReducer,
   setVideoWatched: setVideoWatchedReducer,
+  recordId: setRecordIdReducer,
 });
 
 // STORE
@@ -85,6 +102,7 @@ export {
   togglePostExtraSectionAction,
   randomVideoNumberAction,
   setVideoWatchedAction,
+  setRecordIdAction,
 };
 
 // CONSUMER
