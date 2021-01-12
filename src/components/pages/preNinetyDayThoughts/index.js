@@ -6,6 +6,14 @@ import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
+import {
+  UploadFirst1To7,
+  UploadSecond8To26,
+  UploadThird27To34,
+  UploadFourth35To49,
+  UploadFifth50To57,
+  UploadSixth58,
+} from "../../CallsToBackend";
 
 function PreNinetyDayThoughts() {
   const [spacing] = React.useState(1);
@@ -67,18 +75,23 @@ function PreNinetyDayThoughts() {
     }
   });
 
-  const PrintAllData = () => {
+  const UploadDataToRedcap = () => {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    let output = "";
-    dataPlaceholder.forEach((item) => {
-      let concatenated =
-        item.id + " - " + item.question + " - " + item.answer + "\n";
-      output += concatenated;
-    });
-
-    alert(output);
+    // TODO: Get actual record_id
+    let payload = {
+      record_id: "22",
+      question_27: dataPlaceholder[0].answer,
+      question_28: dataPlaceholder[1].answer,
+      question_29: dataPlaceholder[2].answer,
+      question_30: dataPlaceholder[3].answer,
+      question_31: dataPlaceholder[4].answer,
+      question_32: dataPlaceholder[5].answer,
+      question_33: dataPlaceholder[6].answer,
+      question_34: dataPlaceholder[7].answer,
+    };
+    UploadThird27To34(payload);
   };
 
   return (
@@ -180,7 +193,7 @@ function PreNinetyDayThoughts() {
               color="primary"
               className={classes.button}
               disabled={nextButtonDisabled}
-              onClick={PrintAllData}
+              onClick={UploadDataToRedcap}
             >
               Gem og gå til næste
             </Button>
