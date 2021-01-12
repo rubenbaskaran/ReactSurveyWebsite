@@ -7,6 +7,14 @@ import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import {
+  UploadFirst1To7,
+  UploadSecond8To26,
+  UploadThird27To34,
+  UploadFourth35To49,
+  UploadFifth50To57,
+  UploadSixth58,
+} from "../../CallsToBackend";
 
 function FirstSurvey() {
   const [spacing] = React.useState(1);
@@ -133,18 +141,34 @@ function FirstSurvey() {
     }
   });
 
-  const PrintAllData = () => {
+  const UploadDataToRedcap = () => {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    let output = "";
-    dataPlaceholder.forEach((item) => {
-      let concatenated =
-        item.id + " - " + item.question + " - " + item.answer + "\n";
-      output += concatenated;
-    });
-
-    alert(output);
+    // TODO: Get actual record_id
+    let payload = {
+      record_id: "22",
+      question_8: dataPlaceholder[0].answer,
+      question_9: dataPlaceholder[1].answer,
+      question_10: dataPlaceholder[2].answer,
+      question_11: dataPlaceholder[3].answer,
+      question_12: dataPlaceholder[4].answer,
+      question_13: dataPlaceholder[5].answer,
+      question_14: dataPlaceholder[6].answer,
+      question_15: dataPlaceholder[7].answer,
+      question_16: dataPlaceholder[8].answer,
+      question_17: dataPlaceholder[9].answer,
+      question_18: dataPlaceholder[10].answer,
+      question_19: dataPlaceholder[11].answer,
+      question_20: dataPlaceholder[12].answer,
+      question_21: dataPlaceholder[13].answer,
+      question_22: dataPlaceholder[14].answer,
+      question_23: dataPlaceholder[15].answer,
+      question_24: dataPlaceholder[16].answer,
+      question_25: dataPlaceholder[17].answer,
+      question_26: dataPlaceholder[18].answer,
+    };
+    UploadSecond8To26(payload);
   };
 
   return (
@@ -359,7 +383,7 @@ function FirstSurvey() {
               color="primary"
               className={classes.button}
               disabled={nextButtonDisabled}
-              onClick={PrintAllData}
+              onClick={UploadDataToRedcap}
             >
               Gem og gå til næste
             </Button>
