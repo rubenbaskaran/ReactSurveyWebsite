@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// TODO: Insert record id in all calls besides the first one
-function UploadFirst1To7() {
+// TODO: Extract survey answers from data object
+function UploadFirst1To7(data) {
   let url = "http://localhost:3001/create";
   let data = {
     record_id: "null",
@@ -66,22 +66,14 @@ function UploadFirst1To7() {
     answers_complete: 0,
   };
 
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
-    });
+  console.log("UploadFirst1To7 - RESPONSE:");
+  console.log(AxiosCall(url, data));
 }
 
-function UploadSecond8To26() {
+function UploadSecond8To26(data) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: "NUMBER!",
+    record_id: data.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -143,22 +135,14 @@ function UploadSecond8To26() {
     answers_complete: 0,
   };
 
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
-    });
+  console.log("UploadSecond8To26 - RESPONSE:");
+  console.log(AxiosCall(url, data));
 }
 
-function UploadThird27To34() {
+function UploadThird27To34(data) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: "NUMBER!",
+    record_id: data.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -220,22 +204,14 @@ function UploadThird27To34() {
     answers_complete: 0,
   };
 
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
-    });
+  console.log("UploadThird27To34 - RESPONSE:");
+  console.log(AxiosCall(url, data));
 }
 
-function UploadFourth35To49() {
+function UploadFourth35To49(data) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: "NUMBER!",
+    record_id: data.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -297,22 +273,14 @@ function UploadFourth35To49() {
     answers_complete: 0,
   };
 
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
-    });
+  console.log("UploadFourth35To49 - RESPONSE:");
+  console.log(AxiosCall(url, data));
 }
 
-function UploadFifth50To57() {
+function UploadFifth50To57(data) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: "NUMBER",
+    record_id: data.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -374,22 +342,14 @@ function UploadFifth50To57() {
     answers_complete: 0,
   };
 
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
-    });
+  console.log("UploadFifth50To57 - RESPONSE:");
+  console.log(AxiosCall(url, data));
 }
 
-function UploadSixth58() {
+function UploadSixth58(data) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: "NUMBER",
+    record_id: data.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -451,15 +411,18 @@ function UploadSixth58() {
     answers_complete: 2,
   };
 
+  console.log("UploadSixth58 - RESPONSE:");
+  console.log(AxiosCall(url, data));
+}
+
+function AxiosCall(url, data) {
   axios
     .post(url, data)
     .then(function (response) {
-      console.log("**RESPONSE**");
-      console.log(response);
+      return response;
     })
     .catch(function (error) {
-      console.log("**ERROR**");
-      console.log(error);
+      return error;
     });
 }
 
