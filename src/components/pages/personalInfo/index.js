@@ -5,6 +5,14 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
+import {
+  UploadFirst1To7,
+  UploadSecond8To26,
+  UploadThird27To34,
+  UploadFourth35To49,
+  UploadFifth50To57,
+  UploadSixth58,
+} from "../../CallsToBackend";
 
 function PersonalInfo() {
   const [spacing] = React.useState(1);
@@ -102,18 +110,21 @@ function PersonalInfo() {
     }
   });
 
-  const PrintAllData = () => {
+  const UploadDataToRedcap = () => {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    let output = "";
-    dataPlaceholder.forEach((item) => {
-      let concatenated =
-        item.id + " - " + item.question + " - " + item.answer + "\n";
-      output += concatenated;
-    });
-
-    alert(output);
+    let payload = {
+      record_id: "null",
+      question_1: dataPlaceholder[0].answer,
+      question_2: dataPlaceholder[1].answer,
+      question_3: dataPlaceholder[2].answer,
+      question_4: dataPlaceholder[3].answer,
+      question_5: dataPlaceholder[4].answer,
+      question_6: dataPlaceholder[5].answer,
+      question_7: dataPlaceholder[6].answer,
+    };
+    UploadFirst1To7(payload);
   };
 
   return (
@@ -204,7 +215,7 @@ function PersonalInfo() {
               color="primary"
               className={classes.button}
               disabled={nextButtonDisabled}
-              onClick={PrintAllData}
+              onClick={UploadDataToRedcap}
             >
               Gem og gå til næste
             </Button>

@@ -5,14 +5,6 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
-import {
-  UploadFirst1To7,
-  UploadSecond8To26,
-  UploadThird27To34,
-  UploadFourth35To49,
-  UploadFifth50To57,
-  UploadSixth58,
-} from "../../CallsToBackend";
 
 function Consent() {
   const [spacing] = React.useState(1);
@@ -31,10 +23,6 @@ function Consent() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // TODO: Testing one by one
-  let data = { record_id: 19 };
-  UploadSixth58(data);
 
   // TODO: Insert translated final consent text
   return (
