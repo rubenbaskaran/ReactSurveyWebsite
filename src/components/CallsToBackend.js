@@ -1,10 +1,10 @@
 import axios from "axios";
 
 // TODO: Extract survey answers from data object
-function UploadFirst1To7(data) {
+function UploadFirst1To7(input) {
   let url = "http://localhost:3001/create";
   let data = {
-    record_id: "null",
+    record_id: input.record_id,
     question_1: "question_1",
     question_2: "question_2",
     question_3: "question_3",
@@ -67,13 +67,13 @@ function UploadFirst1To7(data) {
   };
 
   console.log("UploadFirst1To7 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
-function UploadSecond8To26(data) {
+function UploadSecond8To26(input) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: data.record_id,
+    record_id: input.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -136,13 +136,13 @@ function UploadSecond8To26(data) {
   };
 
   console.log("UploadSecond8To26 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
-function UploadThird27To34(data) {
+function UploadThird27To34(input) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: data.record_id,
+    record_id: input.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -205,13 +205,13 @@ function UploadThird27To34(data) {
   };
 
   console.log("UploadThird27To34 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
-function UploadFourth35To49(data) {
+function UploadFourth35To49(input) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: data.record_id,
+    record_id: input.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -274,13 +274,13 @@ function UploadFourth35To49(data) {
   };
 
   console.log("UploadFourth35To49 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
-function UploadFifth50To57(data) {
+function UploadFifth50To57(input) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: data.record_id,
+    record_id: input.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -343,13 +343,13 @@ function UploadFifth50To57(data) {
   };
 
   console.log("UploadFifth50To57 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
-function UploadSixth58(data) {
+function UploadSixth58(input) {
   let url = "http://localhost:3001/update";
   let data = {
-    record_id: data.record_id,
+    record_id: input.record_id,
     question_1: "",
     question_2: "",
     question_3: "",
@@ -412,17 +412,19 @@ function UploadSixth58(data) {
   };
 
   console.log("UploadSixth58 - RESPONSE:");
-  console.log(AxiosCall(url, data));
+  AxiosCall(url, data);
 }
 
 function AxiosCall(url, data) {
   axios
     .post(url, data)
     .then(function (response) {
-      return response;
+      // TODO: Save record_id
+      console.log(response.data.responseData);
     })
     .catch(function (error) {
-      return error;
+      // TODO: Alert user
+      console.log(error.data.errorData);
     });
 }
 
