@@ -5,6 +5,14 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Textfield from "../../questionTypes/Textfield";
 import { useSelector } from "react-redux";
+import {
+  UploadFirst1To7,
+  UploadSecond8To26,
+  UploadThird27To34,
+  UploadFourth35To49,
+  UploadFifth50To57,
+  UploadSixth58,
+} from "../../CallsToBackend";
 
 function CompetitionParticipation() {
   const [spacing] = React.useState(1);
@@ -15,9 +23,13 @@ function CompetitionParticipation() {
     setData({ id: id, question: question, answer: answer });
   };
 
-  const PrintAllData = () => {
+  const UploadDataToRedcap = () => {
     if (data.answer != undefined && data.answer.trim().length != 0) {
-      alert(data.id + " - " + data.question + " - " + data.answer);
+      let payload = {
+        record_id: "22",
+        question_58: data.answer,
+      };
+      UploadSixth58(payload);
     }
   };
 
@@ -44,7 +56,7 @@ function CompetitionParticipation() {
               color="primary"
               className={classes.button}
               href="https://alkohologsamfund.dk/"
-              onClick={PrintAllData}
+              onClick={UploadDataToRedcap}
             >
               Afslut
             </Button>
