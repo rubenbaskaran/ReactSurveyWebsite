@@ -7,6 +7,14 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import {
+  UploadFirst1To7,
+  UploadSecond8To26,
+  UploadThird27To34,
+  UploadFourth35To49,
+  UploadFifth50To57,
+  UploadSixth58,
+} from "../../CallsToBackend";
 
 function SecondSurvey() {
   const [spacing] = React.useState(1);
@@ -91,18 +99,30 @@ function SecondSurvey() {
     }
   });
 
-  const PrintAllData = () => {
+  const UploadDataToRedcap = () => {
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-    let output = "";
-    dataPlaceholder.forEach((item) => {
-      let concatenated =
-        item.id + " - " + item.question + " - " + item.answer + "\n";
-      output += concatenated;
-    });
-
-    alert(output);
+    // TODO: Get actual record_id
+    let payload = {
+      record_id: "22",
+      question_35: dataPlaceholder[0].answer,
+      question_36: dataPlaceholder[1].answer,
+      question_37: dataPlaceholder[2].answer,
+      question_38: dataPlaceholder[3].answer,
+      question_39: dataPlaceholder[4].answer,
+      question_40: dataPlaceholder[5].answer,
+      question_41: dataPlaceholder[6].answer,
+      question_42: dataPlaceholder[7].answer,
+      question_43: dataPlaceholder[8].answer,
+      question_44: dataPlaceholder[9].answer,
+      question_45: dataPlaceholder[10].answer,
+      question_46: dataPlaceholder[11].answer,
+      question_47: dataPlaceholder[12].answer,
+      question_48: dataPlaceholder[13].answer,
+      question_49: dataPlaceholder[14].answer,
+    };
+    UploadFourth35To49(payload);
   };
 
   return (
@@ -279,7 +299,7 @@ function SecondSurvey() {
               color="primary"
               className={classes.button}
               disabled={nextButtonDisabled}
-              onClick={PrintAllData}
+              onClick={UploadDataToRedcap}
             >
               Gem og gå til næste
             </Button>
