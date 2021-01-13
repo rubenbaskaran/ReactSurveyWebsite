@@ -427,7 +427,7 @@ function AxiosCall(url, data, dispatch) {
     })
     .catch(function (error) {
       // TODO: Alert user
-      console.log(error.data.errorData);
+      console.log(error);
     });
 }
 

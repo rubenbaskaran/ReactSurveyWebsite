@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import useStyles from "../../styles";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
 import { UploadThird27To34 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
 
-function PreNinetyDayThoughts() {
+function PreNinetyDayThoughts(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
@@ -71,6 +71,8 @@ function PreNinetyDayThoughts() {
   });
 
   const UploadDataToRedcap = () => {
+    props.setCurrentPage(4);
+
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -181,8 +183,8 @@ function PreNinetyDayThoughts() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/videotext"
+              // component={Link}
+              // to="/videotext"
               variant="contained"
               color="primary"
               className={classes.button}

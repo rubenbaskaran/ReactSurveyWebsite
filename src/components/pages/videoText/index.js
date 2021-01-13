@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 
-function VideoText() {
+function VideoText(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
 
@@ -25,11 +25,12 @@ function VideoText() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/randomvideo"
+              // component={Link}
+              // to="/randomvideo"
               variant="contained"
               color="primary"
               className={classes.button}
+              onClick={() => props.setCurrentPage(5)}
             >
               Næste
             </Button>

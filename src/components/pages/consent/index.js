@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 
-function Consent() {
+function Consent(props) {
   const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
@@ -76,12 +76,13 @@ function Consent() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/personalinfo"
+              // component={Link}
+              // to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
               disabled={disabled}
+              onClick={() => props.setCurrentPage(1)}
             >
               Deltag
             </Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Button, Grid, MenuItem } from "@material-ui/core";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { UploadFirst1To7 } from "../../CallsToBackend";
 
-function PersonalInfo() {
+function PersonalInfo(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
@@ -106,6 +106,8 @@ function PersonalInfo() {
   });
 
   const UploadDataToRedcap = () => {
+    props.setCurrentPage(2);
+
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -205,8 +207,8 @@ function PersonalInfo() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/firstsurvey"
+              // component={Link}
+              // to="/firstsurvey"
               variant="contained"
               color="primary"
               className={classes.button}

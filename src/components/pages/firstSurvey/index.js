@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Button, Grid, MenuItem } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import useStyles from "../../styles";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { UploadSecond8To26 } from "../../CallsToBackend";
 
-function FirstSurvey() {
+function FirstSurvey(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
@@ -136,6 +136,8 @@ function FirstSurvey() {
   });
 
   const UploadDataToRedcap = () => {
+    props.setCurrentPage(3);
+
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -370,8 +372,8 @@ function FirstSurvey() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to={conditionalNextPage}
+              // component={Link}
+              // to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}
