@@ -8,11 +8,13 @@ import {
   randomVideoNumberAction,
   setVideoWatchedAction,
 } from "../../../globalVariables";
+import { UploadVideoId } from "../../CallsToBackend";
 
 function RandomVideo(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
   const dispatch = useDispatch();
+  let recordId = useSelector((state) => state.recordId);
   const urlConfigs =
     "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
@@ -66,6 +68,16 @@ function RandomVideo(props) {
     }
   }, [timeLeft]);
 
+  const UploadDataToRedcap = () => {
+    props.setCurrentPage(6);
+
+    let payload = {
+      record_id: recordId,
+      video_id: randomVideoNumber,
+    };
+    UploadVideoId(payload);
+  };
+
   return (
     <div>
       <Container fixed>
@@ -89,7 +101,7 @@ function RandomVideo(props) {
               color="primary"
               className={classes.button}
               disabled={btnDisabled}
-              onClick={() => props.setCurrentPage(6)}
+              onClick={UploadDataToRedcap}
             >
               {timeLeft != 0 && videoWatched != true ? timeLeft : "Næste"}
             </Button>

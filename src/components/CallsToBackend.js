@@ -5,6 +5,7 @@ function UploadFirst1To7(input, dispatch) {
   let url = "http://localhost:3001/create";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: input.question_1,
     question_2: input.question_2,
     question_3: input.question_3,
@@ -74,6 +75,7 @@ function UploadSecond8To26(input) {
   let url = "http://localhost:3001/update";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -143,6 +145,7 @@ function UploadThird27To34(input) {
   let url = "http://localhost:3001/update";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -208,10 +211,81 @@ function UploadThird27To34(input) {
   AxiosCall(url, data);
 }
 
+function UploadVideoId(input) {
+  let url = "http://localhost:3001/update";
+  let data = {
+    record_id: input.record_id,
+    video_id: input.video_id,
+    question_1: "",
+    question_2: "",
+    question_3: "",
+    question_4: "",
+    question_5: "",
+    question_6: "",
+    question_7: "",
+    question_8: "",
+    question_9: "",
+    question_10: "",
+    question_11: "",
+    question_12: "",
+    question_13: "",
+    question_14: "",
+    question_15: "",
+    question_16: "",
+    question_17: "",
+    question_18: "",
+    question_19: "",
+    question_20: "",
+    question_21: "",
+    question_22: "",
+    question_23: "",
+    question_24: "",
+    question_25: "",
+    question_26: "",
+    question_27: "",
+    question_28: "",
+    question_29: "",
+    question_30: "",
+    question_31: "",
+    question_32: "",
+    question_33: "",
+    question_34: "",
+    question_35: "",
+    question_36: "",
+    question_37: "",
+    question_38: "",
+    question_39: "",
+    question_40: "",
+    question_41: "",
+    question_42: "",
+    question_43: "",
+    question_44: "",
+    question_45: "",
+    question_46: "",
+    question_47: "",
+    question_48: "",
+    question_49: "",
+    question_50: "",
+    question_51: "",
+    question_52: "",
+    question_53: "",
+    question_54: "",
+    question_55: "",
+    question_56: "",
+    question_57: "",
+    question_58: "",
+    answers_complete: 0,
+  };
+
+  console.log("UploadVideoId - RESPONSE:");
+  AxiosCall(url, data);
+}
+
 function UploadFourth35To49(input) {
   let url = "http://localhost:3001/update";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -281,6 +355,7 @@ function UploadFifth50To57(input) {
   let url = "http://localhost:3001/update";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -350,6 +425,7 @@ function UploadSixth58(input) {
   let url = "http://localhost:3001/update";
   let data = {
     record_id: input.record_id,
+    video_id: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -424,6 +500,7 @@ function AxiosCall(url, data, dispatch) {
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
       }
+      console.log(response.data.responseData);
     })
     .catch(function (error) {
       // TODO: Alert user
@@ -435,6 +512,7 @@ export {
   UploadFirst1To7,
   UploadSecond8To26,
   UploadThird27To34,
+  UploadVideoId,
   UploadFourth35To49,
   UploadFifth50To57,
   UploadSixth58,
