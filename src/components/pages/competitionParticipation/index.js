@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
