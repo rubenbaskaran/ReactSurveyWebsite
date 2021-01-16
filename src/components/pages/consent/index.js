@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-// import { Link } from "react-router-dom";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
@@ -76,8 +75,6 @@ function Consent(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              // component={Link}
-              // to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
