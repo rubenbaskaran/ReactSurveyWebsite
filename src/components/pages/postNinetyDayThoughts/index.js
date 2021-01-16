@@ -1,10 +1,8 @@
 import React from "react";
-import { Container, Button, Grid, MenuItem } from "@material-ui/core";
+import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import useStyles from "../../styles";
-// import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../../progressBar";
-import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
 import { UploadFifth50To57 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
@@ -183,8 +181,6 @@ function PostNinetyDayThoughts(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              // component={Link}
-              // to="/competitionparticipation"
               variant="contained"
               color="primary"
               className={classes.button}
