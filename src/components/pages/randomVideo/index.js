@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { UploadVideoId } from "../../CallsToBackend";
 
 function RandomVideo(props) {
-  const [spacing] = React.useState(1);
   const [randomVideoNumber, setRandomVideoNumber] = React.useState(0);
   const classes = useStyles();
   let recordId = useSelector((state) => state.recordId);
@@ -69,7 +68,7 @@ function RandomVideo(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={50} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12} container justify="center">
             <iframe
               id="existing-iframe-example"

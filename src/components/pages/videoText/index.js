@@ -4,14 +4,13 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 
 function VideoText(props) {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
 
   return (
     <div>
       <Container fixed>
         <LinearWithValueLabel value={40} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil du se en film, der varer ca. et minut</h1>
             <p>

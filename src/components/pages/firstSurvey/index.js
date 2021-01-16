@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { UploadSecond8To26 } from "../../CallsToBackend";
 
 function FirstSurvey(props) {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
@@ -173,7 +172,7 @@ function FirstSurvey(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={20} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil vi stille nogle spørgsmål om alkohol</h1>
           </Grid>

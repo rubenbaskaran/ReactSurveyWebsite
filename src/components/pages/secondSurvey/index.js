@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { UploadFourth35To49 } from "../../CallsToBackend";
 
 function SecondSurvey(props) {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
@@ -127,7 +126,7 @@ function SecondSurvey(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={70} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu er du kommet til de sidste spørgsmål</h1>
           </Grid>

@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { UploadSixth58 } from "../../CallsToBackend";
 
 function CompetitionParticipation() {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
   const [data, setData] = React.useState({});
   let recordId = useSelector((state) => state.recordId);
@@ -30,7 +29,7 @@ function CompetitionParticipation() {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={100} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Tak for din deltagelse!</h1>
           </Grid>

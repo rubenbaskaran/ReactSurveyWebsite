@@ -8,7 +8,6 @@ import { UploadThird27To34 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
 
 function PreNinetyDayThoughts(props) {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
@@ -92,7 +91,7 @@ function PreNinetyDayThoughts(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={30} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>
               Hvor ofte i de sidste 90 dage har du haft disse tanker og

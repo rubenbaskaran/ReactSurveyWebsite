@@ -6,7 +6,6 @@ import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 
 function Consent(props) {
-  const [spacing] = React.useState(1);
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
 
@@ -28,7 +27,7 @@ function Consent(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={0} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Velkommen til projektet XYZ</h1>
             <p>

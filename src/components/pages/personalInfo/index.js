@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { UploadFirst1To7 } from "../../CallsToBackend";
 
 function PersonalInfo(props) {
-  const [spacing] = React.useState(1);
   const classes = useStyles();
   const [nextButtonDisabled, setNextButtonDisabled] = React.useState(true);
   const [data, setData] = React.useState([]);
@@ -128,7 +127,7 @@ function PersonalInfo(props) {
     <div>
       <Container fixed>
         <LinearWithValueLabel value={10} />
-        <Grid container spacing={spacing} className={classes.grid}>
+        <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Vi starter med nogle baggrundsspørgsmål</h1>
           </Grid>
