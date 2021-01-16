@@ -7,12 +7,15 @@ import { UploadVideoId } from "../../CallsToBackend";
 
 function RandomVideo(props) {
   const [spacing] = React.useState(1);
+  const [randomVideoNumber, setRandomVideoNumber] = React.useState(0);
   const classes = useStyles();
   let recordId = useSelector((state) => state.recordId);
   const urlConfigs =
     "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
-  let randomVideoNumber = Math.floor(Math.random() * 3) + 1;
+  if (randomVideoNumber === 0) {
+    setRandomVideoNumber(Math.floor(Math.random() * 3) + 1);
+  }
 
   const [url, setUrl] = React.useState("");
   const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
