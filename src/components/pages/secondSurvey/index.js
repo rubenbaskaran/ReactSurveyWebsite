@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import DropdownList from "../../questionTypes/DropdownList";
@@ -94,7 +93,11 @@ function SecondSurvey(props) {
   });
 
   const UploadDataToRedcap = () => {
-    props.setCurrentPage(7);
+    if (conditionalNextPage === "/postninetydaythoughts") {
+      props.setCurrentPage(7);
+    } else {
+      props.setCurrentPage(8);
+    }
 
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
@@ -288,8 +291,6 @@ function SecondSurvey(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              // component={Link}
-              // to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}
