@@ -15,20 +15,6 @@ const togglePostExtraSectionAction = (data) => {
   };
 };
 
-const randomVideoNumberAction = (data) => {
-  return {
-    type: "setRandomVideo",
-    payload: data,
-  };
-};
-
-const setVideoWatchedAction = (data) => {
-  return {
-    type: "setVideoWatched",
-    payload: data,
-  };
-};
-
 const setRecordIdAction = (data) => {
   return {
     type: "setRecordId",
@@ -55,24 +41,6 @@ const togglePostExtraSectionReducer = (state = false, action) => {
   }
 };
 
-const setRandomVideoReducer = (state = 0, action) => {
-  switch (action.type) {
-    case "setRandomVideo":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-const setVideoWatchedReducer = (state = false, action) => {
-  switch (action.type) {
-    case "setVideoWatched":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
 const setRecordIdReducer = (state = "null", action) => {
   switch (action.type) {
     case "setRecordId":
@@ -85,8 +53,6 @@ const setRecordIdReducer = (state = "null", action) => {
 const allStates = combineReducers({
   showPreExtraSection: togglePreExtraSectionReducer,
   showPostExtraSection: togglePostExtraSectionReducer,
-  randomVideoNumber: setRandomVideoReducer,
-  setVideoWatched: setVideoWatchedReducer,
   recordId: setRecordIdReducer,
 });
 
@@ -100,39 +66,5 @@ export default store;
 export {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
-  randomVideoNumberAction,
-  setVideoWatchedAction,
   setRecordIdAction,
 };
-
-// CONSUMER
-
-// import { useSelector, useDispatch } from "react-redux";
-// import store, {
-//   togglePreExtraSectionAction,
-//   togglePostExtraSectionAction,
-// } from "../../../globalVariables";
-
-// store.subscribe(() => {
-//   console.log(
-//     "PRE: " +
-//       store.getState().togglePreExtraSection +
-//       ". POST: " +
-//       store.getState().togglePostExtraSection
-//   );
-//   console.log();
-// });
-
-// const dispatch = useDispatch();
-// dispatch(togglePreExtraSectionAction("hello"));
-// dispatch(togglePostExtraSectionAction("world"));
-// dispatch(togglePreExtraSectionAction("bye"));
-// dispatch(togglePostExtraSectionAction("moon"));
-
-// console.log(
-//   "useSelector PRE: " + useSelector((state) => state.togglePreExtraSection)
-// );
-
-// console.log(
-//   "useSelector POST: " + useSelector((state) => state.togglePostExtraSection)
-// );

@@ -1,28 +1,18 @@
 import React, { useEffect } from "react";
-// import { Link } from "react-router-dom";
 import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  randomVideoNumberAction,
-  setVideoWatchedAction,
-} from "../../../globalVariables";
+import { useSelector } from "react-redux";
 import { UploadVideoId } from "../../CallsToBackend";
 
 function RandomVideo(props) {
   const [spacing] = React.useState(1);
   const classes = useStyles();
-  const dispatch = useDispatch();
   let recordId = useSelector((state) => state.recordId);
   const urlConfigs =
     "?autoplay=1&modestbranding=1&fs=0&rel=0&cc_load_policy=1&enablejsapi=1";
 
-  let randomVideoNumber = useSelector((state) => state.randomVideoNumber);
-  if (randomVideoNumber == 0) {
-    randomVideoNumber = Math.floor(Math.random() * 3) + 1;
-    dispatch(randomVideoNumberAction(randomVideoNumber));
-  }
+  let randomVideoNumber = Math.floor(Math.random() * 3) + 1;
 
   const [url, setUrl] = React.useState("");
   const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
@@ -46,26 +36,20 @@ function RandomVideo(props) {
     }
   }
 
-  let videoWatched = useSelector((state) => state.setVideoWatched);
   const [btnDisabled, setBtnDisabled] = React.useState(true);
 
   useEffect(() => {
-    if (videoWatched == false) {
-      let myInterval = setInterval(() => {
-        if (timeLeft > 0) {
-          setTimeLeft(timeLeft - 1);
-        } else {
-          setBtnDisabled(false);
-          dispatch(setVideoWatchedAction(true));
-          clearInterval(myInterval);
-        }
-      }, 1000);
-      return () => {
+    let myInterval = setInterval(() => {
+      if (timeLeft > 0) {
+        setTimeLeft(timeLeft - 1);
+      } else {
+        setBtnDisabled(false);
         clearInterval(myInterval);
-      };
-    } else {
-      setBtnDisabled(false);
-    }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
   }, [timeLeft]);
 
   const UploadDataToRedcap = () => {
@@ -95,15 +79,13 @@ function RandomVideo(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              // component={Link}
-              // to="/secondsurvey"
               variant="contained"
               color="primary"
               className={classes.button}
               disabled={btnDisabled}
               onClick={UploadDataToRedcap}
             >
-              {timeLeft != 0 && videoWatched != true ? timeLeft : "Næste"}
+              {timeLeft != 0 ? timeLeft : "Næste"}
             </Button>
           </Grid>
         </Grid>
