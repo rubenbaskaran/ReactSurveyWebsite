@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "http://localhost:3001/create";
+  let url = "https://respekt-backend.herokuapp.com/create";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -72,7 +72,7 @@ function UploadFirst1To7(input, dispatch) {
 }
 
 function UploadSecond8To26(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -142,7 +142,7 @@ function UploadSecond8To26(input) {
 }
 
 function UploadThird27To34(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -212,7 +212,7 @@ function UploadThird27To34(input) {
 }
 
 function UploadVideoId(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: input.video_id,
@@ -282,7 +282,7 @@ function UploadVideoId(input) {
 }
 
 function UploadFourth35To49(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -352,7 +352,7 @@ function UploadFourth35To49(input) {
 }
 
 function UploadFifth50To57(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -422,7 +422,7 @@ function UploadFifth50To57(input) {
 }
 
 function UploadSixth58(input) {
-  let url = "http://localhost:3001/update";
+  let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
