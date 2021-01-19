@@ -16,13 +16,11 @@ function CompetitionParticipation() {
   };
 
   const UploadDataToRedcap = () => {
-    if (data.answer != undefined && data.answer.trim().length != 0) {
-      let payload = {
-        record_id: recordId,
-        question_58: data.answer,
-      };
-      UploadSixth58(payload);
-    }
+    let payload = {
+      record_id: recordId,
+      question_58: data.answer,
+    };
+    UploadSixth58(payload);
   };
 
   return (
