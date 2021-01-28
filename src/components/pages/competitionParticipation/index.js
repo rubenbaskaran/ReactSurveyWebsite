@@ -21,6 +21,7 @@ function CompetitionParticipation() {
       question_58: data.answer,
     };
     UploadSixth58(payload);
+    window.open("https://alkohologsamfund.dk/", "_self");
   };
 
   return (
@@ -45,7 +46,6 @@ function CompetitionParticipation() {
               variant="contained"
               color="primary"
               className={classes.button}
-              href="https://alkohologsamfund.dk/"
               onClick={UploadDataToRedcap}
             >
               Afslut
