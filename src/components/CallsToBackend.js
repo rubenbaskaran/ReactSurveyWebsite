@@ -495,12 +495,14 @@ function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
+      console.log(response.data.responseData);
       if (url.includes("create")) {
         dispatch(
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
+      } else if (data.answers_complete == 2) {
+        window.open("https://alkohologsamfund.dk/", "_self");
       }
-      console.log(response.data.responseData);
     })
     .catch(function (error) {
       // TODO: Alert user
