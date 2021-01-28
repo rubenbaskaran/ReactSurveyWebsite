@@ -489,6 +489,7 @@ function UploadSixth58(input) {
 
   console.log("UploadSixth58 - RESPONSE:");
   AxiosCall(url, data);
+  window.open("https://alkohologsamfund.dk/", "_self");
 }
 
 function AxiosCall(url, data, dispatch) {

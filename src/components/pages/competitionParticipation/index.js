@@ -21,7 +21,6 @@ function CompetitionParticipation() {
       question_58: data.answer,
     };
     UploadSixth58(payload);
-    window.open("https://alkohologsamfund.dk/", "_self");
   };
 
   return (
