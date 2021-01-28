@@ -501,7 +501,7 @@ function AxiosCall(url, data, dispatch) {
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
       } else if (data.answers_complete == 2) {
-        // window.open("https://alkohologsamfund.dk/", "_self");
+        window.open("https://alkohologsamfund.dk/", "_self");
       }
     })
     .catch(function (error) {
