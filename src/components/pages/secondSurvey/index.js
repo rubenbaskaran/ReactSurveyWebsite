@@ -95,11 +95,13 @@ function SecondSurvey(props) {
   const UploadDataToRedcap = () => {
     let timestampEnd = null;
     let surveyDuration = null;
+    let answersComplete = "0";
 
     if (conditionalNextPage === "/postninetydaythoughts") {
       timestampStart = null;
       props.setCurrentPage(7);
     } else {
+      answersComplete = "2";
       timestampEnd = new Date();
       surveyDuration = Math.abs(
         (timestampEnd - timestampStart) / 1000
@@ -142,6 +144,7 @@ function SecondSurvey(props) {
       question_47: dataPlaceholder[12].answer,
       question_48: dataPlaceholder[13].answer,
       question_49: dataPlaceholder[14].answer,
+      answers_complete: answersComplete,
     };
     UploadFourth35To49(payload);
   };

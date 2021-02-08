@@ -68,6 +68,7 @@ function UploadFirst1To7(input, dispatch) {
     question_57: "",
     question_58: "",
     answers_complete: 0,
+    emails_complete: 0,
   };
 
   console.log("UploadFirst1To7 - REQUEST:");
@@ -143,6 +144,7 @@ function UploadSecond8To26(input) {
     question_57: "",
     question_58: "",
     answers_complete: 0,
+    emails_complete: 0,
   };
 
   console.log("UploadSecond8To26 - REQUEST:");
@@ -218,6 +220,7 @@ function UploadThird27To34(input) {
     question_57: "",
     question_58: "",
     answers_complete: 0,
+    emails_complete: 0,
   };
 
   console.log("UploadThird27To34 - REQUEST:");
@@ -293,6 +296,7 @@ function UploadVideoId(input) {
     question_57: "",
     question_58: "",
     answers_complete: 0,
+    emails_complete: 0,
   };
 
   console.log("UploadVideoId - REQUEST:");
@@ -367,7 +371,8 @@ function UploadFourth35To49(input) {
     question_56: "",
     question_57: "",
     question_58: "",
-    answers_complete: 0,
+    answers_complete: input.answers_complete,
+    emails_complete: 0,
   };
 
   console.log("UploadFourth35To49 - REQUEST:");
@@ -442,7 +447,8 @@ function UploadFifth50To57(input) {
     question_56: input.question_56,
     question_57: input.question_57,
     question_58: "",
-    answers_complete: 0,
+    answers_complete: 2,
+    emails_complete: 0,
   };
 
   console.log("UploadFifth50To57 - REQUEST:");
@@ -517,7 +523,8 @@ function UploadSixth58(input) {
     question_56: "",
     question_57: "",
     question_58: input.question_58,
-    answers_complete: 2,
+    answers_complete: "",
+    emails_complete: 2,
   };
 
   console.log("UploadSixth58 - REQUEST:");
