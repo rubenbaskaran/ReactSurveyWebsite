@@ -16,11 +16,15 @@ function CompetitionParticipation() {
   };
 
   const UploadDataToRedcap = () => {
-    let payload = {
-      record_id: recordId,
-      question_58: data.answer,
-    };
-    UploadSixth58(payload);
+    if (data.answer) {
+      let payload = {
+        record_id: recordId,
+        question_58: data.answer,
+      };
+      UploadSixth58(payload);
+    } else {
+      window.open("https://alkohologsamfund.dk/", "_self");
+    }
   };
 
   return (
