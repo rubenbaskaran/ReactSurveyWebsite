@@ -92,16 +92,28 @@ function SecondSurvey(props) {
   });
 
   const UploadDataToRedcap = () => {
-    let timestampStart = null;
+    let timestampStart = useSelector((state) => state.timestampStart);
     let timestampEnd = null;
     let surveyDuration = null;
 
     if (conditionalNextPage === "/postninetydaythoughts") {
+      timestampStart = null;
       props.setCurrentPage(7);
     } else {
-      timestampStart = useSelector((state) => state.timestampStart);
       timestampEnd = new Date();
       surveyDuration = Math.abs(timestampEnd - timestampStart);
+      timestampStart =
+        timestampStart.getHours() +
+        ":" +
+        timestampStart.getMinutes() +
+        ":" +
+        timestampStart.getSeconds();
+      timestampEnd =
+        timestampEnd.getHours() +
+        ":" +
+        timestampEnd.getMinutes() +
+        ":" +
+        timestampEnd.getSeconds();
       props.setCurrentPage(8);
     }
 
@@ -110,18 +122,8 @@ function SecondSurvey(props) {
 
     let payload = {
       record_id: recordId,
-      timestamp_start:
-        timestampStart.getHours() +
-        ":" +
-        timestampStart.getMinutes() +
-        ":" +
-        timestampStart.getSeconds(),
-      timestamp_end:
-        timestampEnd.getHours() +
-        ":" +
-        timestampEnd.getMinutes() +
-        ":" +
-        timestampEnd.getSeconds(),
+      timestamp_start: timestampStart,
+      timestamp_end: timestampEnd,
       survey_duration: surveyDuration,
       question_35: dataPlaceholder[0].answer,
       question_36: dataPlaceholder[1].answer,
