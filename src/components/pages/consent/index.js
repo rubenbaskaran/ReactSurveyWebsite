@@ -22,6 +22,17 @@ function Consent(props) {
     window.scrollTo(0, 0);
   }, []);
 
+  function SetTimestamp(category) {
+    let fullTimestamp = new Date();
+    let filteredTimestamp =
+      fullTimestamp.getHours() +
+      ":" +
+      fullTimestamp.getMinutes() +
+      ":" +
+      fullTimestamp.getSeconds();
+    console.log("timestamp " + category + ": " + filteredTimestamp);
+  }
+
   // TODO: Insert translated final consent text
   return (
     <div>
@@ -78,7 +89,10 @@ function Consent(props) {
               color="primary"
               className={classes.button}
               disabled={disabled}
-              onClick={() => props.setCurrentPage(1)}
+              onClick={() => {
+                SetTimestamp("start");
+                props.setCurrentPage(1);
+              }}
             >
               Deltag
             </Button>

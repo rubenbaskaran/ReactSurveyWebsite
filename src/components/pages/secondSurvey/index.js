@@ -95,6 +95,7 @@ function SecondSurvey(props) {
     if (conditionalNextPage === "/postninetydaythoughts") {
       props.setCurrentPage(7);
     } else {
+      SetTimestamp("end");
       props.setCurrentPage(8);
     }
 
@@ -121,6 +122,17 @@ function SecondSurvey(props) {
     };
     UploadFourth35To49(payload);
   };
+
+  function SetTimestamp(category) {
+    let fullTimestamp = new Date();
+    let filteredTimestamp =
+      fullTimestamp.getHours() +
+      ":" +
+      fullTimestamp.getMinutes() +
+      ":" +
+      fullTimestamp.getSeconds();
+    console.log("timestamp " + category + ": " + filteredTimestamp);
+  }
 
   return (
     <div>
