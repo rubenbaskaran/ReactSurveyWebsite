@@ -4,10 +4,13 @@ import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setTimestampStartAction } from "../../../globalVariables";
 
 function Consent(props) {
   const [disabled, setDisabled] = React.useState(true);
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   function handleRecaptcha() {
     setDisabled(!disabled);
@@ -22,15 +25,10 @@ function Consent(props) {
     window.scrollTo(0, 0);
   }, []);
 
-  function SetTimestamp(category) {
+  function SetTimestampStart() {
     let fullTimestamp = new Date();
-    let filteredTimestamp =
-      fullTimestamp.getHours() +
-      ":" +
-      fullTimestamp.getMinutes() +
-      ":" +
-      fullTimestamp.getSeconds();
-    console.log("timestamp " + category + ": " + filteredTimestamp);
+    console.log("timestamp start: " + fullTimestamp);
+    dispatch(setTimestampStartAction(fullTimestamp));
   }
 
   // TODO: Insert translated final consent text
@@ -90,7 +88,7 @@ function Consent(props) {
               className={classes.button}
               disabled={disabled}
               onClick={() => {
-                SetTimestamp("start");
+                SetTimestampStart();
                 props.setCurrentPage(1);
               }}
             >
