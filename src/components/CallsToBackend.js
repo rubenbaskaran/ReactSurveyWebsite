@@ -460,7 +460,7 @@ function UploadFifth50To57(input) {
 function UploadSixth58(input) {
   let url = "https://respekt-backend.herokuapp.com/update";
   let data = {
-    record_id: input.record_id,
+    record_id: "null",
     video_id: "",
     timestamp_start: "",
     timestamp_end: "",
