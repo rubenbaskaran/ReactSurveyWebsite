@@ -17,7 +17,7 @@ function PersonalInfo(props) {
   const gender = ["Kvinde", "Mand", "Andet", "Vil ikke svare"];
 
   const age = [];
-  for (var i = 16; i < 100; i++) {
+  for (var i = 18; i < 100; i++) {
     age.push(i.toString());
   }
   age.push("Vil ikke svare");
