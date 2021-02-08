@@ -16,7 +16,7 @@ function CompetitionParticipation() {
   };
 
   const UploadDataToRedcap = () => {
-    if (data.answer) {
+    if (data.answer.trim()) {
       let payload = {
         record_id: recordId,
         question_58: data.answer,
