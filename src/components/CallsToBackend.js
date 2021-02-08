@@ -70,6 +70,8 @@ function UploadFirst1To7(input, dispatch) {
     answers_complete: 0,
   };
 
+  console.log("UploadFirst1To7 - REQUEST:");
+  console.log(data);
   console.log("UploadFirst1To7 - RESPONSE:");
   AxiosCall(url, data, dispatch);
 }
@@ -143,6 +145,8 @@ function UploadSecond8To26(input) {
     answers_complete: 0,
   };
 
+  console.log("UploadSecond8To26 - REQUEST:");
+  console.log(data);
   console.log("UploadSecond8To26 - RESPONSE:");
   AxiosCall(url, data);
 }
@@ -216,6 +220,8 @@ function UploadThird27To34(input) {
     answers_complete: 0,
   };
 
+  console.log("UploadThird27To34 - REQUEST:");
+  console.log(data);
   console.log("UploadThird27To34 - RESPONSE:");
   AxiosCall(url, data);
 }
@@ -286,6 +292,8 @@ function UploadVideoId(input) {
     answers_complete: 0,
   };
 
+  console.log("UploadVideoId - REQUEST:");
+  console.log(data);
   console.log("UploadVideoId - RESPONSE:");
   AxiosCall(url, data);
 }
@@ -359,6 +367,8 @@ function UploadFourth35To49(input) {
     answers_complete: 0,
   };
 
+  console.log("UploadFourth35To49 - REQUEST:");
+  console.log(data);
   console.log("UploadFourth35To49 - RESPONSE:");
   AxiosCall(url, data);
 }
@@ -432,6 +442,8 @@ function UploadFifth50To57(input) {
     answers_complete: 0,
   };
 
+  console.log("UploadFifth50To57 - REQUEST:");
+  console.log(data);
   console.log("UploadFifth50To57 - RESPONSE:");
   AxiosCall(url, data);
 }
@@ -505,6 +517,8 @@ function UploadSixth58(input) {
     answers_complete: 2,
   };
 
+  console.log("UploadSixth58 - REQUEST:");
+  console.log(data);
   console.log("UploadSixth58 - RESPONSE:");
   AxiosCall(url, data);
 }
