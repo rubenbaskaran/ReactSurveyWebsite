@@ -446,7 +446,7 @@ function UploadFifth50To57(input) {
 }
 
 function UploadSixth58(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://respekt-backend.herokuapp.com/create";
   let data = {
     record_id: "null",
     question_58: input.question_58,
