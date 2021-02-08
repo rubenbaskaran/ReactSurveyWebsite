@@ -104,17 +104,6 @@ function PostNinetyDayThoughts(props) {
     UploadFifth50To57(payload);
   };
 
-  function SetTimestamp(category) {
-    let fullTimestamp = new Date();
-    let filteredTimestamp =
-      fullTimestamp.getHours() +
-      ":" +
-      fullTimestamp.getMinutes() +
-      ":" +
-      fullTimestamp.getSeconds();
-    console.log("timestamp " + category + ": " + filteredTimestamp);
-  }
-
   return (
     <div>
       <Container fixed>
