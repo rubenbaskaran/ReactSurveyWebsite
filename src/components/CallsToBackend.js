@@ -6,6 +6,8 @@ function UploadFirst1To7(input, dispatch) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: input.question_1,
     question_2: input.question_2,
     question_3: input.question_3,
@@ -76,6 +78,8 @@ function UploadSecond8To26(input) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -146,6 +150,8 @@ function UploadThird27To34(input) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -286,6 +292,8 @@ function UploadFourth35To49(input) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -356,6 +364,8 @@ function UploadFifth50To57(input) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: "",
     question_2: "",
     question_3: "",
@@ -426,6 +436,8 @@ function UploadSixth58(input) {
   let data = {
     record_id: input.record_id,
     video_id: "",
+    timestamp_start: "",
+    timestamp_end: "",
     question_1: "",
     question_2: "",
     question_3: "",
