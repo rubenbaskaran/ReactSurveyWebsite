@@ -68,7 +68,10 @@ function PostNinetyDayThoughts(props) {
   });
 
   const UploadDataToRedcap = () => {
-    SetTimestamp("end");
+    let timestampStart = useSelector((state) => state.timestampStart);
+    let timestampEnd = new Date();
+    let surveyDuration = Math.abs(timestampEnd - timestampStart);
+
     props.setCurrentPage(8);
 
     let dataPlaceholder = [...data];
@@ -76,6 +79,19 @@ function PostNinetyDayThoughts(props) {
 
     let payload = {
       record_id: recordId,
+      timestamp_start:
+        timestampStart.getHours() +
+        ":" +
+        timestampStart.getMinutes() +
+        ":" +
+        timestampStart.getSeconds(),
+      timestamp_end:
+        timestampEnd.getHours() +
+        ":" +
+        timestampEnd.getMinutes() +
+        ":" +
+        timestampEnd.getSeconds(),
+      survey_duration: surveyDuration,
       question_50: dataPlaceholder[0].answer,
       question_51: dataPlaceholder[1].answer,
       question_52: dataPlaceholder[2].answer,
