@@ -468,7 +468,7 @@ function AxiosCall(url, data, dispatch) {
         dispatch(
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
-      } else if (data.answers_complete == 2) {
+      } else if (data.emails_complete != null && data.emails_complete == 2) {
         window.open("https://alkohologsamfund.dk/", "_self");
       }
     })
