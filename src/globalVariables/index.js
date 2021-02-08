@@ -22,6 +22,13 @@ const setRecordIdAction = (data) => {
   };
 };
 
+const setTimestampStartAction = (data) => {
+  return {
+    type: "setTimestampStart",
+    payload: data,
+  };
+};
+
 // REDUCER
 const togglePreExtraSectionReducer = (state = false, action) => {
   switch (action.type) {
@@ -50,10 +57,20 @@ const setRecordIdReducer = (state = "null", action) => {
   }
 };
 
+const setTimestampStartReducer = (state = null, action) => {
+  switch (action.type) {
+    case "setTimestampStart":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const allStates = combineReducers({
   showPreExtraSection: togglePreExtraSectionReducer,
   showPostExtraSection: togglePostExtraSectionReducer,
   recordId: setRecordIdReducer,
+  timestampStart: setTimestampStartReducer,
 });
 
 // STORE
@@ -67,4 +84,5 @@ export {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
   setRecordIdAction,
+  setTimestampStartAction,
 };
