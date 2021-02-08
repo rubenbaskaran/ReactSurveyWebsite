@@ -13,6 +13,7 @@ function PostNinetyDayThoughts(props) {
   const [data, setData] = React.useState([]);
   const numberOfQuestions = 8;
   let recordId = useSelector((state) => state.recordId);
+  let timestampStart = useSelector((state) => state.timestampStart);
 
   const ninetyDayThoughts = [
     "Jeg tror, at en væsentlig årsag til mine problemer med alkohol er min egen dårlige karakter.",
@@ -68,9 +69,10 @@ function PostNinetyDayThoughts(props) {
   });
 
   const UploadDataToRedcap = () => {
-    let timestampStart = useSelector((state) => state.timestampStart);
     let timestampEnd = new Date();
-    let surveyDuration = Math.abs(timestampEnd - timestampStart);
+    let surveyDuration = Math.abs(
+      (timestampEnd - timestampStart) / 1000
+    ).toString();
 
     props.setCurrentPage(8);
 

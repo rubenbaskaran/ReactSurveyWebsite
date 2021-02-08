@@ -14,6 +14,7 @@ function SecondSurvey(props) {
   const [data, setData] = React.useState([]);
   const numberOfQuestions = 15;
   let recordId = useSelector((state) => state.recordId);
+  let timestampStart = useSelector((state) => state.timestampStart);
 
   let conditionalNextPage = "";
   if (useSelector((state) => state.showPostExtraSection)) {
@@ -92,7 +93,6 @@ function SecondSurvey(props) {
   });
 
   const UploadDataToRedcap = () => {
-    let timestampStart = useSelector((state) => state.timestampStart);
     let timestampEnd = null;
     let surveyDuration = null;
 
@@ -101,7 +101,9 @@ function SecondSurvey(props) {
       props.setCurrentPage(7);
     } else {
       timestampEnd = new Date();
-      surveyDuration = Math.abs(timestampEnd - timestampStart);
+      surveyDuration = Math.abs(
+        (timestampEnd - timestampStart) / 1000
+      ).toString();
       timestampStart =
         timestampStart.getHours() +
         ":" +

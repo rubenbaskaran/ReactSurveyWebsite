@@ -231,6 +231,9 @@ function UploadVideoId(input) {
   let data = {
     record_id: input.record_id,
     video_id: input.video_id,
+    timestamp_start: "",
+    timestamp_end: "",
+    survey_duration: "",
     question_1: "",
     question_2: "",
     question_3: "",
