@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "https://respekt-backend.herokuapp.com/create";
+  let url = "https://respekt-backend.herokuapp.com/createe"; // TODO fjern ekstra e
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -473,8 +473,11 @@ function AxiosCall(url, data, dispatch) {
       }
     })
     .catch(function (error) {
-      // TODO: Alert user
-      console.log(error);
+      // TODO: Indsæt email
+      alert(
+        "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt @ hvis fejlen genopstår. \n\nError: " +
+          error
+      );
     });
 }
 
