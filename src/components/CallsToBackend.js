@@ -475,14 +475,14 @@ function AxiosCall(url, data, dispatch) {
     .catch(function (error) {
       // TODO: Indsæt email
       if (
-        confirm(
+        window.confirm(
           "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nOplys følgende fejlbeskrivelse\n" +
             error
         )
       ) {
-        location.reload();
+        window.location.reload();
       } else {
-        location.reload();
+        window.location.reload();
       }
     });
 }
