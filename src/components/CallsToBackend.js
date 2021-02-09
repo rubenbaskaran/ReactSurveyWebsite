@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "https://respekt-backend.herokuapp.com/createe"; // TODO fjern ekstra e
+  let url = "https://respekt-backend.herokuapp.com/create";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -463,6 +463,7 @@ function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
+      throw "nooo!";
       console.log(response.data.responseData);
       if (url.includes("create") && data.emails_complete == null) {
         dispatch(
