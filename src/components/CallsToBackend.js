@@ -476,10 +476,9 @@ function AxiosCall(url, data, dispatch) {
       }
     })
     .catch(function (error) {
-      // TODO: Indsæt email
       if (
         window.confirm(
-          "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nOplys følgende fejlbeskrivelse:\n" +
+          "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst sarawf@health.sdu.dk hvis fejlen genopstår. \n\nOplys følgende fejlbeskrivelse:\n" +
             error
         )
       ) {
