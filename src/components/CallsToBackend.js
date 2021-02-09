@@ -463,7 +463,6 @@ function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
-      throw "nooo!";
       console.log(response.data.responseData);
       if (url.includes("create") && data.emails_complete == null) {
         dispatch(
