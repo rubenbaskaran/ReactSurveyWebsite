@@ -464,6 +464,9 @@ function AxiosCall(url, data, dispatch) {
     .post(url, data)
     .then(function (response) {
       console.log(response.data.responseData);
+      if (!response.data.responseData) {
+        throw "Response data is undefined";
+      }
       if (url.includes("create") && data.emails_complete == null) {
         dispatch(
           setRecordIdAction(response.data.responseData[0].split(",")[0])
