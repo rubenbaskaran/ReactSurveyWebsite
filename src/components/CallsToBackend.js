@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "https://respekt-backend.herokuapp.com/creat";
+  let url = "https://respekt-backend.herokuapp.com/createe";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -479,7 +479,7 @@ function AxiosCall(url, data, dispatch) {
       // TODO: Indsæt email
       if (
         window.confirm(
-          "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nOplys følgende fejlbeskrivelse\n" +
+          "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nOplys følgende fejlbeskrivelse:\n" +
             error
         )
       ) {
