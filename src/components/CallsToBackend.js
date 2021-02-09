@@ -476,7 +476,7 @@ function AxiosCall(url, data, dispatch) {
     .catch(function (error) {
       // TODO: Indsæt email
       alert(
-        "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nError: " +
+        "Kunne ikke forbinde til server. Tjek din internetforbindelse og prøv igen. Kontakt venligst @ hvis fejlen genopstår. \n\nFejlbeskrivelse\n" +
           error
       );
     });
