@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "https://respekt-backend.herokuapp.com/create";
+  let url = "https://respekt-backend.herokuapp.com/createe";
   let data = {
     record_id: input.record_id,
     video_id: "",
