@@ -114,27 +114,31 @@ function Consent(props) {
               Deltag
             </Button>
           </Grid>
-          <Grid item xs={12}>
-            <p>Yderligere information:</p>
+          <Grid item xs={12} style={{ fontSize: "15px" }}>
             <p>
-              Hvis du ønsker mere information om undersøgelsen og dermed
-              hjemmesiden, kan du kontakte Post Doc, Sara Wallhed Finn (
-              <a href={`mailto:sarawf@health.sdu.dk`}>sarawf@health.sdu.dk</a>).
+              <i>
+                Hvis du ønsker mere information om undersøgelsen og dermed
+                hjemmesiden, kan du kontakte Post Doc Sara Wallhed Finn (
+                <a href={`mailto:sarawf@health.sdu.dk`}>sarawf@health.sdu.dk</a>
+                ).
+              </i>
             </p>
             <p>
-              Hvis du har klager eller bekymringer i forhold til studiet,
-              kontakt da venligst den ansvarlige for studiet, Professor Anette
-              Søgaard Nielsen, (
-              <a href={`mailto:ansnielsen@health.sdu.dk`}>
-                ansnielsen@health.sdu.dk
-              </a>
-              ), eller den Videnskabsetiske komite på SDU (REC) (
-              <a href={`mailto:rec@sdu.dk`}>rec@sdu.dk</a>/
-              <a href={`mailto:nadko@sdu.dk`}>nadko@sdu.dk</a>).
+              <i>
+                Hvis du har klager eller bekymringer i forhold til studiet,
+                kontakt da venligst den ansvarlige for studiet, Professor Anette
+                Søgaard Nielsen, (
+                <a href={`mailto:ansnielsen@health.sdu.dk`}>
+                  ansnielsen@health.sdu.dk
+                </a>
+                ), eller den Videnskabsetiske komite på SDU (REC) (
+                <a href={`mailto:rec@sdu.dk`}>rec@sdu.dk</a>/
+                <a href={`mailto:nadko@sdu.dk`}>nadko@sdu.dk</a>).
+              </i>
             </p>
           </Grid>
-          <Grid item xs={12}>
-            <img src={require("./logo.png")} style={{ width: "100%" }}></img>
+          <Grid container item xs={12} justify="center">
+            <img src={require("./logo.png")} style={{ width: "20%" }}></img>
           </Grid>
         </Grid>
       </Container>
