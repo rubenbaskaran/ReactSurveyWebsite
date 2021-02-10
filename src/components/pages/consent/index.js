@@ -31,7 +31,6 @@ function Consent(props) {
     dispatch(setTimestampStartAction(fullTimestamp));
   }
 
-  // TODO: Insert translated final consent text
   return (
     <div>
       <Container fixed>
