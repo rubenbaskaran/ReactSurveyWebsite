@@ -38,7 +38,9 @@ function Consent(props) {
         <LinearWithValueLabel value={0} />
         <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
-            <h1>Velkommen til projektet XYZ</h1>
+            <h1>
+              Velkommen til forskningsprojektet REACH ved Syddansk Universitet
+            </h1>
             <p>
               I dette projekt vil vi gerne vide mere om, hvordan folk generelt
               ser på dét at søge alkoholbehandling.
@@ -56,27 +58,44 @@ function Consent(props) {
               ud til flere personer, der har behov for behandling.
             </p>
             <p>
-              Det tager cirka XYZ minutter at gennemføre undersøgelsen. Du skal
-              først at besvare nogle spørsmål, derefter vil du se en lille film.
-              Husk at have slået lyden til. Derefter skal du besvare nogle af
+              Det tager cirka 5-10 minutter at gennemføre undersøgelsen. Du skal
+              først besvare nogle spørgsmål, derefter se en lille film. Husk at
+              have slået lyden til. Derefter skal du svare på nogle af
               spørgsmålene engang til. Du er anonym i undersøgelsen, og dine
-              svar, vil kun blive brugt i dette forskningsprojekt. Du skal være
-              mindst 16 år for at kunne deltage.
+              svar vil kun blive brugt i denne undersøgelse. Du skal være mindst
+              18 år for at kunne deltage.
             </p>
             <p>
               Som tak for deltagelsen kan du - hvis du vil - oplyse din
               e-mail-adresse for at deltage i en lodtrækning om
-              <b> (AV VADÅ?)</b>.
+              delikatessekurver.
             </p>
             <p>
-              Vi, der er ansvarlige for undersøgelsen og dermed hjemmesiden,, er
-              en gruppe forskere ved Syddansk Universitet i Odense ledet af
-              Professor Anette Søgaard Nielsen.
+              Du inviteres hermed til at deltage i ovenstående
+              forskningsprojekt.
             </p>
             <p>
-              Spørgsmål om projektet kan sendes til
-              <b> VEM (går bra med min mejl)</b>.
+              Læs deltagerinformationen nøje, klik af i feltet nedenfor og klik
+              derefter på "Deltag" knappen for at bekræfte, at du gerne vil
+              deltage og at:
             </p>
+            <ul>
+              <li>Du har læst og forstået den givne information om studiet.</li>
+              <li>
+                Du har haft mulighed for at overveje informationen og maile
+                eventuelle spørgsmål.
+              </li>
+              <li>
+                Du forstår, at deltagelse er frivillig, og at du kan trække dig
+                ud af undersøgelsen, når du vil og uden at give forklaring.
+              </li>
+              <li>
+                Du forstår, at data i undersøgelsen anvendes anonymiseret til
+                brug for undervisning, publikationer og præsentationer på
+                videnskabelige møder.
+              </li>
+              <li>Du er fyldt 18 år og myndig.</li>
+            </ul>
           </Grid>
           <Grid item xs={12} container justify="center">
             <Recaptcha handleRecaptcha={handleRecaptcha} />
@@ -94,6 +113,28 @@ function Consent(props) {
             >
               Deltag
             </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <p>Yderligere information:</p>
+            <p>
+              Hvis du ønsker mere information om undersøgelsen og dermed
+              hjemmesiden, kan du kontakte Post Doc, Sara Wallhed Finn (
+              <a href={`mailto:sarawf@health.sdu.dk`}>sarawf@health.sdu.dk</a>).
+            </p>
+            <p>
+              Hvis du har klager eller bekymringer i forhold til studiet,
+              kontakt da venligst den ansvarlige for studiet, Professor Anette
+              Søgaard Nielsen, (
+              <a href={`mailto:ansnielsen@health.sdu.dk`}>
+                ansnielsen@health.sdu.dk
+              </a>
+              ), eller den Videnskabsetiske komite på SDU (REC) (
+              <a href={`mailto:rec@sdu.dk`}>rec@sdu.dk</a>/
+              <a href={`mailto:nadko@sdu.dk`}>nadko@sdu.dk</a>).
+            </p>
+          </Grid>
+          <Grid item xs={12}>
+            <img src={require("./logo.png")} style={{ width: "100%" }}></img>
           </Grid>
         </Grid>
       </Container>
