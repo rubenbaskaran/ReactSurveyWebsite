@@ -27,7 +27,6 @@ function Consent(props) {
 
   function SetTimestampStart() {
     let fullTimestamp = new Date();
-    console.log("timestamp start: " + fullTimestamp);
     dispatch(setTimestampStartAction(fullTimestamp));
   }
 
@@ -137,7 +136,10 @@ function Consent(props) {
             </p>
           </Grid>
           <Grid container item xs={12} justify="center">
-            <img src={require("./logo.png")} style={{ width: "20%" }}></img>
+            <img
+              src={require("./logo.png")}
+              style={{ width: 270.6, height: 119.2 }}
+            ></img>
           </Grid>
         </Grid>
       </Container>

@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   grid: {
     "margin-top": "20px",
     "margin-bottom": "40px",
-    background: "#f3f3f3",
+    background: "#f6f9fb",
     padding: "20px",
     "border-radius": "10px",
   },
@@ -14,9 +14,6 @@ const useStyles = makeStyles({
   },
   progressBarPlacement: {
     "margin-top": "40px",
-  },
-  barColorPrimary: {
-    backgroundColor: "green",
   },
 });
 

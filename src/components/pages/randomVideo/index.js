@@ -22,18 +22,15 @@ function RandomVideo(props) {
     switch (randomVideoNumber) {
       case 1:
         setUrl("https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs);
-        setTimeLeft(5);
-        console.log("Showing video 1");
+        setTimeLeft(30);
         break;
       case 2:
         setUrl("https://www.youtube.com/embed/A3kmaB_r_e0" + urlConfigs);
-        setTimeLeft(10);
-        console.log("Showing video 2");
+        setTimeLeft(54);
         break;
       case 3:
         setUrl("https://www.youtube.com/embed/_wvkKixRIK0" + urlConfigs);
-        setTimeLeft(15);
-        console.log("Showing video 3");
+        setTimeLeft(47);
         break;
     }
   }

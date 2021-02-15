@@ -75,7 +75,6 @@ function PersonalInfo(props) {
 
     dataPlaceholder.forEach((item) => {
       if (item.id == id) {
-        console.log("updating existing item");
         item.answer = answer;
         setData(dataPlaceholder);
         updated = true;
@@ -83,7 +82,6 @@ function PersonalInfo(props) {
     });
 
     if (updated == false) {
-      console.log("add new item");
       setData((oldData) => [
         ...oldData,
         { id: id, question: question, answer: answer },

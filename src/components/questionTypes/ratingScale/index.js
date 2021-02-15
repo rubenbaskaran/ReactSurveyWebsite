@@ -24,6 +24,7 @@ const useStyles = makeStyles({
     "font-family": "Segoe UI",
     "letter-spacing": "0.5px",
     "line-height": "1.5",
+    "font-size": "18px",
   },
   ratingScale: {
     "margin-left": "auto",

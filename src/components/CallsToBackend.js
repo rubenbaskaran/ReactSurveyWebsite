@@ -2,7 +2,7 @@ import axios from "axios";
 import { setRecordIdAction } from "../globalVariables";
 
 function UploadFirst1To7(input, dispatch) {
-  let url = "https://respekt-backend.herokuapp.com/create";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/create";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -69,14 +69,11 @@ function UploadFirst1To7(input, dispatch) {
     answers_complete: 0,
   };
 
-  console.log("UploadFirst1To7 - REQUEST:");
-  console.log(data);
-  console.log("UploadFirst1To7 - RESPONSE:");
   AxiosCall(url, data, dispatch);
 }
 
 function UploadSecond8To26(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -143,14 +140,11 @@ function UploadSecond8To26(input) {
     answers_complete: 0,
   };
 
-  console.log("UploadSecond8To26 - REQUEST:");
-  console.log(data);
-  console.log("UploadSecond8To26 - RESPONSE:");
   AxiosCall(url, data);
 }
 
 function UploadThird27To34(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -217,14 +211,11 @@ function UploadThird27To34(input) {
     answers_complete: 0,
   };
 
-  console.log("UploadThird27To34 - REQUEST:");
-  console.log(data);
-  console.log("UploadThird27To34 - RESPONSE:");
   AxiosCall(url, data);
 }
 
 function UploadVideoId(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/update";
   let data = {
     record_id: input.record_id,
     video_id: input.video_id,
@@ -291,14 +282,11 @@ function UploadVideoId(input) {
     answers_complete: 0,
   };
 
-  console.log("UploadVideoId - REQUEST:");
-  console.log(data);
-  console.log("UploadVideoId - RESPONSE:");
   AxiosCall(url, data);
 }
 
 function UploadFourth35To49(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -365,14 +353,11 @@ function UploadFourth35To49(input) {
     answers_complete: input.answers_complete,
   };
 
-  console.log("UploadFourth35To49 - REQUEST:");
-  console.log(data);
-  console.log("UploadFourth35To49 - RESPONSE:");
   AxiosCall(url, data);
 }
 
 function UploadFifth50To57(input) {
-  let url = "https://respekt-backend.herokuapp.com/update";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/update";
   let data = {
     record_id: input.record_id,
     video_id: "",
@@ -439,23 +424,17 @@ function UploadFifth50To57(input) {
     answers_complete: 2,
   };
 
-  console.log("UploadFifth50To57 - REQUEST:");
-  console.log(data);
-  console.log("UploadFifth50To57 - RESPONSE:");
   AxiosCall(url, data);
 }
 
 function UploadSixth58(input) {
-  let url = "https://respekt-backend.herokuapp.com/create";
+  let url = "https://reach.sdu.dk/ReactSurveyWebsiteBackend/create";
   let data = {
     record_id: "null",
     question_58: input.question_58,
     emails_complete: 2,
   };
 
-  console.log("UploadSixth58 - REQUEST:");
-  console.log(data);
-  console.log("UploadSixth58 - RESPONSE:");
   AxiosCall(url, data);
 }
 
@@ -463,7 +442,6 @@ function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
-      console.log(response.data.responseData);
       if (!response.data.responseData) {
         throw "Response data is undefined";
       }

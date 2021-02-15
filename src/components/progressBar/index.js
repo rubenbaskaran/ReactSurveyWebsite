@@ -20,14 +20,11 @@ function LinearProgressWithLabel(props) {
           <LinearProgress
             variant="determinate"
             style={{
-              backgroundColor: "#f3f3f3",
+              backgroundColor: "#f6f9fb",
               height: "20px",
               borderRadius: "5px",
             }}
             {...props}
-            classes={{
-              barColorPrimary: classes.barColorPrimary,
-            }}
           />
         </Box>
         <Box minWidth={35}>
