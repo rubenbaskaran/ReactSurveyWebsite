@@ -56,7 +56,6 @@ function RatingScale(props) {
   if (listOfAnswerOptions.length === 0) {
     props.answers.map((value) => {
       setListOfAnswerOptions((oldList) => [...oldList, value]);
-      return null;
     });
   }
 
