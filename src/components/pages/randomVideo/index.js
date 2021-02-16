@@ -86,7 +86,7 @@ function RandomVideo(props) {
               disabled={btnDisabled}
               onClick={UploadDataToRedcap}
             >
-              {timeLeft !== 0 ? timeLeft : "Næste"}
+              {timeLeft !== 0 ? `Næste (${timeLeft})` : "Næste"}
             </Button>
           </Grid>
         </Grid>
