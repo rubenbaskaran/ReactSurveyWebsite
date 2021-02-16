@@ -56,6 +56,7 @@ function RatingScale(props) {
   if (listOfAnswerOptions.length === 0) {
     props.answers.map((value) => {
       setListOfAnswerOptions((oldList) => [...oldList, value]);
+      return null;
     });
   }
 
@@ -63,7 +64,7 @@ function RatingScale(props) {
     setDirty(true);
 
     let answer = "";
-    if (event.target.value === 10) {
+    if (Number(event.target.value) === 10) {
       answer = "Vil ikke svare";
     } else {
       answer = listOfAnswerOptions[event.target.value];
