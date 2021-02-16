@@ -13,7 +13,7 @@ function VideoText(props) {
         <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>Nu vil du se en film, der varer ca. et minut</h1>
-            <p>
+            <p style={{ fontSize: 20 }}>
               Husk at have lyden tændt, mens du ser filmen.
               <br />
               Når filmen er færdig, skal du besvare nogle af de sidste
