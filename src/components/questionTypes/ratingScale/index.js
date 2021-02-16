@@ -5,9 +5,7 @@ import {
   RadioGroup,
   FormControlLabel,
   Radio,
-  Grid,
 } from "@material-ui/core";
-import { useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,9 +53,10 @@ function RatingScale(props) {
   const [listOfAnswerOptions, setListOfAnswerOptions] = React.useState([]);
   const classes = useStyles();
 
-  if (listOfAnswerOptions.length == 0) {
+  if (listOfAnswerOptions.length === 0) {
     props.answers.map((value) => {
       setListOfAnswerOptions((oldList) => [...oldList, value]);
+      return null;
     });
   }
 
@@ -65,7 +64,7 @@ function RatingScale(props) {
     setDirty(true);
 
     let answer = "";
-    if (event.target.value == 10) {
+    if (event.target.value === 10) {
       answer = "Vil ikke svare";
     } else {
       answer = listOfAnswerOptions[event.target.value];
@@ -82,8 +81,8 @@ function RatingScale(props) {
           <b>{props.question}</b>
         </FormLabel>
         <div className={classes.ratingScale}>
-          {(props.agreeDisagree == true && <label>Meget uenig</label>) ||
-            (props.notAtAllVeryMuch == true && <label>Slet ikke</label>)}
+          {(props.agreeDisagree === true && <label>Meget uenig</label>) ||
+            (props.notAtAllVeryMuch === true && <label>Slet ikke</label>)}
           {props.answers.map((value) => (
             <FormControlLabel
               key={props.answers.indexOf(value)}
@@ -93,8 +92,10 @@ function RatingScale(props) {
               labelPlacement="top"
             />
           ))}
-          {(props.agreeDisagree == true && <label>Meget enig</label>) ||
-            (props.notAtAllVeryMuch == true && <label>I meget høj grad</label>)}
+          {(props.agreeDisagree === true && <label>Meget enig</label>) ||
+            (props.notAtAllVeryMuch === true && (
+              <label>I meget høj grad</label>
+            ))}
           <FormControlLabel
             key={10}
             value={10}
@@ -104,7 +105,7 @@ function RatingScale(props) {
           />
         </div>
       </RadioGroup>
-      {dirty == false && (
+      {dirty === false && (
         <div className={classes.required}>
           <label>*svar mangler</label>
         </div>

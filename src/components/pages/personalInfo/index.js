@@ -74,14 +74,14 @@ function PersonalInfo(props) {
     let updated = false;
 
     dataPlaceholder.forEach((item) => {
-      if (item.id == id) {
+      if (item.id === id) {
         item.answer = answer;
         setData(dataPlaceholder);
         updated = true;
       }
     });
 
-    if (updated == false) {
+    if (updated === false) {
       setData((oldData) => [
         ...oldData,
         { id: id, question: question, answer: answer },
@@ -94,12 +94,12 @@ function PersonalInfo(props) {
   }, []);
 
   useEffect(() => {
-    if (data.length == numberOfQuestions) {
+    if (data.length === numberOfQuestions) {
       if (nextButtonDisabled) {
         setNextButtonDisabled(false);
       }
     }
-  });
+  }, [data, nextButtonDisabled]);
 
   const UploadDataToRedcap = () => {
     props.setCurrentPage(2);

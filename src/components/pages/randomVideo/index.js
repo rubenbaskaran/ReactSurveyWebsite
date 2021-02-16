@@ -18,7 +18,7 @@ function RandomVideo(props) {
 
   const [url, setUrl] = React.useState("");
   const [timeLeft, setTimeLeft] = React.useState(randomVideoNumber * 5);
-  if (url == "") {
+  if (url === "") {
     switch (randomVideoNumber) {
       case 1:
         setUrl("https://www.youtube.com/embed/ElIl2gXQUnw" + urlConfigs);
@@ -32,6 +32,7 @@ function RandomVideo(props) {
         setUrl("https://www.youtube.com/embed/_wvkKixRIK0" + urlConfigs);
         setTimeLeft(47);
         break;
+      default:
     }
   }
 
@@ -69,10 +70,11 @@ function RandomVideo(props) {
           <Grid item xs={12} container justify="center">
             <iframe
               id="existing-iframe-example"
-              width="760"
-              height="515"
+              width="960"
+              height="715"
               src={url}
               frameBorder="0"
+              title="Respekt kampagne video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </Grid>
@@ -84,7 +86,7 @@ function RandomVideo(props) {
               disabled={btnDisabled}
               onClick={UploadDataToRedcap}
             >
-              {timeLeft != 0 ? timeLeft : "Næste"}
+              {timeLeft !== 0 ? timeLeft : "Næste"}
             </Button>
           </Grid>
         </Grid>

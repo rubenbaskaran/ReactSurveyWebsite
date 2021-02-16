@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Paper,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  TextField,
-} from "@material-ui/core";
+import { Paper, FormLabel, RadioGroup, TextField } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -50,14 +43,12 @@ const useStyles = makeStyles({
 
 function Textfield(props) {
   const classes = useStyles();
-  const [dirty, setDirty] = React.useState(true); // Change to false for future purposes
   const [emailInvalid, setEmailInvalid] = React.useState(false);
 
   const handleChange = (event) => {
-    // setDirty(true); // Uncomment for future purposes
     if (
       (event.target.value.includes("@") && event.target.value.includes(".")) ||
-      event.target.value.trim().length == 0
+      event.target.value.trim().length === 0
     ) {
       setEmailInvalid(false);
     } else {
@@ -82,11 +73,6 @@ function Textfield(props) {
           helperText={emailInvalid ? "Ugyldig e-mail adresse" : ""}
         />
       </RadioGroup>
-      {dirty == false && (
-        <div className={classes.required}>
-          <label>*svar mangler</label>
-        </div>
-      )}
     </Paper>
   );
 }

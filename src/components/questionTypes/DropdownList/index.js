@@ -3,17 +3,14 @@ import {
   Paper,
   FormLabel,
   RadioGroup,
-  FormControlLabel,
-  Radio,
   FormControl,
   Select,
   MenuItem,
-  FormHelperText,
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
-import store, {
+import {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
 } from "../../../globalVariables";
@@ -66,20 +63,20 @@ function DropdownList(props) {
     props.callback(props.id, props.question, event.target.value);
     setRating(event.target.value);
 
-    if (props.showExtraSection != "none") {
-      if (props.showExtraSection == "first") {
+    if (props.showExtraSection !== "none") {
+      if (props.showExtraSection === "first") {
         if (
-          event.target.value == "Ja" ||
-          event.target.value == "Nej, men har gjort det tidligere i livet"
+          event.target.value === "Ja" ||
+          event.target.value === "Nej, men har gjort det tidligere i livet"
         ) {
           dispatch(togglePreExtraSectionAction(true));
         } else {
           dispatch(togglePreExtraSectionAction(false));
         }
-      } else if (props.showExtraSection == "second") {
+      } else if (props.showExtraSection === "second") {
         if (
-          event.target.value == "Ja" ||
-          event.target.value == "Nej, men har gjort det tidligere i livet"
+          event.target.value === "Ja" ||
+          event.target.value === "Nej, men har gjort det tidligere i livet"
         ) {
           dispatch(togglePostExtraSectionAction(true));
         } else {
@@ -117,7 +114,7 @@ function DropdownList(props) {
           </FormControl>
         </div>
       </RadioGroup>
-      {dirty == false && (
+      {dirty === false && (
         <div className={classes.required}>
           <label>*svar mangler</label>
         </div>

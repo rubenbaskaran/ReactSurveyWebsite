@@ -443,13 +443,13 @@ function AxiosCall(url, data, dispatch) {
     .post(url, data)
     .then(function (response) {
       if (!response.data.responseData) {
-        throw "Response data is undefined";
+        throw new Error("Response data is undefined");
       }
-      if (url.includes("create") && data.emails_complete == null) {
+      if (url.includes("create") && !data.emails_complete) {
         dispatch(
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
-      } else if (data.emails_complete != null && data.emails_complete == 2) {
+      } else if (data.emails_complete != null && data.emails_complete === 2) {
         window.open("https://alkohologsamfund.dk/", "_self");
       }
     })

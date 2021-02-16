@@ -21,29 +21,29 @@ const App = () => {
   return (
     <Provider store={store}>
       <div>
-        {currentPage == 0 ? <Consent setCurrentPage={setCurrentPage} /> : null}
-        {currentPage == 1 ? (
+        {currentPage === 0 ? <Consent setCurrentPage={setCurrentPage} /> : null}
+        {currentPage === 1 ? (
           <PersonalInfo setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 2 ? (
+        {currentPage === 2 ? (
           <FirstSurvey setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 3 ? (
+        {currentPage === 3 ? (
           <PreNinetyDayThoughts setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 4 ? (
+        {currentPage === 4 ? (
           <VideoText setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 5 ? (
+        {currentPage === 5 ? (
           <RandomVideo setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 6 ? (
+        {currentPage === 6 ? (
           <SecondSurvey setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 7 ? (
+        {currentPage === 7 ? (
           <PostNinetyDayThoughts setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage == 8 ? (
+        {currentPage === 8 ? (
           <CompetitionParticipation setCurrentPage={setCurrentPage} />
         ) : null}
       </div>

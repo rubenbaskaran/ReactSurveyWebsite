@@ -139,6 +139,7 @@ function Consent(props) {
             <img
               src={require("./logo.png")}
               style={{ width: 270.6, height: 119.2 }}
+              alt="SDU logo"
             ></img>
           </Grid>
         </Grid>
