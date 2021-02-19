@@ -42,7 +42,7 @@ function PersonalInfo(props) {
   ];
 
   const maritalStatus = [
-    "Ugift",
+    "Single",
     "I et forhold",
     "Samboende",
     "Enke/enkemand",
