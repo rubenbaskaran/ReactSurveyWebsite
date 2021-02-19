@@ -22,7 +22,10 @@ const useStyles = makeStyles({
     "margin-left": "15px",
     "margin-top": "20px",
     display: "inline-block",
-    width: "40%",
+    width: "100%",
+    "& p": {
+      color: "red",
+    },
   },
   required: {
     display: "block",
