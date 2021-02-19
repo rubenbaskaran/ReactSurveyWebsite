@@ -59,14 +59,14 @@ function Consent(props) {
               Det tager cirka 5-10 minutter at gennemføre undersøgelsen. Du skal
               først besvare nogle spørgsmål, derefter se en lille film. Husk at
               have slået lyden til. Derefter skal du svare på nogle af
-              spørgsmålene engang til. Du er anonym i undersøgelsen, og dine
+              spørgsmålene en gang til. Du er anonym i undersøgelsen, og dine
               svar vil kun blive brugt i denne undersøgelse. Du skal være mindst
               18 år for at kunne deltage.
             </p>
             <p>
               Som tak for deltagelsen kan du - hvis du vil - oplyse din
               e-mail-adresse for at deltage i en lodtrækning om fem
-              delikatessekurver til en værdi af 400 kroner hver.
+              delikatessekurve til en værdi af 400 kroner hver.
             </p>
             <p>
               Du inviteres hermed til at deltage i ovenstående
@@ -89,7 +89,7 @@ function Consent(props) {
               </li>
               <li>
                 Du forstår, at data i undersøgelsen anvendes anonymiseret til
-                brug for undervisning, publikationer og præsentationer på
+                brug i undervisning, publikationer og præsentationer på
                 videnskabelige møder.
               </li>
               <li>Du er fyldt 18 år og myndig.</li>
