@@ -55,6 +55,7 @@ function FirstSurvey(props) {
     "Ja, en gang",
     "Ja, flere gange",
     "Nej, det har jeg ikke",
+    "Nej, men jeg har overvejet det",
     "Vil ikke svare",
   ];
 
