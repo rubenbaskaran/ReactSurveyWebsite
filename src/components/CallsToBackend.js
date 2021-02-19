@@ -456,8 +456,7 @@ function AxiosCall(url, data, dispatch) {
     .catch(function (error) {
       if (
         window.confirm(
-          "Tilgå venligst undersøgelsen på:\n\nhttps://reach.sdu.dk - i stedet for - http://reach.sdu.dk\n\nKontakt venligst sarawf@health.sdu.dk hvis fejlen genopstår.\nOplys følgende fejlbeskrivelse:\n" +
-            error
+          "Kunne ikke forbinde til server. Tjek venligst din internetforbindelse og tilgå undersøgelsen på:\n\nhttps://reach.sdu.dk - i stedet for - http://reach.sdu.dk\n\nKontakt venligst sarawf@health.sdu.dk hvis fejlen genopstår."
         )
       ) {
         window.location.reload();
