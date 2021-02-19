@@ -39,7 +39,7 @@ function CompetitionParticipation() {
             <Textfield
               id={58}
               question="Hvis du ønsker at deltage i lodtrækningen, bedes du efterlade din
-              e-mail-adresse her"
+              e-mailadresse her"
               required={false}
               callback={SaveUserInputInState}
             />

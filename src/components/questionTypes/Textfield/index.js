@@ -70,10 +70,10 @@ function Textfield(props) {
         <TextField
           id="standard-full-width"
           className={classes.textField}
-          placeholder="Angiv e-mail adresse..."
+          placeholder="Angiv e-mailadresse..."
           fullWidth
           onChange={handleChange}
-          helperText={emailInvalid ? "Ugyldig e-mail adresse" : ""}
+          helperText={emailInvalid ? "Ugyldig e-mailadresse" : ""}
         />
       </RadioGroup>
     </Paper>

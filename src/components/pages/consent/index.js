@@ -65,7 +65,7 @@ function Consent(props) {
             </p>
             <p>
               Som tak for deltagelsen kan du - hvis du vil - oplyse din
-              e-mail-adresse for at deltage i en lodtrækning om fem
+              e-mailadresse for at deltage i en lodtrækning om fem
               delikatessekurve til en værdi af 400 kroner hver.
             </p>
             <p>
