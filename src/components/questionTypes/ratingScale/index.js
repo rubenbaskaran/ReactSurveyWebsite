@@ -89,12 +89,14 @@ function RatingScale(props) {
               value={props.answers.indexOf(value)}
               control={<Radio />}
               label={value}
-              labelPlacement="top"
+              labelPlacement="start"
             />
           ))}
-          {(props.agreeDisagree === true && <label>Meget enig</label>) ||
+          {(props.agreeDisagree === true && (
+            <label style={{ marginLeft: 10 }}>Meget enig</label>
+          )) ||
             (props.notAtAllVeryMuch === true && (
-              <label>I meget høj grad</label>
+              <label style={{ marginLeft: 10 }}>I meget høj grad</label>
             ))}
           <FormControlLabel
             key={10}
