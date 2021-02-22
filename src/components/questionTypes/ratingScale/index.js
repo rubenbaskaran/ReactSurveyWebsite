@@ -154,7 +154,13 @@ function RatingScale(props) {
             justify="center"
             alignItems="center"
           >
-            <label style={{ marginLeft: "10px", textAlign: "center" }}>
+            <label
+              style={{
+                marginLeft: "10px",
+                marginBottom: "10px",
+                textAlign: "center",
+              }}
+            >
               Meget enig
             </label>
           </Grid>
@@ -170,7 +176,13 @@ function RatingScale(props) {
               justify="center"
               alignItems="center"
             >
-              <label style={{ marginLeft: "10px", textAlign: "center" }}>
+              <label
+                style={{
+                  marginLeft: "10px",
+                  marginBottom: "10px",
+                  textAlign: "center",
+                }}
+              >
                 I meget høj grad
               </label>
             </Grid>
