@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Paper,
   FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
+  Grid,
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -23,12 +24,7 @@ const useStyles = makeStyles({
     "letter-spacing": "0.5px",
     "line-height": "1.5",
     "font-size": "18px",
-  },
-  ratingScale: {
-    "margin-left": "auto",
-    "margin-right": "auto",
-    "margin-top": "20px",
-    display: "inline-block",
+    marginBottom: "20px",
   },
   required: {
     display: "block",
@@ -52,6 +48,18 @@ function RatingScale(props) {
   const [dirty, setDirty] = React.useState(false);
   const [listOfAnswerOptions, setListOfAnswerOptions] = React.useState([]);
   const classes = useStyles();
+  const [radioButtonGridWidth, setRadioButtonGridWidth] = React.useState(1);
+  const [
+    radioButtonLabelPosition,
+    setRadioButtonLabelPosition,
+  ] = React.useState("start");
+
+  useEffect(() => {
+    if (props.answers.length !== 9) {
+      setRadioButtonGridWidth(2);
+      setRadioButtonLabelPosition("top");
+    }
+  }, []);
 
   if (listOfAnswerOptions.length === 0) {
     props.answers.map((value) => {
@@ -80,32 +88,112 @@ function RatingScale(props) {
         <FormLabel className={classes.question}>
           <b>{props.question}</b>
         </FormLabel>
-        <div className={classes.ratingScale}>
-          {(props.agreeDisagree === true && <label>Meget uenig</label>) ||
-            (props.notAtAllVeryMuch === true && <label>Slet ikke</label>)}
-          {props.answers.map((value) => (
+        {(props.agreeDisagree === true && (
+          <Grid
+            container
+            xs={12}
+            sm={12}
+            md={radioButtonGridWidth}
+            lg={radioButtonGridWidth}
+            xl={radioButtonGridWidth}
+            justify="center"
+            alignItems="center"
+            alignContent="center"
+          >
+            <label style={{ marginLeft: "20px", textAlign: "center" }}>
+              Meget uenig
+            </label>
+          </Grid>
+        )) ||
+          (props.notAtAllVeryMuch === true && (
+            <Grid
+              container
+              xs={12}
+              sm={12}
+              md={radioButtonGridWidth}
+              lg={radioButtonGridWidth}
+              xl={radioButtonGridWidth}
+              justify="center"
+              alignItems="center"
+            >
+              <label style={{ marginLeft: "20px", textAlign: "center" }}>
+                Slet ikke
+              </label>
+            </Grid>
+          ))}
+
+        {props.answers.map((value) => (
+          <Grid
+            container
+            xs={12}
+            sm={12}
+            md={radioButtonGridWidth}
+            lg={radioButtonGridWidth}
+            xl={radioButtonGridWidth}
+            justify="center"
+          >
             <FormControlLabel
               key={props.answers.indexOf(value)}
               value={props.answers.indexOf(value)}
               control={<Radio />}
               label={value}
-              labelPlacement="start"
+              labelPlacement={radioButtonLabelPosition}
+              style={{ textAlign: "center" }}
             />
+          </Grid>
+        ))}
+
+        {(props.agreeDisagree === true && (
+          <Grid
+            container
+            xs={12}
+            sm={12}
+            md={radioButtonGridWidth}
+            lg={radioButtonGridWidth}
+            xl={radioButtonGridWidth}
+            justify="center"
+            alignItems="center"
+          >
+            <label style={{ marginLeft: "10px", textAlign: "center" }}>
+              Meget enig
+            </label>
+          </Grid>
+        )) ||
+          (props.notAtAllVeryMuch === true && (
+            <Grid
+              container
+              xs={12}
+              sm={12}
+              md={radioButtonGridWidth}
+              lg={radioButtonGridWidth}
+              xl={radioButtonGridWidth}
+              justify="center"
+              alignItems="center"
+            >
+              <label style={{ marginLeft: "10px", textAlign: "center" }}>
+                I meget høj grad
+              </label>
+            </Grid>
           ))}
-          {(props.agreeDisagree === true && (
-            <label style={{ marginLeft: 10 }}>Meget enig</label>
-          )) ||
-            (props.notAtAllVeryMuch === true && (
-              <label style={{ marginLeft: 10 }}>I meget høj grad</label>
-            ))}
+
+        <Grid
+          container
+          xs={12}
+          sm={12}
+          md={radioButtonGridWidth}
+          lg={radioButtonGridWidth}
+          xl={radioButtonGridWidth}
+          justify={"flex-end"}
+        >
           <FormControlLabel
             key={10}
             value={10}
             control={<Radio />}
             label={"Vil ikke svare"}
             labelPlacement="top"
+            style={{ textAlign: "center" }}
           />
-        </div>
+        </Grid>
       </RadioGroup>
       {dirty === false && (
         <div className={classes.required}>
