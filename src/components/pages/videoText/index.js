@@ -16,8 +16,8 @@ function VideoText(props) {
             <p style={{ fontSize: 20 }}>
               Husk at have lyden tændt, mens du ser filmen.
               <br />
-              Når filmen er færdig, skal du besvare nogle af de sidste
-              spørgsmål.
+              Efter filmen skal du genbesvare nogle af de spørgsmål, som blev
+              stillet i starten af undersøgelsen.
             </p>
           </Grid>
           <Grid container item xs={12}>

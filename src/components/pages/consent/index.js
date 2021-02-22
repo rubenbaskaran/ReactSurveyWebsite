@@ -70,10 +70,6 @@ function Consent(props) {
               delikatessekurve til en værdi af 400 kroner hver.
             </p>
             <p>
-              Du inviteres hermed til at deltage i ovenstående
-              forskningsprojekt.
-            </p>
-            <p>
               Læs deltagerinformationen nøje, klik af i feltet nedenfor og klik
               derefter på "Deltag" knappen for at bekræfte, at du gerne vil
               deltage og at:
