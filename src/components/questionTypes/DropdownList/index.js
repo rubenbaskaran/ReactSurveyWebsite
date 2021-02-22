@@ -101,7 +101,7 @@ function DropdownList(props) {
               displayEmpty
               className={classes.selectEmpty}
               inputProps={{ "aria-label": "Without label" }}
-              style={{ width: "100%" }}
+              style={{ width: "200px" }}
             >
               <MenuItem value="" disabled>
                 <em>{props.placeholder}</em>
