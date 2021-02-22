@@ -30,6 +30,7 @@ const useStyles = makeStyles({
     display: "block",
     "text-align": "right",
     color: "red",
+    paddingRight: "15px",
   },
   goodText: {
     display: "inline-block",
@@ -157,7 +158,6 @@ function RatingScale(props) {
             <label
               style={{
                 marginLeft: "10px",
-                marginBottom: "20px",
                 textAlign: "center",
               }}
             >
@@ -179,7 +179,6 @@ function RatingScale(props) {
               <label
                 style={{
                   marginLeft: "10px",
-                  marginBottom: "20px",
                   textAlign: "center",
                 }}
               >
