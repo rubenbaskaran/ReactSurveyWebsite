@@ -19,7 +19,6 @@ const useStyles = makeStyles({
     "font-size": "18px",
   },
   textField: {
-    "margin-left": "15px",
     "margin-top": "20px",
     display: "inline-block",
     width: "100%",
