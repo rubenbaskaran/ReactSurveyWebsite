@@ -157,7 +157,7 @@ function RatingScale(props) {
             <label
               style={{
                 marginLeft: "10px",
-                marginBottom: "10px",
+                marginBottom: "20px",
                 textAlign: "center",
               }}
             >
@@ -179,7 +179,7 @@ function RatingScale(props) {
               <label
                 style={{
                   marginLeft: "10px",
-                  marginBottom: "10px",
+                  marginBottom: "20px",
                   textAlign: "center",
                 }}
               >
