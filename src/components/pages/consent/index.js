@@ -60,9 +60,9 @@ function Consent(props) {
               Det tager cirka 5-10 minutter at gennemføre undersøgelsen. I
               starten af undersøgelsen får du stillet nogle spørgsmål, hvorefter
               du skal se en film. Efter filmen skal du genbesvare nogle af de
-              spørgsmål, som blev stillet i starten af undersøgelsen. Husk at
-              slå lyden til under filmen. Du er anonym i undersøgelsen, og dine
-              svar vil kun blive brugt i forbindelse med denne undersøgelse.
+              spørgsmål, som blev stillet i starten af undersøgelsen. Du er
+              anonym i undersøgelsen, og dine svar vil kun blive brugt i
+              forbindelse med denne undersøgelse.
             </p>
             <p>
               Som tak for deltagelsen kan du - hvis du vil - oplyse din
