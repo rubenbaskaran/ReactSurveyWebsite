@@ -34,7 +34,7 @@ function PersonalInfo(props) {
   const occupation = [
     "Er i arbejde",
     "Ledig",
-    "Pensionist, efterlønsmodtager eller lign.",
+    "Pensionist/efterlønsmodtager",
     "Hjemmegående",
     "Under uddannelse",
     "Andet",
@@ -44,7 +44,7 @@ function PersonalInfo(props) {
   const maritalStatus = [
     "Single",
     "I et forhold",
-    "Samboende",
+    "Gift/samboende",
     "Enke/enkemand",
     "Vil ikke svare",
   ];
@@ -60,7 +60,7 @@ function PersonalInfo(props) {
   const origin = [
     "Danmark",
     "Norden (Norge, Island, Finland eller Sverige)",
-    "Europa (ej Danmark, Norge, Island, Finland eller Sverige)",
+    "Europa (ej Danmark eller Norden)",
     "Afrika",
     "Asien",
     "Nordamerika (Canada, USA)",
