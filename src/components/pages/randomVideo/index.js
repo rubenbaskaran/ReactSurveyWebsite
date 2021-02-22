@@ -71,7 +71,7 @@ function RandomVideo(props) {
             <iframe
               id="existing-iframe-example"
               width="960"
-              height="715"
+              height="515"
               src={url}
               frameBorder="0"
               title="Respekt kampagne video"
