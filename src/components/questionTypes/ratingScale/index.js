@@ -195,6 +195,7 @@ function RatingScale(props) {
           lg={radioButtonGridWidth}
           xl={radioButtonGridWidth}
           justify={"flex-end"}
+          style={{ marginTop: "20px" }}
         >
           <FormControlLabel
             key={10}
