@@ -60,7 +60,7 @@ function RatingScale(props) {
       setRadioButtonGridWidth(2);
       setRadioButtonLabelPosition("top");
     }
-  }, []);
+  }, [props.answers.length]);
 
   if (listOfAnswerOptions.length === 0) {
     props.answers.map((value) => {
@@ -95,6 +95,7 @@ function RatingScale(props) {
             xs={12}
             sm={12}
             md={radioButtonGridWidth}
+            item
             lg={radioButtonGridWidth}
             xl={radioButtonGridWidth}
             justify="center"
@@ -112,6 +113,7 @@ function RatingScale(props) {
               xs={12}
               sm={12}
               md={radioButtonGridWidth}
+              item
               lg={radioButtonGridWidth}
               xl={radioButtonGridWidth}
               justify="center"
@@ -125,10 +127,12 @@ function RatingScale(props) {
 
         {props.answers.map((value) => (
           <Grid
+            key={props.answers.indexOf(value)}
             container
             xs={12}
             sm={12}
             md={radioButtonGridWidth}
+            item
             lg={radioButtonGridWidth}
             xl={radioButtonGridWidth}
             justify="center"
@@ -150,6 +154,7 @@ function RatingScale(props) {
             xs={12}
             sm={12}
             md={radioButtonGridWidth}
+            item
             lg={radioButtonGridWidth}
             xl={radioButtonGridWidth}
             justify="center"
@@ -171,6 +176,7 @@ function RatingScale(props) {
               xs={12}
               sm={12}
               md={radioButtonGridWidth}
+              item
               lg={radioButtonGridWidth}
               xl={radioButtonGridWidth}
               justify="center"
@@ -192,6 +198,7 @@ function RatingScale(props) {
           xs={12}
           sm={12}
           md={radioButtonGridWidth}
+          item
           lg={radioButtonGridWidth}
           xl={radioButtonGridWidth}
           justify={"flex-end"}
