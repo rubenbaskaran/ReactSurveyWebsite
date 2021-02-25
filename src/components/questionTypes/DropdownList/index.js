@@ -1,4 +1,6 @@
 import React from "react";
+import useStyles from "../../styles";
+import { useDispatch } from "react-redux";
 import {
   Paper,
   FormLabel,
@@ -7,9 +9,6 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core";
-
-import useStyles from "../../styles";
-import { useDispatch } from "react-redux";
 import {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
