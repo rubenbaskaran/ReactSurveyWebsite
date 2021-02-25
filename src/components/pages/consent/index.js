@@ -93,9 +93,9 @@ function Consent(props) {
               delikatessekurve til en værdi af 400 kroner hver.
             </p>
             <p>
-              Læs deltagerinformationen nøje, klik af i feltet nedenfor og klik
-              derefter på "Deltag" knappen for at bekræfte, at du gerne vil
-              deltage og at:
+              Læs deltagerinformationen nøje, sæt flueben i afkrydsningsfeltet
+              og klik derefter på "Deltag" knappen for at bekræfte, at du gerne
+              vil deltage og at:
             </p>
             <ul>
               <li>Du har læst og forstået den givne information om studiet.</li>

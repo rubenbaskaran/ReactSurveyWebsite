@@ -30,7 +30,7 @@ function RecaptchaPage(props) {
           <Grid item xs={12}>
             <h1>
               Sæt venligst flueben i afkrydsningsfeltet herunder og klik
-              derefter på "Start"
+              derefter på "Start" knappen for at starte undersøgelsen
             </h1>
           </Grid>
           <Grid item xs={12} container justify="center">
