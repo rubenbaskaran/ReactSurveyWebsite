@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
 import DropdownList from "../../questionTypes/DropdownList";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { UploadFourth35To49 } from "../../CallsToBackend";
+import useStyles from "../../styles";
 
 function SecondSurvey(props) {
   const classes = useStyles();

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 import { UploadVideoId } from "../../CallsToBackend";
+import useStyles from "../../styles";
 
 function RandomVideo(props) {
   const [randomVideoNumber, setRandomVideoNumber] = React.useState(0);

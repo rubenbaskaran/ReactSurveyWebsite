@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { UploadSecond8To26 } from "../../CallsToBackend";
+import useStyles from "../../styles";
 
 function FirstSurvey(props) {
   const classes = useStyles();

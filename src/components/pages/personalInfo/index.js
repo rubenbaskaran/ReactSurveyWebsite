@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import DropdownList from "../../questionTypes/DropdownList";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { UploadFirst1To7 } from "../../CallsToBackend";
+import useStyles from "../../styles";
 
 function PersonalInfo(props) {
   const classes = useStyles();

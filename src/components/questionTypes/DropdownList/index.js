@@ -7,12 +7,12 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core";
-import useStyles from "../../styles";
 import { useDispatch } from "react-redux";
 import {
   togglePreExtraSectionAction,
   togglePostExtraSectionAction,
 } from "../../../globalVariables";
+import useStyles from "../../styles";
 
 function DropdownList(props) {
   const [rating, setRating] = React.useState("");

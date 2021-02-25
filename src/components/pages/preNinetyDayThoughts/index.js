@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import RatingScale from "../../questionTypes/ratingScale";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useEffect } from "react";
 import { UploadThird27To34 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
+import useStyles from "../../styles";
 
 function PreNinetyDayThoughts(props) {
   const classes = useStyles();

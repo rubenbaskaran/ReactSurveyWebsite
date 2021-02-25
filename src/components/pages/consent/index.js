@@ -6,13 +6,13 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@material-ui/core";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTimestampStartAction } from "../../../globalVariables";
 import { green } from "@material-ui/core/colors";
 import { withStyles } from "@material-ui/core/styles";
+import useStyles from "../../styles";
 
 function Consent(props) {
   const [disabled, setDisabled] = React.useState(true);

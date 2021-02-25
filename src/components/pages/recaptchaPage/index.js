@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
-import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
+import useStyles from "../../styles";
 
 function RecaptchaPage(props) {
   const [disabled, setDisabled] = React.useState(true);
