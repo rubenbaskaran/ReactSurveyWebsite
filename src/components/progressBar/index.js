@@ -1,8 +1,6 @@
 import React from "react";
+import { Box, LinearProgress, Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import useStyles from "../styles";
 
 function LinearProgressWithLabel(props) {

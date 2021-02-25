@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import useStyles from "../../styles";
 import {
   Paper,
   FormLabel,
@@ -8,6 +7,7 @@ import {
   Radio,
   Grid,
 } from "@material-ui/core";
+import useStyles from "../../styles";
 
 function RatingScale(props) {
   const [rating, setRating] = React.useState("");
