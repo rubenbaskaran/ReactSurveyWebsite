@@ -1,47 +1,6 @@
 import React from "react";
 import { Paper, FormLabel, RadioGroup, TextField } from "@material-ui/core";
-
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  paper: {
-    padding: 20,
-  },
-  question: {
-    color: "black",
-    background: "#bccfe8",
-    display: "block",
-    width: "100%",
-    padding: "15px",
-    "font-family": "Segoe UI",
-    "letter-spacing": "0.5px",
-    "line-height": "1.5",
-    "font-size": "18px",
-  },
-  textField: {
-    "margin-top": "20px",
-    display: "inline-block",
-    width: "100%",
-    "& p": {
-      color: "red",
-    },
-  },
-  required: {
-    display: "block",
-    "text-align": "right",
-    color: "red",
-  },
-  goodText: {
-    display: "inline-block",
-    "margin-top": "20px",
-    "margin-left": "10px",
-  },
-  badText: {
-    display: "inline-block",
-    "margin-top": "20px",
-    "margin-right": "20px",
-  },
-});
+import useStyles from "../../styles";
 
 function Textfield(props) {
   const classes = useStyles();
@@ -62,7 +21,7 @@ function Textfield(props) {
   return (
     <Paper className={classes.paper}>
       <RadioGroup row>
-        <FormLabel className={classes.question}>
+        <FormLabel className={classes.questionWithoutMarginBottom}>
           <b>{props.question}</b>
         </FormLabel>
 
