@@ -84,12 +84,11 @@ function DropdownList(props) {
         </FormLabel>
 
         <div className={classes.ratingScale}>
-          <FormControl className={classes.formControl}>
+          <FormControl>
             <Select
               value={rating}
               onChange={HandleChange}
               displayEmpty
-              className={classes.selectEmpty}
               inputProps={{ "aria-label": "Without label" }}
               style={{ width: "150px" }}
             >
