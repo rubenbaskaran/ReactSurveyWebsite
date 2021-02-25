@@ -52,16 +52,6 @@ const useStyles = makeStyles({
     color: "red",
     paddingRight: "15px",
   },
-  goodText: {
-    display: "inline-block",
-    "margin-top": "20px",
-    "margin-left": "10px",
-  },
-  badText: {
-    display: "inline-block",
-    "margin-top": "20px",
-    "margin-right": "20px",
-  },
   textField: {
     "margin-top": "20px",
     display: "inline-block",
