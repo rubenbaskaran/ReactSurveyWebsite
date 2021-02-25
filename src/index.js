@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Consent from "./components/pages/consent";
+import RecaptchaPage from "./components/pages/recaptchaPage";
 import PersonalInfo from "./components/pages/personalInfo";
 import FirstSurvey from "./components/pages/firstSurvey";
 import PreNinetyDayThoughts from "./components/pages/preNinetyDayThoughts";
@@ -22,6 +23,9 @@ const App = () => {
     <Provider store={store}>
       <div>
         {currentPage === 0 ? <Consent setCurrentPage={setCurrentPage} /> : null}
+        {currentPage === 0.5 ? (
+          <RecaptchaPage setCurrentPage={setCurrentPage} />
+        ) : null}
         {currentPage === 1 ? (
           <PersonalInfo setCurrentPage={setCurrentPage} />
         ) : null}

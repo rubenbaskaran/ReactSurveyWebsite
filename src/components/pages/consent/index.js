@@ -1,25 +1,43 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import {
+  Container,
+  Button,
+  Grid,
+  FormControlLabel,
+  Checkbox,
+} from "@material-ui/core";
 import useStyles from "../../styles";
 import LinearWithValueLabel from "../../progressBar";
-import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTimestampStartAction } from "../../../globalVariables";
+import { green } from "@material-ui/core/colors";
+import { withStyles } from "@material-ui/core/styles";
 
 function Consent(props) {
   const [disabled, setDisabled] = React.useState(true);
+  const [checkboxValue, setCheckboxValue] = React.useState(false);
+  const [buttonText, setButtonText] = React.useState(
+    "Deltag (Tillad cookies for at fortsætte)"
+  );
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  function handleRecaptcha() {
+  function handleCookies() {
     setDisabled(!disabled);
+    setCheckboxValue(!checkboxValue);
+    setButtonText("Deltag");
   }
 
-  const script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
-  script.async = true;
-  document.body.appendChild(script);
+  const GreenCheckbox = withStyles({
+    root: {
+      color: green[400],
+      "&$checked": {
+        color: green[600],
+      },
+    },
+    checked: {},
+  })((props) => <Checkbox color="default" {...props} />);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -91,9 +109,16 @@ function Consent(props) {
               </li>
               <li>Du er fyldt 18 år og myndig.</li>
             </ul>
-          </Grid>
-          <Grid item xs={12} container justify="center">
-            <Recaptcha handleRecaptcha={handleRecaptcha} />
+            <FormControlLabel
+              control={
+                <GreenCheckbox
+                  checked={checkboxValue}
+                  onChange={handleCookies}
+                />
+              }
+              label="Sæt flueben i afkrydsningsfeltet for at tillade cookies. Hjemmesiden bruger cookies til at bekæmpe spam samt til visning af YouTube videoer."
+              style={{ fontStyle: "italic" }}
+            />
           </Grid>
           <Grid container item xs={12}>
             <Button
@@ -103,10 +128,10 @@ function Consent(props) {
               disabled={disabled}
               onClick={() => {
                 SetTimestampStart();
-                props.setCurrentPage(1);
+                props.setCurrentPage(0.5);
               }}
             >
-              Deltag
+              {buttonText}
             </Button>
           </Grid>
           <Grid item xs={12} style={{ fontSize: "15px" }}>
