@@ -26,7 +26,12 @@ function Consent(props) {
   function handleCookies() {
     setDisabled(!disabled);
     setCheckboxValue(!checkboxValue);
-    setButtonText("Deltag");
+
+    if (buttonText === "Deltag (Tillad cookies for at fortsætte)") {
+      setButtonText("Deltag");
+    } else {
+      setButtonText("Deltag (Tillad cookies for at fortsætte)");
+    }
   }
 
   const GreenCheckbox = withStyles({
@@ -116,7 +121,7 @@ function Consent(props) {
                   onChange={handleCookies}
                 />
               }
-              label="Sæt flueben i afkrydsningsfeltet for at tillade cookies. Hjemmesiden bruger cookies til at bekæmpe spam samt til visning af YouTube videoer."
+              label="Sæt venligst flueben i afkrydsningsfeltet til venstre, for at tillade cookies. Hjemmesiden bruger cookies til at bekæmpe spam samt til visning af YouTube videoer."
               style={{ fontStyle: "italic" }}
             />
           </Grid>

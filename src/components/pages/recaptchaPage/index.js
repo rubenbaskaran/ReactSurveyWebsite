@@ -25,12 +25,12 @@ function RecaptchaPage(props) {
   return (
     <div>
       <Container fixed>
-        <LinearWithValueLabel value={0} />
+        <LinearWithValueLabel value={5} />
         <Grid container spacing={1} className={classes.grid}>
           <Grid item xs={12}>
             <h1>
-              Sæt flueben i afkrydsningsfeltet herunder og klik derefter på
-              "Start"
+              Sæt venligst flueben i afkrydsningsfeltet herunder og klik
+              derefter på "Start"
             </h1>
           </Grid>
           <Grid item xs={12} container justify="center">
