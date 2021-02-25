@@ -12,9 +12,6 @@ const useStyles = makeStyles({
     "margin-top": "15px",
     width: "100%",
   },
-  progressBarPlacement: {
-    "margin-top": "40px",
-  },
   paper: {
     padding: 20,
   },

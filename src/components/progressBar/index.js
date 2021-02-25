@@ -1,7 +1,13 @@
 import React from "react";
 import { Box, LinearProgress, Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
-import useStyles from "../styles";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  progressBarPlacement: {
+    "margin-top": "40px",
+  },
+});
 
 function LinearProgressWithLabel(props) {
   const classes = useStyles();
