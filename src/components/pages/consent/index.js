@@ -72,9 +72,8 @@ function Consent(props) {
               forbindelse med denne undersøgelse.
             </p>
             <p>
-              Læs deltagerinformationen nøje, sæt flueben i afkrydsningsfeltet
-              og klik derefter på "Deltag" knappen for at bekræfte, at du gerne
-              vil deltage og at:
+              Læs deltagerinformationen nøje og klik derefter på "Deltag"
+              knappen for at bekræfte, at du gerne vil deltage og at:
             </p>
             <ul>
               <li>Du har læst og forstået den givne information om studiet.</li>
