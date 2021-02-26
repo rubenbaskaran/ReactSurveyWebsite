@@ -94,17 +94,17 @@ function Consent(props) {
               til flere personer, der har behov for behandling.
             </p>
             <p>
+              Som tak for deltagelsen kan du - hvis du vil - oplyse din
+              e-mailadresse for at deltage i en lodtrækning om fem
+              delikatessekurve til en værdi af 400 kroner hver.
+            </p>
+            <p>
               Det tager cirka 5-10 minutter at gennemføre undersøgelsen. I
               starten af undersøgelsen får du stillet nogle spørgsmål, hvorefter
               du skal se en film. Efter filmen skal du genbesvare nogle af de
               spørgsmål, som blev stillet i starten af undersøgelsen. Du er
               anonym i undersøgelsen, og dine svar vil kun blive brugt i
               forbindelse med denne undersøgelse.
-            </p>
-            <p>
-              Som tak for deltagelsen kan du - hvis du vil - oplyse din
-              e-mailadresse for at deltage i en lodtrækning om fem
-              delikatessekurve til en værdi af 400 kroner hver.
             </p>
             <p>
               Læs deltagerinformationen nøje, sæt flueben i afkrydsningsfeltet

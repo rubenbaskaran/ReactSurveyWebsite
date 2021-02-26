@@ -77,6 +77,7 @@ function PersonalInfo(props) {
     "Europa (ej Danmark eller Norden)",
     "Afrika",
     "Asien",
+    "Mellemøsten",
     "Nordamerika (Canada, USA)",
     "Oceania (Australien)",
     "Sydamerika",
