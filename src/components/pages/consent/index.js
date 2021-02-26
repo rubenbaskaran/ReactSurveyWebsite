@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  Container,
-  Button,
-  Grid,
-  FormControlLabel,
-  Checkbox,
-} from "@material-ui/core";
+import { Container, Button, Grid } from "@material-ui/core";
 import LinearWithValueLabel from "../../progressBar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTimestampStartAction } from "../../../globalVariables";
-import { green } from "@material-ui/core/colors";
-import { withStyles } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -29,34 +21,8 @@ const useStyles = makeStyles({
 });
 
 function Consent(props) {
-  const [disabled, setDisabled] = React.useState(true);
-  const [checkboxValue, setCheckboxValue] = React.useState(false);
-  const [buttonText, setButtonText] = React.useState(
-    "Deltag (Tillad cookies for at fortsætte)"
-  );
   const classes = useStyles();
   const dispatch = useDispatch();
-
-  function handleCookies() {
-    setDisabled(!disabled);
-    setCheckboxValue(!checkboxValue);
-
-    if (buttonText === "Deltag (Tillad cookies for at fortsætte)") {
-      setButtonText("Deltag");
-    } else {
-      setButtonText("Deltag (Tillad cookies for at fortsætte)");
-    }
-  }
-
-  const GreenCheckbox = withStyles({
-    root: {
-      color: green[400],
-      "&$checked": {
-        color: green[600],
-      },
-    },
-    checked: {},
-  })((props) => <Checkbox color="default" {...props} />);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -128,29 +94,18 @@ function Consent(props) {
               </li>
               <li>Du er fyldt 18 år og myndig.</li>
             </ul>
-            <FormControlLabel
-              control={
-                <GreenCheckbox
-                  checked={checkboxValue}
-                  onChange={handleCookies}
-                />
-              }
-              label="Sæt venligst flueben i afkrydsningsfeltet til venstre, for at tillade cookies. Hjemmesiden bruger tredjepartscookies fra Google til at forhindre spambot besvarelser samt til visning af YouTube videoer."
-              style={{ fontStyle: "italic" }}
-            />
           </Grid>
           <Grid container item xs={12}>
             <Button
               variant="contained"
               color="primary"
               className={classes.button}
-              disabled={disabled}
               onClick={() => {
                 SetTimestampStart();
                 props.setCurrentPage(0.5);
               }}
             >
-              {buttonText}
+              Deltag
             </Button>
           </Grid>
           <Grid item xs={12} style={{ fontSize: "15px" }}>
