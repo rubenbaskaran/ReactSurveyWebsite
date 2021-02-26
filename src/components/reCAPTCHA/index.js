@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SecurityKey from "./SecurityKey";
 
 class Recaptcha extends Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class Recaptcha extends Component {
     return (
       <div
         className="g-recaptcha"
-        data-sitekey={SecurityKey.value}
+        data-sitekey="6LflOMcZAAAAAKLtg_6NyNLeUUsfncjpWgiWwwH8"
         data-callback="handleRecaptcha"
       ></div>
     );
