@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     "border-radius": "10px",
   },
   button: {
-    "margin-top": "15px",
     width: "100%",
   },
 });
