@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 });
 
 function RecaptchaPage(props) {
-  const [disabled, setDisabled] = React.useState(true);
+  const [disabled, setDisabled] = React.useState(false);
   const classes = useStyles();
 
   function handleRecaptcha() {
@@ -48,7 +48,7 @@ function RecaptchaPage(props) {
             </h1>
           </Grid>
           <Grid item xs={12} container justify="center">
-            <Recaptcha handleRecaptcha={handleRecaptcha} />
+            {/* <Recaptcha handleRecaptcha={handleRecaptcha} /> */}
           </Grid>
           <Grid container item xs={12}>
             <Button
