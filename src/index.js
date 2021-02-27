@@ -17,7 +17,7 @@ import store from "./globalVariables";
 import { Provider } from "react-redux";
 
 const App = () => {
-  const [currentPage, setCurrentPage] = React.useState(7);
+  const [currentPage, setCurrentPage] = React.useState(8);
 
   return (
     <Provider store={store}>
