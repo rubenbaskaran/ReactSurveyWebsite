@@ -11,6 +11,9 @@ function CookiePage() {
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
+
+    document.body.style =
+      "background: #F6F9FB; margin: 100px; border: solid black; border-width: 3px; border-radius: 20px; padding: 20px";
   }, []);
 
   function ReloadPage() {
@@ -21,10 +24,10 @@ function CookiePage() {
     <Button
       variant="contained"
       color="primary"
-      style={{ margin: "10px" }}
+      style={{ marginBottom: "10px" }}
       onClick={ReloadPage}
     >
-      Til forsiden
+      Gå tilbage til forsiden
     </Button>
   );
 }
