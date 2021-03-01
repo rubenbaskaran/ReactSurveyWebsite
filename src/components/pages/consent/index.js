@@ -136,6 +136,15 @@ function Consent(props) {
               alt="SDU logo"
             ></img>
           </Grid>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              props.setCurrentPage(9);
+            }}
+          >
+            Cookie-indstillinger
+          </Button>
         </Grid>
       </Container>
     </div>

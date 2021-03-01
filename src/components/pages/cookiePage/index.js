@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
+import { Button } from "@material-ui/core";
 
-function CookiePage() {
+function CookiePage(props) {
   useEffect(() => {
     const script = document.createElement("script");
     script.id = "CookieDeclaration";
@@ -12,7 +13,17 @@ function CookiePage() {
     document.body.appendChild(script);
   }, []);
 
-  return null;
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => {
+        props.setCurrentPage(0);
+      }}
+    >
+      Til forsiden
+    </Button>
+  );
 }
 
 export default CookiePage;

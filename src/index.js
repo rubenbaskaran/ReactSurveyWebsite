@@ -52,17 +52,9 @@ const App = () => {
         {currentPage === 8 ? (
           <CompetitionParticipation setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage === 9 ? <CookiePage /> : null}
-
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            setCurrentPage(9);
-          }}
-        >
-          Cookie-indstillinger
-        </Button>
+        {currentPage === 9 ? (
+          <CookiePage setCurrentPage={setCurrentPage} />
+        ) : null}
       </div>
     </Provider>
   );
