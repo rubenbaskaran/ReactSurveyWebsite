@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Button } from "@material-ui/core";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Consent from "./components/pages/consent";
@@ -18,6 +19,14 @@ import { Provider } from "react-redux";
 
 const App = () => {
   const [currentPage, setCurrentPage] = React.useState(0);
+
+  function ShowCookieDisclaimer() {
+    const script = document.createElement("script");
+    script.src =
+      "https://consent.cookiebot.com/13374a5a-f8ff-4ec7-90c7-9b849796daf7/cd.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
 
   return (
     <Provider store={store}>
@@ -56,6 +65,15 @@ const App = () => {
         {currentPage === 8 ? (
           <CompetitionParticipation setCurrentPage={setCurrentPage} />
         ) : null}
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            ShowCookieDisclaimer();
+          }}
+        >
+          Cookie-indstillinger
+        </Button>
       </div>
     </Provider>
   );
