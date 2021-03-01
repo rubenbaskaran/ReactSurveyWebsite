@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Button } from "@material-ui/core";
 
-function CookiePage(props) {
+function CookiePage() {
   useEffect(() => {
     const script = document.createElement("script");
     script.id = "CookieDeclaration";
@@ -13,13 +13,16 @@ function CookiePage(props) {
     document.body.appendChild(script);
   }, []);
 
+  function ReloadPage() {
+    window.location.reload();
+  }
+
   return (
     <Button
       variant="contained"
       color="primary"
-      onClick={() => {
-        props.setCurrentPage(0);
-      }}
+      style={{ margin: "10px" }}
+      onClick={ReloadPage}
     >
       Til forsiden
     </Button>

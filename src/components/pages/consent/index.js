@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid, Link } from "@material-ui/core";
 import LinearWithValueLabel from "../../progressBar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -109,6 +109,24 @@ function Consent(props) {
           <Grid item xs={12} style={{ fontSize: "15px" }}>
             <p>
               <i>
+                Klik{" "}
+                <Link
+                  component="button"
+                  variant="body2"
+                  color="primary"
+                  onClick={() => {
+                    props.setCurrentPage(9);
+                  }}
+                >
+                  <div style={{ color: "#0029E8" }}>
+                    <i>her</i>
+                  </div>
+                </Link>{" "}
+                for at se eller ændre i dine cookie-indstillinger.
+              </i>
+            </p>
+            <p>
+              <i>
                 Hvis du ønsker mere information om undersøgelsen og dermed
                 hjemmesiden, kan du kontakte Post Doc Sara Wallhed Finn (
                 <a href={`mailto:sarawf@health.sdu.dk`}>sarawf@health.sdu.dk</a>
@@ -136,15 +154,6 @@ function Consent(props) {
               alt="SDU logo"
             ></img>
           </Grid>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              props.setCurrentPage(9);
-            }}
-          >
-            Cookie-indstillinger
-          </Button>
         </Grid>
       </Container>
     </div>

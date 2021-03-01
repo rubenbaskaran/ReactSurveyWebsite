@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button } from "@material-ui/core";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Consent from "./components/pages/consent";

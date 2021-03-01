@@ -50,7 +50,19 @@ function RecaptchaPage(props) {
           <Grid item xs={12} container justify="center">
             <Recaptcha handleRecaptcha={handleRecaptcha} />
           </Grid>
-          <Grid container item xs={12}>
+          <Grid container item xs={6}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={() => {
+                props.setCurrentPage(0);
+              }}
+            >
+              Tilbage
+            </Button>
+          </Grid>
+          <Grid container item xs={6}>
             <Button
               variant="contained"
               color="primary"
