@@ -20,7 +20,6 @@ import { Provider } from "react-redux";
 
 const App = () => {
   const [currentPage, setCurrentPage] = React.useState(0);
-  const [previousPage, setPreviousPage] = React.useState(0);
 
   return (
     <Provider store={store}>
@@ -53,13 +52,12 @@ const App = () => {
         {currentPage === 8 ? (
           <CompetitionParticipation setCurrentPage={setCurrentPage} />
         ) : null}
-        {currentPage === 9 ? <CookiePage previousPage={previousPage} /> : null}
+        {currentPage === 9 ? <CookiePage /> : null}
 
         <Button
           variant="contained"
           color="primary"
           onClick={() => {
-            setPreviousPage(currentPage);
             setCurrentPage(9);
           }}
         >
