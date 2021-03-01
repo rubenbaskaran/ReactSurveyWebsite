@@ -13,26 +13,14 @@ import RandomVideo from "./components/pages/randomVideo";
 import SecondSurvey from "./components/pages/secondSurvey";
 import PostNinetyDayThoughts from "./components/pages/postNinetyDayThoughts";
 import CompetitionParticipation from "./components/pages/competitionParticipation";
+import CookiePage from "./components/pages/cookiePage";
 import "fontsource-roboto";
 import store from "./globalVariables";
 import { Provider } from "react-redux";
 
 const App = () => {
   const [currentPage, setCurrentPage] = React.useState(0);
-  const [myScript, setMyScript] = React.useState(null);
-
-  function ShowCookieDisclaimer() {
-    if (myScript !== null) {
-      document.body.removeChild(myScript);
-    }
-
-    const script = document.createElement("script");
-    script.src =
-      "https://consent.cookiebot.com/13374a5a-f8ff-4ec7-90c7-9b849796daf7/cd.js";
-    script.async = true;
-    document.body.appendChild(script);
-    setMyScript(script);
-  }
+  const [previousPage, setPreviousPage] = React.useState(0);
 
   return (
     <Provider store={store}>
@@ -71,11 +59,14 @@ const App = () => {
         {currentPage === 8 ? (
           <CompetitionParticipation setCurrentPage={setCurrentPage} />
         ) : null}
+        {currentPage === 9 ? <CookiePage previousPage={previousPage} /> : null}
+
         <Button
           variant="contained"
           color="primary"
           onClick={() => {
-            ShowCookieDisclaimer();
+            setPreviousPage(currentPage);
+            setCurrentPage(9);
           }}
         >
           Cookie-indstillinger
