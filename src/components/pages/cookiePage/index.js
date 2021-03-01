@@ -3,17 +3,16 @@ import { useEffect } from "react";
 
 function CookiePage() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const script = document.createElement("script");
+    script.id = "CookieDeclaration";
+    script.src =
+      "https://consent.cookiebot.com/13374a5a-f8ff-4ec7-90c7-9b849796daf7/cd.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
-  return (
-    <script
-      id="CookieDeclaration"
-      src="https://consent.cookiebot.com/13374a5a-f8ff-4ec7-90c7-9b849796daf7/cd.js"
-      type="text/javascript"
-      async
-    ></script>
-  );
+  return null;
 }
 
 export default CookiePage;
