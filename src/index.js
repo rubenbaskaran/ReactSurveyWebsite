@@ -19,13 +19,19 @@ import { Provider } from "react-redux";
 
 const App = () => {
   const [currentPage, setCurrentPage] = React.useState(0);
+  const [myScript, setMyScript] = React.useState(null);
 
   function ShowCookieDisclaimer() {
+    if (myScript !== null) {
+      document.body.removeChild(myScript);
+    }
+
     const script = document.createElement("script");
     script.src =
       "https://consent.cookiebot.com/13374a5a-f8ff-4ec7-90c7-9b849796daf7/cd.js";
     script.async = true;
     document.body.appendChild(script);
+    setMyScript(script);
   }
 
   return (
