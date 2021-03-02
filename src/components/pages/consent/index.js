@@ -118,7 +118,12 @@ function Consent(props) {
                     props.setCurrentPage(9);
                   }}
                 >
-                  <div style={{ color: "#0029E8" }}>
+                  <div
+                    style={{
+                      color: "#0029E8",
+                      paddingBottom: "2px",
+                    }}
+                  >
                     <i>her</i>
                   </div>
                 </Link>{" "}
