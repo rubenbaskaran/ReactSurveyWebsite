@@ -17,6 +17,12 @@ const useStyles = makeStyles({
   button: {
     width: "100%",
   },
+  link: {
+    color: "#0029E8",
+    "padding-bottom": "2.5px",
+    fontSize: "15px",
+    "font-style": "italic",
+  },
 });
 
 function Consent(props) {
@@ -111,22 +117,13 @@ function Consent(props) {
               <i>
                 Klik{" "}
                 <Link
+                  className={classes.link}
                   component="button"
-                  variant="body2"
-                  color="primary"
                   onClick={() => {
                     props.setCurrentPage(9);
                   }}
                 >
-                  <div
-                    style={{
-                      color: "#0029E8",
-                      paddingBottom: "1px",
-                      fontSize: "15px",
-                    }}
-                  >
-                    <i>her</i>
-                  </div>
+                  her
                 </Link>{" "}
                 for at se eller ændre i dine cookie-indstillinger.
               </i>
