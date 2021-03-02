@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 function CookiePage() {
   useEffect(() => {
     document.body.style =
-      "background: #F6F9FB; margin: 100px; border: solid black; border-width: 3px; border-radius: 20px; padding: 20px";
+      "background: #F6F9FB; margin: 50px; border: solid black; border-width: 3px; border-radius: 20px; padding: 20px";
 
     const script = document.createElement("script");
     script.id = "CookieDeclaration";
