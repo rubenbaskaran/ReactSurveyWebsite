@@ -20,6 +20,7 @@ const useStyles = makeStyles({
   link: {
     color: "#0029E8",
     "padding-bottom": "2.5px",
+    "margin-left": "-1px",
     fontSize: "15px",
     "font-style": "italic",
   },
