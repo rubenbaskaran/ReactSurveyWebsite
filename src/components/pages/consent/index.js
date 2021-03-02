@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Button, Grid } from "@material-ui/core";
+import { Container, Button, Grid, Link } from "@material-ui/core";
 import LinearWithValueLabel from "../../progressBar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTimestampStartAction } from "../../../globalVariables";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -20,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Consent() {
+function Consent(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -96,13 +95,12 @@ function Consent() {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/recaptcha"
               variant="contained"
               color="primary"
               className={classes.button}
               onClick={() => {
                 SetTimestampStart();
+                props.setCurrentPage(0.5);
               }}
             >
               Deltag
@@ -111,8 +109,20 @@ function Consent() {
           <Grid item xs={12} style={{ fontSize: "15px" }}>
             <p>
               <i>
-                Klik <Link to="/cookie">her</Link> for at se eller ændre i dine
-                cookie-indstillinger.
+                Klik{" "}
+                <Link
+                  component="button"
+                  variant="body2"
+                  color="primary"
+                  onClick={() => {
+                    props.setCurrentPage(9);
+                  }}
+                >
+                  <div style={{ color: "#0029E8" }}>
+                    <i>her</i>
+                  </div>
+                </Link>{" "}
+                for at se eller ændre i dine cookie-indstillinger.
               </i>
             </p>
             <p>

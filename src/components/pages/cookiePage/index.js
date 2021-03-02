@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
 function CookiePage() {
   useEffect(() => {
@@ -17,21 +16,19 @@ function CookiePage() {
       "background: #F6F9FB; margin: 100px; border: solid black; border-width: 3px; border-radius: 20px; padding: 20px";
   }, []);
 
+  function ReloadPage() {
+    window.location.reload();
+  }
+
   return (
-    <div>
-      <Button
-        component={Link}
-        to="/"
-        variant="contained"
-        color="primary"
-        style={{ marginBottom: "10px" }}
-        onClick={() => {
-          document.body.style = null;
-        }}
-      >
-        Gå tilbage til forsiden
-      </Button>
-    </div>
+    <Button
+      variant="contained"
+      color="primary"
+      style={{ marginBottom: "10px" }}
+      onClick={ReloadPage}
+    >
+      Gå tilbage til forsiden
+    </Button>
   );
 }
 

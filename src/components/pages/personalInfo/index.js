@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { UploadFirst1To7 } from "../../CallsToBackend";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -118,6 +117,8 @@ function PersonalInfo(props) {
   }, [data, nextButtonDisabled]);
 
   const UploadDataToRedcap = () => {
+    props.setCurrentPage(2);
+
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -217,8 +218,6 @@ function PersonalInfo(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/firstsurvey"
               variant="contained"
               color="primary"
               className={classes.button}

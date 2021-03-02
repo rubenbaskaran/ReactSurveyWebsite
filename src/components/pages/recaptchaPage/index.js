@@ -4,7 +4,6 @@ import LinearWithValueLabel from "../../progressBar";
 import Recaptcha from "../../reCAPTCHA";
 import { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -53,23 +52,25 @@ function RecaptchaPage(props) {
           </Grid>
           <Grid container item xs={6}>
             <Button
-              component={Link}
-              to="/"
               variant="contained"
               color="primary"
               className={classes.button}
+              onClick={() => {
+                props.setCurrentPage(0);
+              }}
             >
               Tilbage
             </Button>
           </Grid>
           <Grid container item xs={6}>
             <Button
-              component={Link}
-              to="/personalinfo"
               variant="contained"
               color="primary"
               className={classes.button}
               disabled={disabled}
+              onClick={() => {
+                props.setCurrentPage(1);
+              }}
             >
               Start
             </Button>

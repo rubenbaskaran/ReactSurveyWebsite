@@ -4,7 +4,6 @@ import LinearWithValueLabel from "../../progressBar";
 import { useSelector } from "react-redux";
 import { UploadVideoId } from "../../CallsToBackend";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -68,6 +67,8 @@ function RandomVideo(props) {
   }, [timeLeft]);
 
   const UploadDataToRedcap = () => {
+    props.setCurrentPage(6);
+
     let payload = {
       record_id: recordId,
       video_id: randomVideoNumber,
@@ -93,8 +94,6 @@ function RandomVideo(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/secondsurvey"
               variant="contained"
               color="primary"
               className={classes.button}

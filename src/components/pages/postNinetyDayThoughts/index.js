@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { UploadFifth50To57 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -86,6 +85,8 @@ function PostNinetyDayThoughts(props) {
     let surveyDuration = Math.abs(
       (timestampEnd - timestampStart) / 1000
     ).toString();
+
+    props.setCurrentPage(8);
 
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
@@ -210,8 +211,6 @@ function PostNinetyDayThoughts(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
-              component={Link}
-              to="/competitionparticipation"
               variant="contained"
               color="primary"
               className={classes.button}
