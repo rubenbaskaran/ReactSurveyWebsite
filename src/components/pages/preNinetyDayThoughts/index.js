@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { UploadThird27To34 } from "../../CallsToBackend";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -80,8 +81,6 @@ function PreNinetyDayThoughts(props) {
   }, [data, nextButtonDisabled]);
 
   const UploadDataToRedcap = () => {
-    props.setCurrentPage(4);
-
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -192,6 +191,8 @@ function PreNinetyDayThoughts(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
+              component={Link}
+              to="/videotext"
               variant="contained"
               color="primary"
               className={classes.button}

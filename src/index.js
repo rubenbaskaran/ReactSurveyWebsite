@@ -16,46 +16,39 @@ import CookiePage from "./components/pages/cookiePage";
 import "fontsource-roboto";
 import store from "./globalVariables";
 import { Provider } from "react-redux";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 const App = () => {
-  const [currentPage, setCurrentPage] = React.useState(0);
-
   return (
-    <Provider store={store}>
-      <div>
-        {currentPage === 0 ? <Consent setCurrentPage={setCurrentPage} /> : null}
-        {currentPage === 0.5 ? (
-          <RecaptchaPage setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 1 ? (
-          <PersonalInfo setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 2 ? (
-          <FirstSurvey setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 3 ? (
-          <PreNinetyDayThoughts setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 4 ? (
-          <VideoText setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 5 ? (
-          <RandomVideo setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 6 ? (
-          <SecondSurvey setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 7 ? (
-          <PostNinetyDayThoughts setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 8 ? (
-          <CompetitionParticipation setCurrentPage={setCurrentPage} />
-        ) : null}
-        {currentPage === 9 ? (
-          <CookiePage setCurrentPage={setCurrentPage} />
-        ) : null}
-      </div>
-    </Provider>
+    <HashRouter>
+      <Switch>
+        <Provider store={store}>
+          <Route exact path="/" component={Consent} />
+          <Route exact path="/cookie" component={CookiePage} />
+          <Route exact path="/recaptcha" component={RecaptchaPage} />
+          <Route exact path="/personalinfo" component={PersonalInfo} />
+          <Route exact path="/firstsurvey" component={FirstSurvey} />
+          <Route
+            exact
+            path="/preninetydaythoughts"
+            component={PreNinetyDayThoughts}
+          />
+          <Route exact path="/videotext" component={VideoText} />
+          <Route exact path="/randomvideo" component={RandomVideo} />
+          <Route exact path="/secondsurvey" component={SecondSurvey} />
+          <Route
+            exact
+            path="/postninetydaythoughts"
+            component={PostNinetyDayThoughts}
+          />
+          <Route
+            exact
+            path="/competitionparticipation"
+            component={CompetitionParticipation}
+          />
+        </Provider>
+      </Switch>
+    </HashRouter>
   );
 };
 

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { UploadSecond8To26 } from "../../CallsToBackend";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -147,12 +148,6 @@ function FirstSurvey(props) {
   }, [data, nextButtonDisabled]);
 
   const UploadDataToRedcap = () => {
-    if (conditionalNextPage === "/preninetydaythoughts") {
-      props.setCurrentPage(3);
-    } else {
-      props.setCurrentPage(4);
-    }
-
     let dataPlaceholder = [...data];
     dataPlaceholder.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
@@ -387,6 +382,8 @@ function FirstSurvey(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
+              component={Link}
+              to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}

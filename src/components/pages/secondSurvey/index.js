@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { UploadFourth35To49 } from "../../CallsToBackend";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -111,7 +112,6 @@ function SecondSurvey(props) {
 
     if (conditionalNextPage === "/postninetydaythoughts") {
       timestampStart = null;
-      props.setCurrentPage(7);
     } else {
       answersComplete = "2";
       timestampEnd = new Date();
@@ -130,7 +130,6 @@ function SecondSurvey(props) {
         timestampEnd.getMinutes() +
         ":" +
         timestampEnd.getSeconds();
-      props.setCurrentPage(8);
     }
 
     let dataPlaceholder = [...data];
@@ -329,6 +328,8 @@ function SecondSurvey(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
+              component={Link}
+              to={conditionalNextPage}
               variant="contained"
               color="primary"
               className={classes.button}

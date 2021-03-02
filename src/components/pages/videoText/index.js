@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Button, Grid } from "@material-ui/core";
 import LinearWithValueLabel from "../../progressBar";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   grid: {
@@ -36,10 +37,11 @@ function VideoText(props) {
           </Grid>
           <Grid container item xs={12}>
             <Button
+              component={Link}
+              to="/randomvideo"
               variant="contained"
               color="primary"
               className={classes.button}
-              onClick={() => props.setCurrentPage(5)}
             >
               Næste
             </Button>
