@@ -27,8 +27,6 @@ function CookiePage() {
         style={{ marginBottom: "10px" }}
         onClick={() => {
           document.body.style = null;
-          var myNodeList = document.querySelectorAll("div");
-          document.body.removeChild(myNodeList[myNodeList.length - 1]);
         }}
       >
         Gå tilbage til forsiden
