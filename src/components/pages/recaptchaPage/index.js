@@ -27,13 +27,12 @@ function RecaptchaPage(props) {
     setDisabled(!disabled);
   }
 
-  const script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
-  script.async = true;
-  document.body.appendChild(script);
-
   useEffect(() => {
     window.scrollTo(0, 0);
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   return (
