@@ -122,6 +122,7 @@ function Consent(props) {
                     style={{
                       color: "#0029E8",
                       paddingBottom: "1px",
+                      fontSize: "15px",
                     }}
                   >
                     <i>her</i>
