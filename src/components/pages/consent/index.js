@@ -100,7 +100,7 @@ function Consent(props) {
               className={classes.button}
               onClick={() => {
                 SetTimestampStart();
-                props.setCurrentPage(5);
+                props.setCurrentPage(0.5);
               }}
             >
               Deltag
