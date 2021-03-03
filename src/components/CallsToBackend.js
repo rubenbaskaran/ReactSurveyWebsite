@@ -442,21 +442,18 @@ function AxiosCall(url, data, dispatch) {
   axios
     .post(url, data)
     .then(function (response) {
-      if (!response.data.responseData) {
-        throw new Error("Response data is undefined");
-      }
       if (url.includes("create") && !data.emails_complete) {
         dispatch(
           setRecordIdAction(response.data.responseData[0].split(",")[0])
         );
-      } else if (data.emails_complete != null && data.emails_complete === 2) {
+      } else if (data.emails_complete === 2) {
         window.open("https://alkohologsamfund.dk/", "_self");
       }
     })
     .catch(function (error) {
       if (
         window.confirm(
-          "Kunne ikke forbinde til server. Tjek venligst din internetforbindelse og tilgå undersøgelsen på:\n\nhttps://reach.sdu.dk - i stedet for - http://reach.sdu.dk\n\nKontakt venligst sarawf@health.sdu.dk hvis fejlen genopstår."
+          `Kunne ikke forbinde til server. Tjek venligst din internetforbindelse og tilgå undersøgelsen på:\n\nhttps://reach.sdu.dk - i stedet for - http://reach.sdu.dk\n\nKontakt venligst sarawf@health.sdu.dk hvis fejlen genopstår. \nOplys følgende fejlbesked: ${error}`
         )
       ) {
         window.location.reload();
